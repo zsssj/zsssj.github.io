@@ -4,7 +4,7 @@
  <title>zsssj's Blog</title>
  <link href="http://zsssj.github.io/atom.xml" rel="self"/>
  <link href="http://zsssj.github.io"/>
- <updated>2019-05-10T17:43:36+08:00</updated>
+ <updated>2019-05-12T14:55:24+08:00</updated>
  <id>http://zsssj.github.io</id>
  <author>
    <name>Nick Kuta</name>
@@ -13,22 +13,95 @@
 
  
  <entry>
-   <title>Hello World</title>
-   <link href="http://zsssj.github.io/books/2019/05/10/hello-world"/>
-   <updated>2019-05-10T00:00:00+08:00</updated>
-   <id>http://zsssj.github.io/books/2019/05/10/hello-world</id>
+   <title>Thirteen Ways of Look at a Blackbird</title>
+   <link href="http://zsssj.github.io/poem/2019/05/12/thirteen-ways-of-look-at-a-blackbird"/>
+   <updated>2019-05-12T00:00:00+08:00</updated>
+   <id>http://zsssj.github.io/poem/2019/05/12/thirteen-ways-of-look-at-a-blackbird</id>
    <content type="html">
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Hello World!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Jekyll Introduction Draft</title>
-   <link href="http://zsssj.github.io/lessons/2019/04/13/jekyll-introduction-draft"/>
-   <updated>2019-04-13T11:24:58+08:00</updated>
-   <id>http://zsssj.github.io/lessons/2019/04/13/jekyll-introduction-draft</id>
-   <content type="html">
-&lt;p&gt;This is an example of a draft. Read more here: &lt;a href=&quot;http://jekyllrb.com/docs/drafts/&quot;&gt;http://jekyllrb.com/docs/drafts/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;thirteen-ways-of-looking-at-a-blackbird&quot;&gt;Thirteen Ways of Looking at a Blackbird&lt;/h3&gt;
+&lt;h4 id=&quot;by-wallace-stevens&quot;&gt;&lt;center&gt;By Wallace Stevens&lt;/center&gt;&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;        I
+Among twenty snowy mountains,  
+The only moving thing  
+Was the eye of the blackbird.  
+
+        II
+I was of three minds,  
+Like a tree  
+In which there are three blackbirds.  
+
+        III
+The blackbird whirled in the autumn winds.  
+It was a small part of the pantomime.  
+
+        IV
+A man and a woman  
+Are one.  
+A man and a woman and a blackbird  
+Are one.  
+
+        V
+I do not know which to prefer,  
+The beauty of inflections  
+Or the beauty of innuendoes,  
+The blackbird whistling  
+Or just after.  
+
+        VI
+Icicles filled the long window  
+With barbaric glass.  
+The shadow of the blackbird  
+Crossed it, to and fro.  
+The mood  
+Traced in the shadow  
+An indecipherable cause.  
+
+        VII
+O thin men of Haddam,  
+Why do you imagine golden birds?  
+Do you not see how the blackbird  
+Walks around the feet  
+Of the women about you?  
+
+        VIII
+I know noble accents  
+And lucid, inescapable rhythms;  
+But I know, too,  
+That the blackbird is involved  
+In what I know.  
+
+        IX
+When the blackbird flew out of sight,  
+It marked the edge  
+Of one of many circles.  
+
+        X
+At the sight of blackbirds  
+Flying in a green light,  
+Even the bawds of euphony  
+Would cry out sharply.  
+
+        XI
+He rode over Connecticut  
+In a glass coach.  
+Once, a fear pierced him,  
+In that he mistook  
+The shadow of his equipage  
+For blackbirds.  
+
+        XII
+The river is moving.  
+The blackbird must be flying.  
+
+        XIII
+It was evening all afternoon.  
+It was snowing  
+And it was going to snow.  
+The blackbird sat  
+In the cedar-limbs.  
+&lt;/code&gt;&lt;/pre&gt;
+
 </content>
  </entry>
  
