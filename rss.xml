@@ -1,33 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-        <title>zsssj's Blog</title>
-        <description>zsssj's Blog - Nick Kuta</description>
+        <title>Kuta's Blog</title>
+        <description>Kuta's Blog - Nick Kuta</description>
         <link>http://zsssj.github.io</link>
         <atom:link href="http://zsssj.github.io/rss.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Fri, 10 May 2019 17:43:36 +0800</lastBuildDate>
-        <pubDate>Fri, 10 May 2019 17:43:36 +0800</pubDate>
+        <lastBuildDate>Mon, 13 May 2019 11:07:26 +0800</lastBuildDate>
+        <pubDate>Mon, 13 May 2019 11:07:26 +0800</pubDate>
         <ttl>60</ttl>
 
 
         <item>
-                <title>Hello World</title>
+                <title>Thirteen Ways of Look at a Blackbird</title>
                 <description>
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Hello World!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
-                <link>http://zsssj.github.io/books/2019/05/10/hello-world</link>
-                <guid>http://zsssj.github.io/books/2019/05/10/hello-world</guid>
-                <pubDate>Fri, 10 May 2019 00:00:00 +0800</pubDate>
-        </item>
+&lt;h3 id=&quot;thirteen-ways-of-looking-at-a-blackbird&quot;&gt;Thirteen Ways of Looking at a Blackbird&lt;/h3&gt;
+&lt;h4 id=&quot;by-wallace-stevens&quot;&gt;&lt;center&gt;By Wallace Stevens&lt;/center&gt;&lt;/h4&gt;
 
-        <item>
-                <title>Jekyll Introduction Draft</title>
-                <description>
-&lt;p&gt;This is an example of a draft. Read more here: &lt;a href=&quot;http://jekyllrb.com/docs/drafts/&quot;&gt;http://jekyllrb.com/docs/drafts/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        I
+Among twenty snowy mountains,  
+The only moving thing  
+Was the eye of the blackbird.  
+
+        II
+I was of three minds,  
+Like a tree  
+In which there are three blackbirds.  
+
+        III
+The blackbird whirled in the autumn winds.  
+It was a small part of the pantomime.  
+
+        IV
+A man and a woman  
+Are one.  
+A man and a woman and a blackbird  
+Are one.  
+
+        V
+I do not know which to prefer,  
+The beauty of inflections  
+Or the beauty of innuendoes,  
+The blackbird whistling  
+Or just after.  
+
+        VI
+Icicles filled the long window  
+With barbaric glass.  
+The shadow of the blackbird  
+Crossed it, to and fro.  
+The mood  
+Traced in the shadow  
+An indecipherable cause.  
+
+        VII
+O thin men of Haddam,  
+Why do you imagine golden birds?  
+Do you not see how the blackbird  
+Walks around the feet  
+Of the women about you?  
+
+        VIII
+I know noble accents  
+And lucid, inescapable rhythms;  
+But I know, too,  
+That the blackbird is involved  
+In what I know.  
+
+        IX
+When the blackbird flew out of sight,  
+It marked the edge  
+Of one of many circles.  
+
+        X
+At the sight of blackbirds  
+Flying in a green light,  
+Even the bawds of euphony  
+Would cry out sharply.  
+
+        XI
+He rode over Connecticut  
+In a glass coach.  
+Once, a fear pierced him,  
+In that he mistook  
+The shadow of his equipage  
+For blackbirds.  
+
+        XII
+The river is moving.  
+The blackbird must be flying.  
+
+        XIII
+It was evening all afternoon.  
+It was snowing  
+And it was going to snow.  
+The blackbird sat  
+In the cedar-limbs.  
+&lt;/code&gt;&lt;/pre&gt;
+
 </description>
-                <link>http://zsssj.github.io/lessons/2019/04/13/jekyll-introduction-draft</link>
-                <guid>http://zsssj.github.io/lessons/2019/04/13/jekyll-introduction-draft</guid>
-                <pubDate>Sat, 13 Apr 2019 11:24:58 +0800</pubDate>
+                <link>http://zsssj.github.io/poem/2019/05/12/thirteen-ways-of-look-at-a-blackbird</link>
+                <guid>http://zsssj.github.io/poem/2019/05/12/thirteen-ways-of-look-at-a-blackbird</guid>
+                <pubDate>Sun, 12 May 2019 00:00:00 +0800</pubDate>
         </item>
 
 
