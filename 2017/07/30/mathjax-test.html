@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- gitalk javascript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>     
 	
 	<!--
 Author: Ray-Eldath
@@ -256,6 +259,24 @@ k &= m\oplus c
     });
   </script>
 
+  
+
+  
+    <hr>
+    <div id='gitalk-container'></div>
+<script>
+const gitalk = new Gitalk({
+  clientID: '5ff8b2f8733a28e91c3b',
+  clientSecret: '8ae4e54da63b351934a8308c0f772c56af8696f4',
+  repo: 'zsssj.github.io',
+  owner: 'zsssj',
+  admin: ['zsssj'],
+  id: 'MathJax Test',      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
+</script>
   
 
   <script src="/assets/js/prism.js"></script>
