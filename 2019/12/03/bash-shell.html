@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash shell - Kuta's Blog</title>
+    <meta name="author"  content="zsssj">
+    <meta name="description" content="Bash shell">
+    <meta name="keywords"  content="shell, program">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bash shell - Kuta's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2019/12/03/bash-shell.html">
+    <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
+    <meta property="og:site_name" content="Kuta's Blog"> 
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- gitalk javascript -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>    
+    -->
+    <!-- gitalk will conflict with prism, please use it carefully. --> 
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#shell" class="post-tag">shell</a>
+          
+            <a href="/tags.html#program" class="post-tag">program</a>
+          
+        
+      </div>
+      <h1>Bash shell</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>zsssj</span>
+        <time class="post-meta-item" datetime="19-12-03"><i class="iconfont icon-date"></i>03 Dec 2019</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <h1 id="bash-shell编程入门">Bash Shell编程入门</h1>
+</blockquote>
+
+<h2 id="1-shell是什么">1 Shell是什么？</h2>
+<p> shell本身是一个命令解释器，介于操作系统的内核（kernel）态和用户态之间，可以执行系统调用及系统命令等，让用户以此来与操作系统实现互动。同时，它也用来指一种计算机程序语言（类似于C、Python等）。一个shell程序一般被称为一个脚本。</p>
+
+<p><strong>Shell语言的流派</strong><br />
+目前，shell主要有两大流派：</p>
+<ul>
+  <li>sh:</li>
+  <li>burne shell (sh)</li>
+  <li>burne again shell (bash)</li>
+  <li>csh:</li>
+  <li>c shell (csh)</li>
+  <li>tc shell (tcsh)</li>
+  <li>korn shell (ksh)</li>
+</ul>
+
+<p>目前，大部分Linux系统预设的shell都是bash。<br />
+Ubuntu16.04提供的shell环境（登录成功后默认使用bash）：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slot@slot-ubt:~<span class="nv">$ </span><span class="nb">cat</span> /etc/shells
+<span class="c"># /etc/shells: valid login shells </span>
+/bin/sh 
+/bin/dash 
+/bin/bash 
+/bin/rbash 
+slot@slot-ubt:~<span class="nv">$ </span>
+</code></pre></div></div>
+<p>Mac OS提供的shell环境：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /etc/shells 
+<span class="c"># List of acceptable shells for chpass(1).</span>
+<span class="c"># Ftpd will not allow users to connect who are not using </span>
+<span class="c"># one of these shells. </span>
+<span class="o">&gt;</span> 
+/bin/bash 
+/bin/csh 
+/bin/ksh 
+/bin/sh 
+/bin/tcsh 
+/bin/zsh <span class="c"># zsh系本文作者自己安装 </span>
+</code></pre></div></div>
+<p>一个极简的bash demo: hello_world.sh</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash </span>
+
+<span class="c"># Here is comment </span>
+<span class="nb">echo</span> <span class="s2">"Hello World!"</span> 
+</code></pre></div></div>
+<p>执行 <br />
+方法1: 直接使用bash解释器来解释执行：<br />
+<em>bash hello_world.sh</em> <br />
+或者：<br />
+<em>sh hello_world.sh</em> <br />
+方法2: 先将文件属性改为可执行状态：<br />
+<em>chmod +x hello_world.sh</em> <br />
+或者：<br />
+<em>chmod 777 hello_world.sh</em> <br />
+再直接执行：<br />
+<em>./hello_world.sh</em> <br />
+输出<br />
+<em>Hello World!</em> <br />
+解释<br />
+#!用来指定执行该脚本的解释器，后面的/bin/bash表明指定/bin目录下的bash程序来解释执行该脚本文件。 <br />
+#开头的是注释行(#!除外)，shell中只有单行注释。 <br />
+echo “Hello World!” 即用echo命令输出字符串”Hello World!”到终端显示器。 <br />
+补充知识: 文件的属性<br />
+通过ls -l命令可以查看文件的属性，例如查看新建文件test.sh的属性：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slot@slot-ubt:~<span class="nv">$ </span><span class="nb">touch </span>test.sh 
+slot@slot-ubt:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> test.sh 
+<span class="nt">-rw-rw-r--</span> 1 slot slot 0 12月 21 15:40 test.sh 
+</code></pre></div></div>
+<p>可以看到，一般新建文件的默认属性是-rw-rw-r–，即644，不具有可执行属性x，可使用chmod命令来改变文件属性（修改默认属性则使用umask命令），例如将文件test.sh的属性改为可读可写可执行(rwx: 4 + 2 + 1 = 7)：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slot@slot-ubt:~<span class="nv">$ </span><span class="nb">chmod </span>777 test.sh 
+slot@slot-ubt:~<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> test.sh 
+<span class="nt">-rwxrwxrwx</span> 1 slot slot 0 12月 21 15:40 test.sh 
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="2-bash中的变量">2 Bash中的变量</h2>
+<h3 id="21-变量的定义与赋值">2.1 变量的定义与赋值</h3>
+<p>不像C、Java等静态语言需要先声明然后才能使用，而是和Python等动态语言类似，Bash变量在使用时直接定义，例如：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">my_bash_var</span><span class="o">=</span><span class="s2">"this is my bash var"</span> 
+</code></pre></div></div>
+<p>注意:</p>
+<ul>
+  <li>＝两边不能有空格！否则就是语法错误了。</li>
+  <li>Bash变量命名只能使用字母，下划线和数字，并且不能以数字开头。</li>
+</ul>
+
+<h3 id="22-变量的引用">2.2 变量的引用</h3>
+<p>使用已定义的变量时，只要在变量名前面加$符号即可:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$my_bash_var</span> 
+</code></pre></div></div>
+<p>或者使用${var_name}的形式，{}是可选的，主要是帮助解释器更好地识别变量的边界(推荐)：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="k">${</span><span class="nv">my_bash_var</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>注意’‘和”“的区别：</p>
+<ul>
+  <li>’‘ ：单引号里的任何字符都会原样输出，单引号中对变量引用是无效的，且单引号中不能出现单引号（对单引号使用转义符也不行）；</li>
+  <li>”“：双引号里可以引用变量，可以出现转义字符。</li>
+</ul>
+
+<p>实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">a</span><span class="o">=</span><span class="s2">"hello"</span> 
+<span class="nb">echo</span> <span class="s1">'a is : $a'</span> 
+<span class="nb">echo</span> <span class="s2">"a is : </span><span class="nv">$a</span><span class="s2">"</span> 
+Output:
+a is : <span class="nv">$a</span> 
+a is : hello 
+</code></pre></div></div>
+<p>只读变量<br />
+使用 readonly 命令可以将变量限定为只读变量，这与 C 语言中的 const 常量类型的情况相同.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">a_var</span><span class="o">=</span><span class="s2">"hello"</span> 
+<span class="nb">readonly </span>a_var 
+<span class="nv">a_var</span><span class="o">=</span><span class="s2">"world"</span> <span class="c"># Output: bash: read-only variable: a_var </span>
+</code></pre></div></div>
+<p>删除变量<br />
+使用 unset 命令可以删除变量，但是不能删除只读变量。<br />
+变量被删除后不能再次使用。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">my_var</span><span class="o">=</span><span class="s2">"haha"</span> 
+<span class="nb">unset </span>my_var 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">my_var</span><span class="k">}</span> <span class="c"># 变量my_var已被删除，没有任何输出 </span>
+</code></pre></div></div>
+
+<h3 id="23-变量的类型">2.3 变量的类型</h3>
+<p>诸如C、Java、Python等这些高级语言中的变量是有类型的，例如数字类型（整型、浮点型等）、字符串类型、布尔类型，面向对象语言中还有引用类型等。但是，在Bash中，并不对变量区分类型。<br />
+本质上来说，Bash变量都是字符串。但是依赖于上下文，Bash也允许比较操作和算术操作。决定这些的关键因素是变量中的值是否只有数字，只有当变量是纯数字时，该变量才是“数字类型的”，否则就是字符串类型的。<br />
+另外，注意Bash中的数字默认的是十进制，八进制需要以0开头，十六进制以0x开头。<br />
+纯数字变量是“数字变量”：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">a</span><span class="o">=</span>1234 
+<span class="nb">let</span> <span class="s2">"a+=1"</span> 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">a</span><span class="k">}</span> <span class="c"># Output: 1235 </span>
+</code></pre></div></div>
+<p>数字＋字符串：字符串变量，字符串变量不能进行数学运算</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">b</span><span class="o">=</span><span class="k">${</span><span class="nv">a</span><span class="p">/12/BB</span><span class="k">}</span> <span class="c"># 将12替换为BB </span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">b</span><span class="k">}</span> <span class="c"># Output: BB35 </span>
+
+<span class="nb">let</span> <span class="s2">"b+=1"</span> 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">b</span><span class="k">}</span> <span class="c"># Output:1 </span>
+</code></pre></div></div>
+<p>将变量中的非数字字符替换为数字，得到数字变量</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">c</span><span class="o">=</span>BB34 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">c</span><span class="k">}</span> <span class="c"># Output: BB34 </span>
+
+<span class="nv">d</span><span class="o">=</span><span class="k">${</span><span class="nv">c</span><span class="p">/BB/12</span><span class="k">}</span> <span class="c"># 将BB替换为12 </span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">d</span><span class="k">}</span> <span class="c"># Output: 1234 </span>
+
+<span class="nb">let</span> <span class="s2">"d+=1"</span> 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">d</span><span class="k">}</span> <span class="c"># Output: 1235 </span>
+</code></pre></div></div>
+<p>空变量+数字：数字变量</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 变量e定义为空值 </span>
+<span class="nv">e</span><span class="o">=</span><span class="s2">""</span> 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">e</span><span class="k">}</span> <span class="c"># Output: 没有任何输出 </span>
+
+<span class="nb">let</span> <span class="s2">"e+=1"</span> <span class="c"># 空值 + 1 </span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">e</span><span class="k">}</span> <span class="c"># Output: 1 </span>
+</code></pre></div></div>
+<p>未定义的变量+数字：数字变量</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 变量f未定义 </span>
+<span class="nb">echo</span> <span class="s2">"f = </span><span class="nv">$f</span><span class="s2">"</span> <span class="c"># Output: f = </span>
+
+<span class="nb">let</span> <span class="s2">"f+=1"</span> 
+<span class="nb">echo</span> <span class="s2">"f = </span><span class="k">${</span><span class="nv">f</span><span class="k">}</span><span class="s2">"</span> <span class="c"># Output: f = 1 </span>
+</code></pre></div></div>
+
+<h3 id="24-变量的作用域">2.4 变量的作用域</h3>
+
+<ul>
+  <li>局部变量(local variables)：这种变量只有在变量所在的代码块或者函数中才可见，需要使用local声明；</li>
+  <li>全局变量：Bash中用户自定义的普通变量默认是全局变量，可以在本文件中的其它位置引用；</li>
+  <li>环境变量(environmental variables)：所有的程序（包括shell启动的程序）都能访问环境变量。</li>
+</ul>
+
+<p>如果一个shell脚本设置了环境变量,需要用 export 命令来通知脚本的环境。<br />
+更多关于环境变量的知识可以参考以下文章：</p>
+<ul>
+  <li><a href="https://www.jianshu.com/p/ac2bc0ad3d74">Linux环境变量总结</a></li>
+  <li><a href="https://www.jianshu.com/p/f7d4a821d292">linux入门之环境变量与文件查找</a><br />
+<br /></li>
+</ul>
+
+<h2 id="3-bash中的运算符">3 Bash中的运算符</h2>
+<p>Bash支持的运算符有：</p>
+<ul>
+  <li>数学运算符</li>
+  <li>关系运算符</li>
+  <li>布尔运算符</li>
+  <li>逻辑运算符</li>
+  <li>字符串运算符</li>
+  <li>文件测试运算符</li>
+</ul>
+
+<h3 id="31-数学运算符">3.1 数学运算符</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>数学运算符 </th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+</td>
+      <td>加法</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>减法</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>乘法</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>除法</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>取余</td>
+    </tr>
+    <tr>
+      <td>=</td>
+      <td>赋值</td>
+    </tr>
+    <tr>
+      <td>==</td>
+      <td>相等测试，相等则返回true</td>
+    </tr>
+    <tr>
+      <td>!=</td>
+      <td>不相等测试，不相等则返回true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>注意： 乘号*前边必须加反斜杠 \ 才能实现乘法运算</p>
+
+<h3 id="32-关系运算符">3.2 关系运算符</h3>
+<p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>关系运算符</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-eq</td>
+      <td>(equal) 检测两个数是否相等，相等则返回 true</td>
+    </tr>
+    <tr>
+      <td>-ne</td>
+      <td>(not equal）检测两个数是否相等，不相等则返回 true</td>
+    </tr>
+    <tr>
+      <td>-gt</td>
+      <td>(greater than）检测左边的数是否大于右边的，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-lt</td>
+      <td>(lower than) 检测左边的数是否小于右边的，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-ge</td>
+      <td>(greater equal）检测左边的数是否大于等于右边的，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-le</td>
+      <td>(lower equal) 检测左边的数是否小于等于右边的，如果是，则返回 true</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="33-布尔运算符">3.3 布尔运算符</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>布尔运算符</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-a</td>
+      <td>与运算，两个表达式都为 true 才返回 true</td>
+    </tr>
+    <tr>
+      <td>-o</td>
+      <td>或运算，有一个表达式为 true 则返回 true</td>
+    </tr>
+    <tr>
+      <td>!</td>
+      <td>非运算，表达式为 true 则返回 false，否则返回 true</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="34-逻辑运算符">3.4 逻辑运算符</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>逻辑运算符</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;&amp;</td>
+      <td>逻辑与</td>
+    </tr>
+    <tr>
+      <td>||</td>
+      <td>逻辑或</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="35-字符串运算符">3.5 字符串运算符</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>字符串运算符</th>
+      <th>说明</th>
+      <th>举例 (a=”abc” b=”def”)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>=</td>
+      <td>检测两个字符串是否相等，相等返回 true</td>
+      <td><code class="highlighter-rouge">[ $a = $b ]</code> 返回 false</td>
+    </tr>
+    <tr>
+      <td>!=</td>
+      <td>检测两个字符串是否相等，不相等返回 true</td>
+      <td><code class="highlighter-rouge">[ $a != $b ]</code> 返回 true</td>
+    </tr>
+    <tr>
+      <td>-z</td>
+      <td>检测字符串长度是否为0，为0返回 true</td>
+      <td><code class="highlighter-rouge">[ -z $a ]</code> 返回 false</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>检测字符串长度是否为0，不为0返回 true</td>
+      <td><code class="highlighter-rouge">[ -n $a ]</code> 返回 true</td>
+    </tr>
+    <tr>
+      <td>str_name</td>
+      <td>检测字符串是否为空，不为空返回 true</td>
+      <td><code class="highlighter-rouge">[ $a ]</code> 返回 true</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="36-文件测试运算符">3.6 文件测试运算符</h3>
+<p>文件测试运算符用于检测 Unix 文件的各种属性</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>文件测试运算符</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-b file</td>
+      <td>检测文件是否是块设备文件，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-c file</td>
+      <td>检测文件是否是字符设备文件，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-d file</td>
+      <td>检测文件是否是目录，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-f file</td>
+      <td>检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-g file</td>
+      <td>检测文件是否设置了 SGID 位，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-k file</td>
+      <td>检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-p fill</td>
+      <td>检测文件是否是命名管道，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-u file</td>
+      <td>检测文件是否设置了 SUID 位，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-r file</td>
+      <td>检测文件是否可读，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-w file</td>
+      <td>检测文件是否可写，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-x file</td>
+      <td>检测文件是否可执行，如果是，则返回 true</td>
+    </tr>
+    <tr>
+      <td>-s file</td>
+      <td>检测文件是否为空（文件大小是否大于0），不为空返回 true</td>
+    </tr>
+    <tr>
+      <td>-e file</td>
+      <td>检测文件（包括目录）是否存在，如果是，则返回 true</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="4-bash的控制流">4 Bash的控制流</h2>
+<h3 id="41-条件语句">4.1 条件语句</h3>
+<p><strong>4.1.1 if语句</strong></p>
+
+<ul>
+  <li>if</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> condition <span class="o">]</span> 
+<span class="k">then 
+	</span><span class="nb">command 
+</span><span class="k">fi</span> 
+</code></pre></div></div>
+<ul>
+  <li>if-else</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> condition <span class="o">]</span> 
+<span class="k">then 
+	</span><span class="nb">command 
+</span><span class="k">else 
+	</span><span class="nb">command 
+</span><span class="k">fi</span> 
+</code></pre></div></div>
+<ul>
+  <li>if-elif-else</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> condition1 <span class="o">]</span> 
+<span class="k">then 
+	</span>command1 
+<span class="k">elif</span> <span class="o">[</span> condition2 <span class="o">]</span> 
+	command2 
+<span class="k">else 
+	</span>commandN 
+<span class="k">fi</span> 
+</code></pre></div></div>
+<p>注意：<br />
+勿忘最后的fi（if的反向拼写）!</p>
+
+<p><strong>4.1.2 case语句</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="s2">"</span><span class="k">${</span><span class="nv">var</span><span class="k">}</span><span class="s2">"</span> <span class="k">in</span> 
+	<span class="s2">"</span><span class="nv">$condition1</span><span class="s2">"</span> <span class="p">)</span> 
+		command1 
+	<span class="p">;;</span> 
+
+	<span class="s2">"</span><span class="nv">$condition2</span><span class="s2">"</span> <span class="p">)</span> 
+		command2 
+	<span class="p">;;</span> 
+	<span class="k">*</span> <span class="p">)</span> <span class="c"># 这里相当于C中case语句的default </span>
+<span class="k">esac</span> 
+</code></pre></div></div>
+<p>注意：</p>
+<ul>
+  <li>对变量使用”“并不是强制的，因为不会发生单词分离;</li>
+  <li>每句测试行,都以右小括号)结尾;</li>
+  <li>每个条件块都以两个分号;;结尾（作用类似C中的break）;</li>
+  <li>case 块的结束以 esac(case 的反向拼写)结尾.</li>
+</ul>
+
+<h3 id="42-循环语句">4.2 循环语句</h3>
+<p><strong>4.2.1 for语句</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>var <span class="k">in </span>item1 item2 ... itemN 
+<span class="k">do 
+	</span>command1 
+	command2 
+	... 
+	commandN 
+<span class="k">done</span> 
+</code></pre></div></div>
+<p>注意： <br />
+在循环的每次执行中，var将顺序的存取 list （i.e. item1 … itemN）中列出的变量。<br />
+C风格的for循环:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">((</span> EXP1<span class="p">;</span> EXP2<span class="p">;</span> EXP3 <span class="o">))</span> 
+<span class="k">do 
+	</span>command1 
+	command2 
+	command3 
+<span class="k">done</span> 
+</code></pre></div></div>
+<p>注意: (())中对变量的引用可以不加$<br />
+<strong>4.2.2 while语句</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="o">[</span> condition <span class="o">]</span> 
+<span class="k">do 
+	</span><span class="nb">command 
+</span><span class="k">done</span> 
+</code></pre></div></div>
+<p>C风格的while循环:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="o">((</span> condition <span class="o">))</span> 
+<span class="k">do 
+	</span><span class="nb">command 
+</span><span class="k">done</span> 
+</code></pre></div></div>
+<p>注意: (())中对变量的引用同样可以不加$<br />
+<strong>4.2.3 until语句</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">until</span> <span class="o">[</span> condition-is-true <span class="o">]</span> 
+<span class="k">do 
+	</span><span class="nb">command 
+</span><span class="k">done</span> 
+</code></pre></div></div>
+<p>注意：   
+util结构在循环的顶部判断条件,并且如果条件一直为 false 那就一直循环下去，直到条件为真才结束循环(与 while 相反)。<br />
+<br /></p>
+
+<h2 id="5-bash支持的编程模型">5 Bash支持的编程模型</h2>
+<p>Bash只支持过程式的编程模型，不支持面向对象和函数式等高级编程模型，更不支持对高级设计模式的实现。所以，如果要实现比较复杂的功能，还是使用Perl、Python或者Ruby等高级语言吧。</p>
+<h3 id="51-bash的传参机制">5.1 Bash的传参机制</h3>
+<p>shell通过位置参数（positional parameters）来给脚本文件传递参数，就是从命令行中传进来的参数,<code class="highlighter-rouge">$0</code>, <code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, <code class="highlighter-rouge">$3</code>… 其中：</p>
+<ul>
+  <li><code class="highlighter-rouge">$0</code> 是该脚本文件的名字</li>
+  <li><code class="highlighter-rouge">$1</code> 是第一个参数, <code class="highlighter-rouge">$2</code> 是第 2 个参数…</li>
+</ul>
+
+<p>注意：</p>
+<ul>
+  <li><code class="highlighter-rouge">$9</code> 以后就需要大括号了,如 <code class="highlighter-rouge">${10}</code>, <code class="highlighter-rouge">${11}</code>, <code class="highlighter-rouge">${12}</code>…</li>
+</ul>
+
+<p>另外，还有几个特殊字符用来处理参数：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数处理</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">$#</code></td>
+      <td>传递到脚本的参数个数</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$*</code></td>
+      <td>以一个单字符串显示所有向脚本传递的参数。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$@</code></td>
+      <td>与<code class="highlighter-rouge">$*</code>相同，但是使用时加引号，并在引号中返回每个参数。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$$</code></td>
+      <td>脚本运行的当前进程ID号</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$!</code></td>
+      <td>后台运行的最后一个进程的ID号</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$-</code></td>
+      <td>显示Shell使用的当前选项，与set命令功能相同</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">$?</code></td>
+      <td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">$*</code> 与 <code class="highlighter-rouge">$@</code> 区别:</p>
+<ul>
+  <li>相同点：都表示引用所有的位置参数;</li>
+  <li>不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 “ * “ 等价于 “1 2 3”（传递了一个参数），而 “@” 等价于 “1” “2” “3”（传递了三个参数）。<br />
+<br /></li>
+</ul>
+
+<h2 id="6-bash函数">6 Bash函数</h2>
+<h3 id="61-函数的定义">6.1 函数的定义</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>func_name<span class="o">()</span> 
+<span class="o">{</span> 
+	<span class="c"># 函数体 </span>
+<span class="o">}</span> 
+</code></pre></div></div>
+<p>注意：</p>
+<ul>
+  <li>关键字function是可选的;</li>
+  <li>函数定义必须在第一次调用前完成，shell没有像 C 中的函数“声明”;</li>
+  <li>在一个函数内嵌套另一个函数也是可以的，但是不常用.</li>
+</ul>
+
+<p><strong>函数的参数传递</strong>  <br />
+函数以位置来引用传递过来的参数(就好像他们是位置参数一样), 例如<code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, …<br />
+<strong>函数的调用</strong><br />
+函数被调用或被触发, 只需要简单地用函数名来调用，有参数的话将参数依次置于函数名之后。</p>
+<h3 id="62-无参函数的调用">6.2 无参函数的调用</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>func1<span class="o">()</span> 
+<span class="o">{</span> 
+	<span class="nb">echo</span> <span class="s2">"Hello World!"</span> 
+	<span class="nb">echo</span> <span class="s2">"This is func1"</span> 
+<span class="o">}</span> 
+
+<span class="c"># Calling func1 </span>
+func1 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello World! 
+This is func1 
+</code></pre></div></div>
+<h3 id="63-有参函数的调用">6.3 有参函数的调用</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>func2<span class="o">()</span> 
+<span class="o">{</span> 
+	<span class="nb">echo</span> <span class="s2">"This is func2"</span> 
+
+	<span class="nv">a</span><span class="o">=</span><span class="nv">$1</span> 
+	<span class="nv">b</span><span class="o">=</span><span class="nv">$2</span> 
+	<span class="nb">echo</span> <span class="s2">"a is : </span><span class="nv">$a</span><span class="s2">"</span> 
+	<span class="nb">echo</span> <span class="s2">"b is : </span><span class="nv">$b</span><span class="s2">"</span> 
+<span class="o">}</span> 
+
+<span class="c"># Calling func2,and pass two parameters </span>
+func2 <span class="s2">"aaa"</span> <span class="s2">"bbb"</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is func2 
+a is : aaa 
+b is : bbb 
+</code></pre></div></div>
+<h3 id="64-函数中参数的作用域">6.4 函数中参数的作用域</h3>
+<p>在函数调用之前，所有在函数内声明且没有明确声明为 local 的变量都可在函数体外可见（默认为全局变量）。<br />
+如果变量用local 来声明,那么它只能在该变量声明的代码块中可见。这个代码块就是局部”范围”。在一个函数内,局部变量意味着只能在函数代码块内它才有意义。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash </span>
+ 
+func<span class="o">()</span> 
+<span class="o">{</span> 
+    <span class="nv">global_var</span><span class="o">=</span><span class="s2">"I am global_var difined in function func."</span> 
+    <span class="nb">echo</span> <span class="nv">$global_var</span> 
+
+    <span class="nb">local </span><span class="nv">loc_var</span><span class="o">=</span><span class="s2">"I am local_var defined in function func"</span> 
+    <span class="nb">echo</span> <span class="nv">$loc_var</span> 
+<span class="o">}</span> 
+ 
+func 
+<span class="nb">echo 
+echo</span> <span class="nv">$global_var</span> 
+<span class="nb">echo</span> <span class="nv">$loc_var</span> 
+
+<span class="nb">exit</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am global_var difined <span class="k">in function </span>func. 
+I am local_var defined <span class="k">in function </span>func 
+
+I am global_var difined <span class="k">in function </span>func. 
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="7-bash数组">7 Bash数组</h2>
+<p>Bash 只支持一维数组，用圆括号()来表示，数组元素之间用”空格”符号来分割（不同于C、C++、Java等语言中用逗号分割）。</p>
+<h3 id="71-数组的定义与初始化">7.1 数组的定义与初始化</h3>
+<p>初始化时不需要指定数组的大小。和其它大部分语言一样，bash数组元素的下标从0开始。<br />
+初始化方式1：直接初始化</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">arr_name</span><span class="o">=(</span>value1 value2 ... valueN<span class="o">)</span> 
+</code></pre></div></div>
+<p>初始化方式2: 用下标初始化</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arr_name[0]<span class="o">=</span>value1 
+arr_name[1]<span class="o">=</span>value2 
+arr_name[223]<span class="o">=</span>value3 <span class="c"># 不连续初始化 </span>
+</code></pre></div></div>
+<p>注意：</p>
+<ul>
+  <li>数组成员不必一定要连续，空缺元素是允许的;</li>
+  <li>数组的一部分成员允许不被初始化, 没有被初始化的元素将打印空(NULL)值;</li>
+</ul>
+
+<h3 id="72-访问数组元素">7.2 访问数组元素</h3>
+<p>访问数组元素的一般格式：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${</span><span class="nv">arr_name</span><span class="p">[index]</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>遍历数组<br />
+使用* 或@ 可以获取数组中的所有元素<br />
+实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">my_arr</span><span class="o">=(</span>A B C <span class="s2">"ddd"</span><span class="o">)</span> 
+
+<span class="c"># 遍历数组格式1 </span>
+<span class="nb">echo</span> <span class="s2">"my_arr: </span><span class="k">${</span><span class="nv">my_arr</span><span class="p">[*]</span><span class="k">}</span><span class="s2"> 
+
+# 遍历数组格式2 
+echo "</span>my_arr: <span class="k">${</span><span class="nv">my_arr</span><span class="p">[@]</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_arr: A B C ddd 
+my_arr: A B C ddd 
+</code></pre></div></div>
+<h3 id="73-获取数组长度">7.3 获取数组长度</h3>
+<p>获取数组长度（即数组中的元素个数），和遍历数组语法很相似，只是在数组名前加了#符号，格式：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${#</span><span class="nv">arr_name</span><span class="p">[*]</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>或者</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${#</span><span class="nv">my_arr</span><span class="p">[@]</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 获取数组my_arr的长度（元素个数） </span>
+<span class="nb">echo</span> <span class="s2">"my_arr length: </span><span class="k">${#</span><span class="nv">my_arr</span><span class="p">[*]</span><span class="k">}</span><span class="s2">
+
+ # 获取数组my_arr的长度, 
+echo "</span>my_arr length: <span class="k">${#</span><span class="nv">my_arr</span><span class="p">[@]</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_arr length: 4 
+my_arr length: 4 
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="8-bash字符串操作">8 Bash字符串操作</h2>
+<p>在Bash中，字符串可以用单引号，也可以用双引号，也可以不用引号。单双引号的区别如前文所述。<br />
+定义字符串实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">str1</span><span class="o">=</span>hello 
+<span class="nv">str2</span><span class="o">=</span><span class="s1">'hello'</span> 
+<span class="nv">str3</span><span class="o">=</span><span class="s2">"hello"</span> 
+
+<span class="nb">echo</span> <span class="nv">$str1</span> 
+<span class="nb">echo</span> <span class="nv">$str2</span> 
+<span class="nb">echo</span> <span class="nv">$str3</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello 
+hello 
+hello 
+</code></pre></div></div>
+<h3 id="81-获取字符串长度">8.1 获取字符串长度</h3>
+<p>格式：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${#</span><span class="nv">string_name</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">my_str</span><span class="o">=</span><span class="s2">"hello world"</span> 
+<span class="nb">echo</span> <span class="s2">"my_str length: </span><span class="k">${#</span><span class="nv">my_str</span><span class="k">}</span><span class="s2"> 
+</span></code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_str length: 11 
+</code></pre></div></div>
+<h3 id="82-字符串拼接">8.2 字符串拼接</h3>
+<p>和Java Python等语言类似，bash允许直接将字符串拼接在一起以获得新的字符串。<br />
+实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">str1</span><span class="o">=</span><span class="s2">"hello"</span> 
+<span class="nv">str2</span><span class="o">=</span><span class="s2">"world"</span> 
+
+<span class="nv">str3</span><span class="o">=</span><span class="k">${</span><span class="nv">str1</span><span class="k">}</span><span class="s2">" "</span><span class="k">${</span><span class="nv">str2</span><span class="k">}</span> 
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str3</span><span class="k">}</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello world 
+</code></pre></div></div>
+<h3 id="83-提取子串">8.3 提取子串</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>表达式</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${string:position}</td>
+      <td>在string中, 从位置position开始提取子串</td>
+    </tr>
+    <tr>
+      <td>${string:position:length}</td>
+      <td>在string中, 从位置position开始提取长度为length的子串</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>实例1：从位置1开始提取子串</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">str</span><span class="o">=</span><span class="s2">"hello world"</span> 
+
+<span class="nv">sub_str</span><span class="o">=</span><span class="k">${</span><span class="nv">str</span>:1<span class="k">}</span> 
+<span class="nb">echo</span> <span class="s2">"sub_str: </span><span class="k">${</span><span class="nv">sub_str</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sub_str: ello world 
+</code></pre></div></div>
+<p>实例2：从位置1开始提取长度为3的子串</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">str</span><span class="o">=</span><span class="s2">"hello world"</span> 
+<span class="nv">sub_str</span><span class="o">=</span><span class="k">${</span><span class="nv">str</span>:1:3<span class="k">}</span> 
+
+<span class="nb">echo</span> <span class="s2">"sub_str: </span><span class="k">${</span><span class="nv">sub_str</span><span class="k">}</span><span class="s2">"</span> 
+</code></pre></div></div>
+<p>输出：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sub_str: ell 
+</code></pre></div></div>
+<h3 id="84-删除子串">8.4 删除子串</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>表达式</td>
+      <td>含义</td>
+    </tr>
+    <tr>
+      <td>${string#substring}</td>
+      <td>从string的开头, 删除最短匹配substring的子串</td>
+    </tr>
+    <tr>
+      <td>${string##substring}</td>
+      <td>从string的开头, 删除最长匹配substring的子串</td>
+    </tr>
+    <tr>
+      <td>${string%substring}</td>
+      <td>从string的结尾, 删除最短匹配substring的子串</td>
+    </tr>
+    <tr>
+      <td>${string%%substring}</td>
+      <td>从string的结尾, 删除最长匹配substring的子串</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>记忆：</p>
+<ul>
+  <li>#表示从头匹配，%表示从尾匹配</li>
+  <li>一个符号（#或者%）表示最短匹配，两个符号（##或者%%）表示最长匹配</li>
+</ul>
+
+<p>注意：substring可以是正则表达式。<br />
+实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">str</span><span class="o">=</span><span class="s2">"abcabcdefabcabc"</span> 
+
+<span class="c"># 从str的开头,删除最短匹配的以a开头c结尾的子串 </span>
+<span class="c"># 将删除最左端的abc </span>
+<span class="c"># 输出：abcdefabcabc </span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">str</span><span class="p">#a*c</span><span class="k">}</span><span class="s2">"</span> 
+
+<span class="c"># 从str的开头,删除最长匹配以a开头b结尾的子串 </span>
+<span class="c"># 将删除abcabcdefabcab </span>
+<span class="c"># 输出：c </span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">str</span><span class="p">##a*b</span><span class="k">}</span><span class="s2">"</span> 
+
+<span class="c"># 从str的结尾,删除最短匹配以a开头c结尾的子串 </span>
+<span class="c"># 将删除最右端的abc </span>
+<span class="c"># 输出：abcabcdefabc </span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">str</span><span class="p">%a*c</span><span class="k">}</span><span class="s2">"</span> 
+
+<span class="c"># 从str的结尾,删除最长匹配以a开头c结尾的子串 </span>
+<span class="c"># 将删除整个字符串 </span>
+<span class="c"># 输出：空 </span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">str</span><span class="p">%%a*b</span><span class="k">}</span><span class="s2">"</span> 
+</code></pre></div></div>
+
+<h3 id="85-替换子串">8.5 替换子串</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>表达式</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>${string/substring/replacement}</td>
+      <td>使用<code class="highlighter-rouge">$replacement</code> 来代替第一个匹配的<code class="highlighter-rouge">$substring</code></td>
+    </tr>
+    <tr>
+      <td>${string//substring/replacement}</td>
+      <td>使用<code class="highlighter-rouge">$replacement</code> 代替所有匹配的<code class="highlighter-rouge">$substring</code></td>
+    </tr>
+    <tr>
+      <td>${string/#substring/replacement}</td>
+      <td>如果<code class="highlighter-rouge">$string</code>的前缀匹配<code class="highlighter-rouge">$substring</code>, 那么就用<code class="highlighter-rouge">$replacement</code>来代替匹配到的<code class="highlighter-rouge">$substring</code></td>
+    </tr>
+    <tr>
+      <td>${string/%substring/replacement}</td>
+      <td>如果<code class="highlighter-rouge">$string</code>的后缀匹配<code class="highlighter-rouge">$substring</code>, 那么就用<code class="highlighter-rouge">$replacement</code>来代替匹配到的<code class="highlighter-rouge">$substring</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>实例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">str</span><span class="o">=</span><span class="s2">"abcdefabc"</span> 
+
+<span class="c"># 用hello替换第一个abc</span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">/</span><span class="s2">"abc"</span><span class="p">/</span><span class="s2">"hello"</span><span class="k">}</span> <span class="c"># 输出：hellodefabc </span>
+
+<span class="c"># 用hello替换第一个abc </span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">//</span><span class="s2">"abc"</span><span class="p">/</span><span class="s2">"hello"</span><span class="k">}</span> <span class="c"># 输出：hellodefhello </span>
+
+<span class="c"># 前缀匹配替换 </span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">/#</span><span class="s2">"abc"</span><span class="p">/</span><span class="s2">"world"</span><span class="k">}</span> <span class="c"># 输出：worlddefabc </span>
+
+<span class="c"># 后缀匹配替换 </span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">/％</span><span class="s2">"abc"</span><span class="p">/</span><span class="s2">"world"</span><span class="k">}</span> <span class="c"># 输出：abcdefworld </span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="9-彩色文本">9 彩色文本</h2>
+<p>格式: echo -e “\033[字背景颜色;字体颜色m字符串\033[0m”</p>
+
+<p>例如:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[41;36m something here </span><span class="se">\0</span><span class="s2">33[0m"</span> 
+</code></pre></div></div>
+<p>其中41的位置代表底色, 36的位置是代表字的颜色</p>
+
+<p>那些ascii code 是对颜色调用的始末.<br />
+\033[ ; m …… \033[0m</p>
+
+<p>字背景颜色范围:40———49<br />
+40:   $\color{#000000}{黑色}$ <br />
+41:   $\color{#880000}{深红}$ <br />
+42:   $\color{#00ff00}{绿色}$  <br />
+43:   $\color{#dddd00}{黄色}$ <br />
+44:   $\color{#0000ff}{蓝色}$ <br />
+45:   $\color{#ff00ff}{紫色}$ <br />
+46:   $\color{#007700}{深绿}$ <br />
+47:   $\color{#bbbbbb}{白色}$</p>
+
+<p>字颜色:30———39 <br />
+30:   $\color{#000000}{黑色}$<br />
+31:   $\color{#ff0000}{红色}$ <br />
+32:   $\color{#00ff00}{绿色}$ <br />
+33:   $\color{#dddd00}{黄色}$ <br />
+34:   $\color{#0000ff}{蓝色}$ <br />
+35:   $\color{#ff00ff}{紫色}$ <br />
+36:   $\color{#008800}{深绿}$ <br />
+37:   $\color{#bbbbbb}{白色}$</p>
+
+<p>======ANSI控制码的说明=========================================</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>\33[0m</td>
+      <td>关闭所有属性</td>
+    </tr>
+    <tr>
+      <td>\33[1m</td>
+      <td>设置高亮度</td>
+    </tr>
+    <tr>
+      <td>\33[4m</td>
+      <td>下划线</td>
+    </tr>
+    <tr>
+      <td>\33[5m</td>
+      <td>闪烁</td>
+    </tr>
+    <tr>
+      <td>\33[7m</td>
+      <td>反显</td>
+    </tr>
+    <tr>
+      <td>\33[8m</td>
+      <td>消隐</td>
+    </tr>
+    <tr>
+      <td>\33[30m – \33[37m</td>
+      <td>设置前景色</td>
+    </tr>
+    <tr>
+      <td>\33[40m – \33[47m</td>
+      <td>设置背景色</td>
+    </tr>
+    <tr>
+      <td>\33[nA</td>
+      <td>光标上移n行</td>
+    </tr>
+    <tr>
+      <td>\33[nB</td>
+      <td>光标下移n行</td>
+    </tr>
+    <tr>
+      <td>\33[nC</td>
+      <td>光标右移n行</td>
+    </tr>
+    <tr>
+      <td>\33[nD</td>
+      <td>光标左移n行</td>
+    </tr>
+    <tr>
+      <td>\33[y;xH</td>
+      <td>设置光标位置</td>
+    </tr>
+    <tr>
+      <td>\33[2J</td>
+      <td>清屏</td>
+    </tr>
+    <tr>
+      <td>\33[K</td>
+      <td>清除从光标到行尾的内容</td>
+    </tr>
+    <tr>
+      <td>\33[s</td>
+      <td>保存光标位置</td>
+    </tr>
+    <tr>
+      <td>\33[u</td>
+      <td>恢复光标位置</td>
+    </tr>
+    <tr>
+      <td>\33[?25l</td>
+      <td>隐藏光标</td>
+    </tr>
+    <tr>
+      <td>\33[?25h</td>
+      <td>显示光标</td>
+    </tr>
+  </tbody>
+</table>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">zsssj</div>
+      <div class="bio">
+        <p>全栈设计,极客,热爱技术&设计,简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/2675326420" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//zhihu.com/people/zsssjc" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="mailto:7_xi@163.com" target="_blank">
+                    <i class="iconfont icon-email"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/zsssj" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2019/12/03/doctor.html" class="read-next-link"></a>
+        <section>
+          <span>Doctor</span>
+          <p>  博士</p>
+        </section>
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2019/12/02/makefile.html" class="read-next-link"></a>
+          <section>
+            <span>Makefile教程</span>
+            <p>  现在讲述如何写makefile的文章比较少，这是我想写这篇文章的原因。当然，不同产商的make各不相同，也有不...</p>
+          </section>
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Kuta's Blog ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>
