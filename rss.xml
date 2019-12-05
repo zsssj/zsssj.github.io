@@ -5,8 +5,8 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 05 Dec 2019 12:24:37 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Dec 2019 12:24:37 +0800</lastBuildDate>
+    <pubDate>Thu, 05 Dec 2019 12:59:58 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Dec 2019 12:59:58 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -15,8 +15,7 @@
   &lt;p&gt;Vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《Learn Vim Progressively》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;——————————正文开始——————————&lt;br /&gt;
-你想以最快的速度学习人类史上最好的文本编辑器VIM吗？你先得懂得如何在VIM幸存下来，然后一点一点地学习各种戏法。&lt;/p&gt;
+&lt;p&gt;你想以最快的速度学习人类史上最好的文本编辑器VIM吗？你先得懂得如何在VIM幸存下来，然后一点一点地学习各种戏法。&lt;/p&gt;
 
 &lt;p&gt;Vim the Six Billion Dollar editor&lt;br /&gt;
   &lt;em&gt;Better, Stronger, Faster.&lt;/em&gt;&lt;/p&gt;
@@ -80,7 +79,7 @@
 
 &lt;p&gt;标记:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;下面的文字中，如果是 Ctrl-λ我会写成 .&lt;/li&gt;
+  &lt;li&gt;下面的文字中，如果是 Ctrl-↵我会写成 .&lt;/li&gt;
   &lt;li&gt;以 : 开始的命令你需要输入 回车，例如 — 如果我写成 :q 也就是说你要输入 :q.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -114,7 +113,7 @@
   &lt;li&gt;&lt;strong&gt;Undo/Redo&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;u → undo&lt;/li&gt;
-      &lt;li&gt;→ redo&lt;/li&gt;
+      &lt;li&gt;CTRL+r → redo&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;打开/保存/退出/改变文件&lt;/strong&gt;(Buffer)
@@ -145,9 +144,9 @@
       &lt;li&gt;&lt;em&gt;3p → 粘贴文本3次&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;&lt;em&gt;100idesu [ESC] → 会写下 “desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu “&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;&lt;em&gt;. → 重复上一个命令—— 100 “desu “.&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;3.→ 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;→ 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;更强&lt;/strong&gt;&lt;br /&gt;
