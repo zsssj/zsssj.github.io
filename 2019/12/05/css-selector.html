@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCS selector - Kuta's Blog</title>
+    <meta name="author"  content="zsssj">
+    <meta name="description" content="CCS selector">
+    <meta name="keywords"  content="前端开发">
+    <!-- Open Graph -->
+    <meta property="og:title" content="CCS selector - Kuta's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2019/12/05/css-selector.html">
+    <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
+    <meta property="og:site_name" content="Kuta's Blog"> 
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- gitalk javascript -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>    
+    -->
+    <!-- gitalk will conflict with prism, please use it carefully. --> 
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91" class="post-tag">前端开发</a>
+          
+        
+      </div>
+      <h1>CCS selector</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>zsssj</span>
+        <time class="post-meta-item" datetime="19-12-05"><i class="iconfont icon-date"></i>05 Dec 2019</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>CSS 选择器除了样式表匹配元素时需要用到，在使用 jQuery 等库的时候也可以利用 CSS 选择器来选择元素，因此作为前端开发需要熟练掌握。下面是一些常用的 CSS 选择器示例。</p>
+</blockquote>
+
+<h2 id="1-元素选择器">1 元素选择器</h2>
+<p><strong>E</strong>，选择所有指定元素名称的元素，例如 p，选择所有的 p 元素。</p>
+
+<h3 id="通用选择器">通用选择器</h3>
+<p><strong>*</strong>，选择所有元素，例如：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;}</span>
+</code></pre></div></div>
+
+<h3 id="类选择器">类选择器</h3>
+<p><strong>.class</strong>，用一个点号加类名表示，例如 .header，选择所有 class 属性中包含 header 的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>也会被选中<span class="nt">&lt;/h2&gt;</span>
+</code></pre></div></div>
+
+<h3 id="多类选择器">多类选择器</h3>
+<p>使用多个 class 可以选择同时含有多个类名的元素，例如 .collapse.in 选择同时含有类 collapse 和 in 的元素：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse in"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse"</span><span class="nt">&gt;</span>不会被选中<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"in"</span><span class="nt">&gt;</span>不会被选中<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>IE 6 浏览器不支持多类选择器，会忽略多类中前面的类，比如这里 IE 6 只会匹配 .in。</p>
+
+<h3 id="id-选择器">ID 选择器</h3>
+<p><strong>#id</strong>，用一个 # 号加 ID 值表示，例如 #title，选择 id 属性等于 title 的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"title"</span><span class="nt">&gt;&lt;/h2&gt;</span>
+</code></pre></div></div>
+
+<h3 id="上下文选择器">上下文选择器</h3>
+<p><strong>selector selector</strong>，用于选择元素内部的元素，例如 p span，选择所有属于 p 元素内部的 span 元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>会被选中<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;strong&gt;&lt;span&gt;</span>同样会被选中<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="子元素选择器">子元素选择器</h3>
+<p><strong>selector &gt; selector</strong>，用于选择带有特定父元素的元素，例如 p &gt; span，选择所有父元素为 p 的 span 元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>父元素是 p 会被选中<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;strong&gt;&lt;span&gt;</span>父元素是 strong 不会被选中<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="相邻元素选择器">相邻元素选择器</h3>
+<p><strong>selector + selector</strong>，用于选择一个特定元素之后紧跟的元素，h2 + p，选择所有相邻 h2 元素之后的同级 p 元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>h2 之前的不会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>示例<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>紧邻 h2 的会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>不会被选中<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="同级元素选择器">同级元素选择器</h3>
+<p><strong>selector ~ selector</strong>，用于选择特定元素之后的同级元素，h2 ~ p，选择所有 h2 元素之后的同级 p 元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>不会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>示例<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>h2 之后的同级 p 元素会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>示例<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>h2 之后的同级 p 元素会被选中<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>同级元素选择器选择特定元素之后的所有同级元素，而相邻元素选择器只选择特定元素之后紧邻的那个元素。 
+<br /></p>
+
+<h2 id="2-属性名选择器">2 属性名选择器</h2>
+<p><strong>[attribute]</strong>，用于选择所有带有特定属性的元素，例如 [title]，选择所有带有 title 属性的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"link"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a&gt;</span>不会被选中<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="属性值选择器">属性值选择器</h3>
+<p><strong>[attribute=”value”]</strong>，用于选择所有带有特定属性和值的元素，例如 [title=”link”]，选择所有带有 title 属性并且值为 link 的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"link"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"this is a link"</span><span class="nt">&gt;</span>属性值不匹配，不会被选中<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p><strong>[attribute~=”value”]</strong>，用于选择所有带有特定属性并且属性值包含指定单词的元素，单词之间用空格分隔，例如 [title~=”link”]，选择所有带有 title 属性并且属性值中包含 link 单词的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"link"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"this is a link"</span><span class="nt">&gt;</span>属性值中包含 link 会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"thisisalink"</span><span class="nt">&gt;</span>不会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"other"</span><span class="nt">&gt;</span>不会被选中<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p><strong>[attribute|=”value”]</strong>，用于选择带有特定属性并且属性值是以指定值开头的所有元素，该值必须是整个单词，或者后面跟着连字符，例如 [title|=”red”]，选择所有带有 title 属性并且值是 red 开头的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"red"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"red-hot"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"redhot"</span><span class="nt">&gt;</span>不会被选中<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p><strong>[attribute^=”value”]</strong>，用于选择带有特定属性并且属性值是以指定字符串开头的所有元素，例如 a[href^=”http://”]，选择所有 href 属性值以 http:// 字符串开头的 a 元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.baidu.com/"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/index"</span><span class="nt">&gt;</span>不会被选中<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p><strong>[attribute$=”value”]</strong>，用于选择带有特定属性并且属性值是以指定字符串结尾的所有元素，例如 img[src$=”.png”]，选择所有 png 格式的 img 元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"logo"</span> <span class="na">src=</span><span class="s">"/assets/logo.png"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 会被选中 --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"banner"</span> <span class="na">src=</span><span class="s">"/assets/banner.jpg"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 不会被选中 --&gt;</span>
+</code></pre></div></div>
+
+<p><em>*[attribute</em>=”value”]<em>*，用于选择带有特定属性并且属性值包含指定字符串的所有元素，例如 [title</em>=”red”]，选择所有带有 title 属性并且值包含 red 字符串的所有元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"red"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"redhot"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"hotredhot"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p><strong>属性选择器对比</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>选择器</th>
+      <th>属性值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[attribute]</td>
+      <td>仅匹配属性名，与属性值无关</td>
+    </tr>
+    <tr>
+      <td>[attribute=”value”]</td>
+      <td>完全匹配属性名和属性值</td>
+    </tr>
+    <tr>
+      <td>[attribute~=”value”]</td>
+      <td>属性值以空格分隔，包含value单词或者仅为value</td>
+    </tr>
+    <tr>
+      <td>[attribute |=”value”]</td>
+      <td>属性值以 value- 开头或者仅为 value</td>
+    </tr>
+    <tr>
+      <td>[attribute^=”value”]</td>
+      <td>属性值以 value 字符串开头</td>
+    </tr>
+    <tr>
+      <td>[attribute$=”value”]</td>
+      <td>属性值以 value 字符串结尾</td>
+    </tr>
+    <tr>
+      <td>[attribute*=”value”]</td>
+      <td>属性值包含 value 字符串</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3-伪类">3 伪类</h2>
+<h3 id="状态伪类选择器">状态伪类选择器</h3>
+<p>状态伪类选择器会根据元素的特定状态选择相应的元素。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>选择器</th>
+      <th>说明</th>
+      <th>例子</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:link</td>
+      <td>选择所有未被访问的链接</td>
+      <td>a:link</td>
+    </tr>
+    <tr>
+      <td>:visited</td>
+      <td>选择所有已被访问的链接</td>
+      <td>a:visited</td>
+    </tr>
+    <tr>
+      <td>:focus</td>
+      <td>选择获取焦点的元素</td>
+      <td>input:focus</td>
+    </tr>
+    <tr>
+      <td>:hover</td>
+      <td>择鼠标指针位于其上的元素</td>
+      <td>li:hover</td>
+    </tr>
+    <tr>
+      <td>:active</td>
+      <td>选择激活的元素</td>
+      <td>button:active</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>:target</strong>，选择目标元素。当用户点击一个指向页面中其它元素的链接，则那个被指向的元素就是目标元素，例如：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#more"</span><span class="nt">&gt;</span>more<span class="nt">&lt;/a&gt;</span> <span class="c">&lt;!-- 点击这个链接之后 --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"more"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- 这个元素会被 :target 选中 --&gt;</span>
+</code></pre></div></div>
+<p><strong>:enabled</strong>，选择所有已启用的元素。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 会被选中 --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">disabled</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 已禁用不会被选中 --&gt;</span>
+</code></pre></div></div>
+<p><strong>:disabled</strong>，选择所有被禁用的元素，和 :enabled 相反，例如：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span><span class="nd">:disabled</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#eee</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>给禁用的文本输入框一个灰色的背景。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 不会被选中 --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">disabled</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 禁用的文本框会被选中 --&gt;</span>
+</code></pre></div></div>
+<p><strong>:checked</strong>，选择所有已经被勾选的单选框或者复选框，例如 input:checked。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">checked</span> <span class="na">type=</span><span class="s">"radio"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 已经勾选的元素会被选中 --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 没有勾选的不会被选中 --&gt;</span>
+</code></pre></div></div>
+<p>示例，结合属性选择器选择被勾选的单选框：input[type=”radio”]:checked。</p>
+
+<h3 id="lang-选择器">:lang 选择器</h3>
+<p><strong>:lang(language)</strong>，用于选择所有带有以指定值开头的 lang 属性的元素，例如 p:lang(en)。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>会被选中<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+<p>该选择器等同于 [lang|=”language”]，是 [attribute|=”value”] 选择器的一种特例。</p>
+
+<h3 id="结构伪类选择器">结构伪类选择器</h3>
+<p><strong>:nth-child(n)</strong>，选择同级元素中的第 n 个元素，例如 ul &gt; li:nth-child(2)：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>第二个元素会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<p>需要注意的是子元素的下标是从 1 开始的。除了可以指定特定的数字，也可以使用 even（偶数）, odd（奇数） 关键字，例如 ul &gt; li:nth-child(odd)，或者使用公式，例如 ul &gt; li:nth-child(2n+1)（n 是计数器，从 0 开始）：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>第一个子元素会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>第二个子元素不会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>第三个子元素会被选中<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<p><strong>:nth-last-child(n)</strong>，同上，不过是从最后一个子元素开始计数，使用该选择器可以实现隔行变色的效果。<br />
+<strong>:first-child</strong>，选择同级元素中的第一个元素，例如 ul &gt; li:first-child：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<p>作用等同于 ul &gt; li:nth-child(1)。<br />
+<strong>:last-child</strong>，选择同级元素中的最后一个元素，例如 ul &gt; li:last-child：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>会被选中<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<p>作用等同于 ul &gt; li:nth-last-child(1)。<br />
+<strong>:only-child</strong>，用于选择父元素下唯一的子元素，例如 ul &gt; li:only-child：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>唯一子元素，会被选中<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>不会被选中<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<p><strong>:nth-of-type(n)</strong>，选择同级元素中的第 n 个同类元素，和 :nth-child 类似，例如 .box &gt; :nth-of-type(2)：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>第一个 p 子元素，不会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>第一个 span 子元素，不会被选中<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>第二个 p 子元素，会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>第二个 span 子元素，会被选中<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p><strong>:nth-last-of-type</strong>，同上，不过是从最后一个同类子元素开始计数。<br />
+<strong>:first-of-type</strong>，选择同级元素中的第一个同类元素，等同于 :nth-of-type(1)。<br />
+<strong>:last-of-type</strong>，选择同级元素中的最后一个同类元素，等同于 nth-last-of-type(1)。
+<strong>:only-of-type</strong>，用于选择父元素下特定类型的唯一子元素，例如 .box &gt; :only-of-type：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>不会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;em&gt;</span>唯一的 em 子元素会被选中<span class="nt">&lt;/em&gt;</span>
+    <span class="nt">&lt;p&gt;</span>不会被选中<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>唯一的 span 子元素会被选中<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="root-选择器">:root 选择器</h3>
+<p><strong>:root</strong>，选择文档的根元素，对于 HTML 文档就是 html 元素。</p>
+
+<h3 id="empty-伪类选择器">:empty 伪类选择器</h3>
+<p><strong>:empty</strong>，选择没有子元素的元素（包括文本节点），例如：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:empty</span> <span class="p">{</span>  <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;}</span>
+</code></pre></div></div>
+<p>表示隐藏没有内容的 p 元素，</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>非空不会被选中<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;/p&gt;</span> <span class="c">&lt;!-- 为空会被选中 --&gt;</span>
+</code></pre></div></div>
+
+<h3 id="否定伪类选择器">否定伪类选择器</h3>
+<p><strong>:not(selector)</strong>，选择所有不匹配选择器的元素，例如 :not(p)，选择所有不为 p 的元素：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>不会被选中<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;span&gt;</span>会被选中<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+<p>要选择既不是 p 也不是 span 的元素可以多次使用否定伪类选择器，例如 :not(p):not(span)，需要同时满足条件的元素才会被选中。
+CSS 4 否定伪类选择器支持传入参数列表，比如 :not(p, span)。</p>
+
+<h3 id="伪元素">伪元素</h3>
+<p>伪元素选择器用于选择那些若有实无的元素。在 CSS3 中，伪元素的写法为两个冒号，为了兼容旧浏览器，也可以使用一个冒号。<br />
+<strong>首字母伪元素选择器</strong><br />
+<strong>::first-letter</strong>，选择元素的第一个字母，例如：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">::first-letter</span> <span class="p">{</span>  
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">300%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>段落元素的首字母放大。</p>
+
+<p><abbr style="font-size:50px">L</abbr>orem ipsum dolor sit amet.</p>
+
+<p><strong>首行伪元素选择器</strong><br />
+<strong>::first-line</strong>，选择元素的第一行，例如：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">::first-line</span> <span class="p">{</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>段落元素的首行添加下划线。</p>
+
+<p><u>Lorem Ipsum is simply dummy text</u><br />
+of the printing and typesetting<br />
+industry.</p>
+
+<p><strong>::before/::after</strong> 伪元素选择器<br />
+<strong>::before</strong>，选择在元素之前插入的生成内容。<br />
+<strong>::after</strong>，选择在元素之后插入的生成内容，例如：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;blockquote&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/blockquote&gt;</span>
+</code></pre></div></div>
+<p>和样式：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">blockquote</span><span class="nd">::before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"\0022"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">blockquote</span><span class="nd">::after</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"\0022"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>“Lorem ipsum dolor sit amet.”</p>
+
+<h3 id="selection-伪元素选择器">::selection 伪元素选择器</h3>
+<p><strong>::selection</strong>，选择用户选取的内容，例如：</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">::selection</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#b3d4fc</span><span class="p">;</span>  
+  <span class="nl">text-shadow</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">zsssj</div>
+      <div class="bio">
+        <p>全栈设计,极客,热爱技术&设计,简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/2675326420" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//zhihu.com/people/zsssjc" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="mailto:7_xi@163.com" target="_blank">
+                    <i class="iconfont icon-email"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/zsssj" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2019/12/05/vim-editor.html" class="read-next-link"></a>
+        <section>
+          <span>VIM</span>
+          <p>  Vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你...</p>
+        </section>
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2019/12/03/seven-porridge.html" class="read-next-link"></a>
+          <section>
+            <span>Seven porridge</span>
+            <p>  有七个人曾经住在一起，每天分一大桶粥。要命的是，粥每天都是不够的。  一开始，他们抓阄决定谁来分粥，每天轮一个...</p>
+          </section>
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Kuta's Blog ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

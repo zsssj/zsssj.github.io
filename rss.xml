@@ -5,9 +5,702 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 04 Dec 2019 16:25:49 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Dec 2019 16:25:49 +0800</lastBuildDate>
+    <pubDate>Thu, 05 Dec 2019 12:24:37 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Dec 2019 12:24:37 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>VIM</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《Learn Vim Progressively》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;——————————正文开始——————————&lt;br /&gt;
+你想以最快的速度学习人类史上最好的文本编辑器VIM吗？你先得懂得如何在VIM幸存下来，然后一点一点地学习各种戏法。&lt;/p&gt;
+
+&lt;p&gt;Vim the Six Billion Dollar editor&lt;br /&gt;
+  &lt;em&gt;Better, Stronger, Faster.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;学习 vim 并且其会成为你最后一个使用的文本编辑器。没有比这个更好的文本编辑器了，非常地难学，但是却不可思议地好用。&lt;/p&gt;
+
+&lt;p&gt;我建议下面这四个步骤：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;存活&lt;/li&gt;
+  &lt;li&gt;感觉良好&lt;/li&gt;
+  &lt;li&gt;觉得更好，更强，更快&lt;/li&gt;
+  &lt;li&gt;使用VIM的超能力&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当你走完这篇文章，你会成为一个vim的 superstar。&lt;/p&gt;
+
+&lt;p&gt;在开始学习以前，我需要给你一些警告：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;学习vim在开始时是痛苦的。&lt;/li&gt;
+  &lt;li&gt;需要时间&lt;/li&gt;
+  &lt;li&gt;需要不断地练习，就像你学习一个乐器一样。&lt;/li&gt;
+  &lt;li&gt;不要期望你能在3天内把vim练得比别的编辑器更有效率。&lt;/li&gt;
+  &lt;li&gt;事实上，你需要2周时间的苦练，而不是3天。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第一级--存活&quot;&gt;第一级 – 存活&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;安装 vim&lt;/li&gt;
+  &lt;li&gt;启动 vim&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;什么也别干！请先阅读&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当你安装好一个编辑器后，你一定会想在其中输入点什么东西，然后看看这个编辑器是什么样子。但vim不是这样的，请按照下面的命令操作：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;启动Vim后，vim在 &lt;em&gt;Normal&lt;/em&gt; 模式下。&lt;/li&gt;
+  &lt;li&gt;让我们进入 &lt;em&gt;Insert&lt;/em&gt; 模式，请按下键 i 。(注：你会看到vim左下角有一个–insert–字样，表示，你可以以插入的方式输入了）&lt;/li&gt;
+  &lt;li&gt;此时，你可以输入文本了，就像你用“记事本”一样。&lt;/li&gt;
+  &lt;li&gt;如果你想返回 Normal 模式，请按 ESC 键。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现在，你知道如何在 &lt;em&gt;Insert&lt;/em&gt; 和 &lt;em&gt;Normal&lt;/em&gt; 模式下切换了。下面是一些命令，可以让你在 &lt;em&gt;Normal&lt;/em&gt; 模式下幸存下来：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;i → Insert 模式，按 ESC 回到 Normal 模式.&lt;/li&gt;
+  &lt;li&gt;x → 删当前光标所在的一个字符。&lt;/li&gt;
+  &lt;li&gt;:wq → 存盘 + 退出 (:w 存盘, :q 退出) （注：:w 后可以跟文件名）&lt;/li&gt;
+  &lt;li&gt;dd → 删除当前行，并把删除的行存到剪贴板里&lt;/li&gt;
+  &lt;li&gt;p → 粘贴剪贴板&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;推荐:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;hjkl (强例推荐使用其移动光标，但不必需) →你也可以使用光标键 (←↓↑→). 注: j 就像下箭头。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;:help → 显示相关命令的帮助。你也可以就输入 :help 而不跟命令。（注：退出帮助需要输入:q）&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;你能在vim幸存下来只需要上述的那5个命令，你就可以编辑文本了，你一定要把这些命令练成一种下意识的状态。于是你就可以开始进阶到第二级了。&lt;/p&gt;
+
+&lt;p&gt;但是，在你进入第二级时，需要再说一下 &lt;em&gt;Normal&lt;/em&gt; 模式。在一般的编辑器下，当你需要copy一段文字的时候，你需要使用 Ctrl 键，比如：Ctrl-C。也就是说，Ctrl键就好像功能键一样，当你按下了功能键Ctrl后，C就不在是C了，而且就是一个命令或是一个快键键了，&lt;strong&gt;在VIM的Normal模式下，所有的键就是功能键了&lt;/strong&gt;。这个你需要知道。&lt;/p&gt;
+
+&lt;p&gt;标记:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;下面的文字中，如果是 Ctrl-λ我会写成 .&lt;/li&gt;
+  &lt;li&gt;以 : 开始的命令你需要输入 回车，例如 — 如果我写成 :q 也就是说你要输入 :q.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第二级--感觉良好&quot;&gt;第二级 – 感觉良好&lt;/h2&gt;
+&lt;p&gt;上面的那些命令只能让你存活下来，现在是时候学习一些更多的命令了，下面是我的建议：（注：所有的命令都需要在Normal模式下使用，如果你不知道现在在什么样的模式，你就狂按几次ESC键）&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;各种插入模式&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;a → 在光标后插入&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;o → 在当前行后插入一个新行&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;O → 在当前行前插入一个新行&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;cw → 替换从光标所在位置后到一个单词结尾的字符&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;简单的移动光标&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;0 → 数字零，到行头&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;$ → 到本行行尾&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;g_ → 到本行最后一个不是blank字符的位置。&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;/pattern → 搜索 pattern 的字符串（注：如果搜索出多个匹配，可按n键到下一个）&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;拷贝/粘贴&lt;/strong&gt; （注：p/P都可以，p是表示在当前位置之后，P表示在当前位置之前）
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;P → 粘贴&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;yy → 拷贝当前行当行于 ddP&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Undo/Redo&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;u → undo&lt;/li&gt;
+      &lt;li&gt;→ redo&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;打开/保存/退出/改变文件&lt;/strong&gt;(Buffer)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;:e&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:w → 存盘&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:saveas&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:x， ZZ 或 :wq → 保存并退出 (:x 表示仅在需要时保存，ZZ不需要输入冒号并回车)&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:q! → 退出不保存 :qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。（注：我喜欢使用:n到下一个文件）&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;花点时间熟悉一下上面的命令，一旦你掌握他们了，你就几乎可以干其它编辑器都能干的事了。但是到现在为止，你还是觉得使用vim还是有点笨拙，不过没关系，你可以进阶到第三级了。&lt;/p&gt;
+
+&lt;h2 id=&quot;第三级--更好更强更快&quot;&gt;第三级 – 更好，更强，更快&lt;/h2&gt;
+&lt;p&gt;先恭喜你！你干的很不错。我们可以开始一些更为有趣的事了。在第三级，我们只谈那些和vi可以兼容的命令。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更好&lt;/strong&gt;&lt;br /&gt;
+下面，让我们看一下vim是怎么重复自己的：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;. → (小数点) 可以重复上一次的命令&lt;/li&gt;
+  &lt;li&gt;N → 重复某个命令N次&lt;br /&gt;
+下面是一个示例，找开一个文件你可以试试下面的命令：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;2dd → 删除2行&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;3p → 粘贴文本3次&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;100idesu [ESC] → 会写下 “desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu “&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;. → 重复上一个命令—— 100 “desu “.&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;→ 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;更强&lt;/strong&gt;&lt;br /&gt;
+你要让你的光标移动更有效率，你一定要了解下面的这些命令，&lt;strong&gt;千万别跳过&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;NG → 到第 N 行 （注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）&lt;/li&gt;
+  &lt;li&gt;gg → 到第一行。（注：相当于1G，或 :1）&lt;/li&gt;
+  &lt;li&gt;G → 到最后一行。&lt;/li&gt;
+  &lt;li&gt;按单词移动：
+    &lt;ul&gt;
+      &lt;li&gt;w → 到下一个单词的开头。&lt;/li&gt;
+      &lt;li&gt;e → 到下一个单词的结尾。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;如果你认为单词是由默认方式，那么就用小写的e和w。默认上来说，一个单词由字母，数字和下划线组成（注：程序变量）&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（注：程序语句）&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/80/v2-b5e57af4876cd5007e3e066e15eeb8c9_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面，让我来说说最强的光标移动：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;% : 匹配括号移动，包括 (, {, [. （注：你需要把光标先移到括号上）&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;和 #: 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;相信我，上面这三个命令对程序员来说是相当强大的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更快&lt;/strong&gt;&lt;br /&gt;
+你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：&lt;/p&gt;
+
+&lt;p&gt;例如 0y$ 命令意味着：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;0 → 先到行头&lt;/li&gt;
+  &lt;li&gt;y → 从这里开始拷贝&lt;/li&gt;
+  &lt;li&gt;$ → 拷贝到本行最后一个字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;你可可以输入 ye，从当前位置拷贝到本单词的最后一个字符。&lt;br /&gt;
+你也可以输入 y2/foo 来拷贝2个 “foo” 之间的字符串。&lt;br /&gt;
+还有很多时间并不一定你就一定要按y才会拷贝，下面的命令也会被拷贝：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;d (删除 )&lt;/li&gt;
+  &lt;li&gt;v (可视化的选择)&lt;/li&gt;
+  &lt;li&gt;gU (变大写)&lt;/li&gt;
+  &lt;li&gt;gu (变小写)&lt;/li&gt;
+  &lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;（注：可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等）&lt;/p&gt;
+
+&lt;h2 id=&quot;第四级--vim-超能力&quot;&gt;第四级 – Vim 超能力&lt;/h2&gt;
+&lt;p&gt;你只需要掌握前面的命令，你就可以很舒服的使用VIM了。但是，现在，我们向你介绍的是VIM杀手级的功能。下面这些功能是我只用vim的原因。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;在当前行上移动光标: 0 ^ $ f F t T , ;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;0 → 到行头&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;^ → 到本行的第一个非blank字符&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;$ → 到行尾&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;g_ → 到本行最后一个不是blank字符的位置。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;t, → 到逗号前的第一个字符。逗号可以变成其它字符。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;3fa → 在当前行查找第三个出现的a。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;F 和 T → 和 f 和 t 一样，只不过是相反方向。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/80/v2-d5e3e971f3cc37d1fe13ec958bf367da_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还有一个很有用的命令是 &lt;strong&gt;dt”&lt;/strong&gt; → 删除所有的内容，直到遇到双引号—— &lt;strong&gt;“&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;区域选择 a&lt;/strong&gt;  在visual 模式下，这些命令很强大，其命令格式为&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。&lt;/li&gt;
+  &lt;li&gt;object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：”、 ‘、 )、 }、 ]。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;vi” → 会选择 foo.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;va” → 会选择 “foo”.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;vi) → 会选择 “foo”.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;va) → 会选择(“foo”).&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;v2i) → 会选择 map (+) (“foo”)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;v2a) → 会选择 (map (+) (“foo”))&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/80/v2-739d0dce6dcdbae486fcbf055bebc678_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;块操作:&lt;/strong&gt; 块操作，典型的操作： 0 I– [ESC]&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;^ → 到行头&lt;/li&gt;
+  &lt;li&gt;→ 开始块操作&lt;/li&gt;
+  &lt;li&gt;→ 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)&lt;/li&gt;
+  &lt;li&gt;I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-497d0958b176316c75ab8a645528b52d_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在Windows下的vim，你需要使用 而不是 ， 是拷贝剪贴板。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;自动提示： 和&lt;/strong&gt;&lt;br /&gt;
+在 Insert 模式下，你可以输入一个词的开头，然后按 或是，自动补齐功能就出现了……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/v2-f4d9b30c062806611d7b2f5f34567cbb_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;宏录制： qa 操作序列 q, @a, @@&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;qa 把你的操作记录在寄存器 a。&lt;/li&gt;
+  &lt;li&gt;于是 @a 会replay被录制的宏。&lt;/li&gt;
+  &lt;li&gt;@@ 是一个快捷键用来replay最新录制的宏。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;在一个只有一行且这一行只有“1”的文本中，键入如下命令：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;qaYpq→&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;qa 开始录制&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Yp 复制行.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;增加1.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;q 停止录制.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;@a → 在1下面写下 2&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;@@ → 在2 正面写下3&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;现在做 100@@ 会创建新的100行，并把数据增加到 103.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-9edbf6dbab3186ec29ed35795d322389_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;可视化选择： v,V,&lt;/strong&gt;&lt;br /&gt;
+前面，我们看到了 的示例 （在Windows下应该是），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;J → 把所有的行连接起来（变成一行）&lt;/li&gt;
+  &lt;li&gt;&amp;lt; 或 &amp;gt; → 左右缩进&lt;/li&gt;
+  &lt;li&gt;= → 自动给缩进 （注：这个功能相当强大，我太喜欢了）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-7435155e497071705abcd57bac6f29f5_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在所有被选择的行后加上点东西：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;选中相关的行 (可使用 j 或 或是 /pattern 或是 % 等……)&lt;/li&gt;
+  &lt;li&gt;$ 到行最后&lt;/li&gt;
+  &lt;li&gt;A, 输入字符串，按 ESC。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/9a271d2bb03e461b90c13368490d6507_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;分屏: :split 和 vsplit.&lt;/p&gt;
+
+&lt;p&gt;下面是主要的命令，你可以使用VIM的帮助 :help split. 你可以参考本站以前的一篇文章VIM分屏。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;:split → 创建分屏 (:vsplit创建垂直分屏)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;: dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;_ (或 |) : 最大化尺寸 (| 垂直分屏)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;+ (或 -) : 增加尺寸&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;结束语&quot;&gt;结束语&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;上面是作者最常用的90%的命令。&lt;/li&gt;
+  &lt;li&gt;我建议你每天都学1到2个新的命令。&lt;/li&gt;
+  &lt;li&gt;在两到三周后，你会感到vim的强大的。&lt;/li&gt;
+  &lt;li&gt;有时候，学习VIM就像是在死背一些东西。&lt;/li&gt;
+  &lt;li&gt;幸运的是，vim有很多很不错的工具和优秀的文档。&lt;/li&gt;
+  &lt;li&gt;运行vimtutor直到你熟悉了那些基本命令。&lt;/li&gt;
+  &lt;li&gt;其在线帮助文档中你应该要仔细阅读的是 :help usr_02.txt.&lt;/li&gt;
+  &lt;li&gt;你会学习到诸如 !， 目录，寄存器，插件等很多其它的功能。&lt;/li&gt;
+  &lt;li&gt;学习vim就像学弹钢琴一样，一旦学会，受益无穷。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/05/vim-editor.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/05/vim-editor.html</guid>
+        
+        <category>shell</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
+    
+      <item>
+        <title>CCS selector</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;CSS 选择器除了样式表匹配元素时需要用到，在使用 jQuery 等库的时候也可以利用 CSS 选择器来选择元素，因此作为前端开发需要熟练掌握。下面是一些常用的 CSS 选择器示例。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-元素选择器&quot;&gt;1 元素选择器&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;E&lt;/strong&gt;，选择所有指定元素名称的元素，例如 p，选择所有的 p 元素。&lt;/p&gt;
+
+&lt;h3 id=&quot;通用选择器&quot;&gt;通用选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;*&lt;/strong&gt;，选择所有元素，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;border-box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;类选择器&quot;&gt;类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;.class&lt;/strong&gt;，用一个点号加类名表示，例如 .header，选择所有 class 属性中包含 header 的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;也会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;多类选择器&quot;&gt;多类选择器&lt;/h3&gt;
+&lt;p&gt;使用多个 class 可以选择同时含有多个类名的元素，例如 .collapse.in 选择同时含有类 collapse 和 in 的元素：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;collapse in&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;collapse&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;in&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;IE 6 浏览器不支持多类选择器，会忽略多类中前面的类，比如这里 IE 6 只会匹配 .in。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-选择器&quot;&gt;ID 选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;#id&lt;/strong&gt;，用一个 # 号加 ID 值表示，例如 #title，选择 id 属性等于 title 的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;上下文选择器&quot;&gt;上下文选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector selector&lt;/strong&gt;，用于选择元素内部的元素，例如 p span，选择所有属于 p 元素内部的 span 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;同样会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;子元素选择器&quot;&gt;子元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector &amp;gt; selector&lt;/strong&gt;，用于选择带有特定父元素的元素，例如 p &amp;gt; span，选择所有父元素为 p 的 span 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;父元素是 p 会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;父元素是 strong 不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;相邻元素选择器&quot;&gt;相邻元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector + selector&lt;/strong&gt;，用于选择一个特定元素之后紧跟的元素，h2 + p，选择所有相邻 h2 元素之后的同级 p 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;h2 之前的不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;示例&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;紧邻 h2 的会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;同级元素选择器&quot;&gt;同级元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector ~ selector&lt;/strong&gt;，用于选择特定元素之后的同级元素，h2 ~ p，选择所有 h2 元素之后的同级 p 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;示例&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;h2 之后的同级 p 元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;示例&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;h2 之后的同级 p 元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;同级元素选择器选择特定元素之后的所有同级元素，而相邻元素选择器只选择特定元素之后紧邻的那个元素。 
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-属性名选择器&quot;&gt;2 属性名选择器&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;[attribute]&lt;/strong&gt;，用于选择所有带有特定属性的元素，例如 [title]，选择所有带有 title 属性的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;属性值选择器&quot;&gt;属性值选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;[attribute=”value”]&lt;/strong&gt;，用于选择所有带有特定属性和值的元素，例如 [title=”link”]，选择所有带有 title 属性并且值为 link 的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;this is a link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;属性值不匹配，不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute~=”value”]&lt;/strong&gt;，用于选择所有带有特定属性并且属性值包含指定单词的元素，单词之间用空格分隔，例如 [title~=”link”]，选择所有带有 title 属性并且属性值中包含 link 单词的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;this is a link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;属性值中包含 link 会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;thisisalink&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;other&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute|=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值是以指定值开头的所有元素，该值必须是整个单词，或者后面跟着连字符，例如 [title|=”red”]，选择所有带有 title 属性并且值是 red 开头的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red-hot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute^=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值是以指定字符串开头的所有元素，例如 a[href^=”http://”]，选择所有 href 属性值以 http:// 字符串开头的 a 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.baidu.com/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/index&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute$=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值是以指定字符串结尾的所有元素，例如 img[src$=”.png”]，选择所有 png 格式的 img 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;logo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/logo.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;banner&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/banner.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;*[attribute&lt;/em&gt;=”value”]&lt;em&gt;*，用于选择带有特定属性并且属性值包含指定字符串的所有元素，例如 [title&lt;/em&gt;=”red”]，选择所有带有 title 属性并且值包含 red 字符串的所有元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hotredhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;属性选择器对比&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选择器&lt;/th&gt;
+      &lt;th&gt;属性值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute]&lt;/td&gt;
+      &lt;td&gt;仅匹配属性名，与属性值无关&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute=”value”]&lt;/td&gt;
+      &lt;td&gt;完全匹配属性名和属性值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute~=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以空格分隔，包含value单词或者仅为value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute |=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以 value- 开头或者仅为 value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute^=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以 value 字符串开头&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute$=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以 value 字符串结尾&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute*=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值包含 value 字符串&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;3-伪类&quot;&gt;3 伪类&lt;/h2&gt;
+&lt;h3 id=&quot;状态伪类选择器&quot;&gt;状态伪类选择器&lt;/h3&gt;
+&lt;p&gt;状态伪类选择器会根据元素的特定状态选择相应的元素。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选择器&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+      &lt;th&gt;例子&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:link&lt;/td&gt;
+      &lt;td&gt;选择所有未被访问的链接&lt;/td&gt;
+      &lt;td&gt;a:link&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:visited&lt;/td&gt;
+      &lt;td&gt;选择所有已被访问的链接&lt;/td&gt;
+      &lt;td&gt;a:visited&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:focus&lt;/td&gt;
+      &lt;td&gt;选择获取焦点的元素&lt;/td&gt;
+      &lt;td&gt;input:focus&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:hover&lt;/td&gt;
+      &lt;td&gt;择鼠标指针位于其上的元素&lt;/td&gt;
+      &lt;td&gt;li:hover&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:active&lt;/td&gt;
+      &lt;td&gt;选择激活的元素&lt;/td&gt;
+      &lt;td&gt;button:active&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;:target&lt;/strong&gt;，选择目标元素。当用户点击一个指向页面中其它元素的链接，则那个被指向的元素就是目标元素，例如：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#more&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;more&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 点击这个链接之后 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;more&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 这个元素会被 :target 选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:enabled&lt;/strong&gt;，选择所有已启用的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 已禁用不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:disabled&lt;/strong&gt;，选择所有被禁用的元素，和 :enabled 相反，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;给禁用的文本输入框一个灰色的背景。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 禁用的文本框会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:checked&lt;/strong&gt;，选择所有已经被勾选的单选框或者复选框，例如 input:checked。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 已经勾选的元素会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 没有勾选的不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;示例，结合属性选择器选择被勾选的单选框：input[type=”radio”]:checked。&lt;/p&gt;
+
+&lt;h3 id=&quot;lang-选择器&quot;&gt;:lang 选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:lang(language)&lt;/strong&gt;，用于选择所有带有以指定值开头的 lang 属性的元素，例如 p:lang(en)。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;该选择器等同于 [lang|=”language”]，是 [attribute|=”value”] 选择器的一种特例。&lt;/p&gt;
+
+&lt;h3 id=&quot;结构伪类选择器&quot;&gt;结构伪类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:nth-child(n)&lt;/strong&gt;，选择同级元素中的第 n 个元素，例如 ul &amp;gt; li:nth-child(2)：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第二个元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;需要注意的是子元素的下标是从 1 开始的。除了可以指定特定的数字，也可以使用 even（偶数）, odd（奇数） 关键字，例如 ul &amp;gt; li:nth-child(odd)，或者使用公式，例如 ul &amp;gt; li:nth-child(2n+1)（n 是计数器，从 0 开始）：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第一个子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第二个子元素不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第三个子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:nth-last-child(n)&lt;/strong&gt;，同上，不过是从最后一个子元素开始计数，使用该选择器可以实现隔行变色的效果。&lt;br /&gt;
+&lt;strong&gt;:first-child&lt;/strong&gt;，选择同级元素中的第一个元素，例如 ul &amp;gt; li:first-child：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;作用等同于 ul &amp;gt; li:nth-child(1)。&lt;br /&gt;
+&lt;strong&gt;:last-child&lt;/strong&gt;，选择同级元素中的最后一个元素，例如 ul &amp;gt; li:last-child：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;作用等同于 ul &amp;gt; li:nth-last-child(1)。&lt;br /&gt;
+&lt;strong&gt;:only-child&lt;/strong&gt;，用于选择父元素下唯一的子元素，例如 ul &amp;gt; li:only-child：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;唯一子元素，会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:nth-of-type(n)&lt;/strong&gt;，选择同级元素中的第 n 个同类元素，和 :nth-child 类似，例如 .box &amp;gt; :nth-of-type(2)：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;第一个 p 子元素，不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;第一个 span 子元素，不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;第二个 p 子元素，会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;第二个 span 子元素，会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:nth-last-of-type&lt;/strong&gt;，同上，不过是从最后一个同类子元素开始计数。&lt;br /&gt;
+&lt;strong&gt;:first-of-type&lt;/strong&gt;，选择同级元素中的第一个同类元素，等同于 :nth-of-type(1)。&lt;br /&gt;
+&lt;strong&gt;:last-of-type&lt;/strong&gt;，选择同级元素中的最后一个同类元素，等同于 nth-last-of-type(1)。
+&lt;strong&gt;:only-of-type&lt;/strong&gt;，用于选择父元素下特定类型的唯一子元素，例如 .box &amp;gt; :only-of-type：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;唯一的 em 子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;唯一的 span 子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;root-选择器&quot;&gt;:root 选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:root&lt;/strong&gt;，选择文档的根元素，对于 HTML 文档就是 html 元素。&lt;/p&gt;
+
+&lt;h3 id=&quot;empty-伪类选择器&quot;&gt;:empty 伪类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:empty&lt;/strong&gt;，选择没有子元素的元素（包括文本节点），例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:empty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;表示隐藏没有内容的 p 元素，&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;非空不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 为空会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;否定伪类选择器&quot;&gt;否定伪类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:not(selector)&lt;/strong&gt;，选择所有不匹配选择器的元素，例如 :not(p)，选择所有不为 p 的元素：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;要选择既不是 p 也不是 span 的元素可以多次使用否定伪类选择器，例如 :not(p):not(span)，需要同时满足条件的元素才会被选中。
+CSS 4 否定伪类选择器支持传入参数列表，比如 :not(p, span)。&lt;/p&gt;
+
+&lt;h3 id=&quot;伪元素&quot;&gt;伪元素&lt;/h3&gt;
+&lt;p&gt;伪元素选择器用于选择那些若有实无的元素。在 CSS3 中，伪元素的写法为两个冒号，为了兼容旧浏览器，也可以使用一个冒号。&lt;br /&gt;
+&lt;strong&gt;首字母伪元素选择器&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;::first-letter&lt;/strong&gt;，选择元素的第一个字母，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::first-letter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;段落元素的首字母放大。&lt;/p&gt;
+
+&lt;p&gt;&lt;abbr style=&quot;font-size:50px&quot;&gt;L&lt;/abbr&gt;orem ipsum dolor sit amet.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;首行伪元素选择器&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;::first-line&lt;/strong&gt;，选择元素的第一行，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::first-line&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;段落元素的首行添加下划线。&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Lorem Ipsum is simply dummy text&lt;/u&gt;&lt;br /&gt;
+of the printing and typesetting&lt;br /&gt;
+industry.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;::before/::after&lt;/strong&gt; 伪元素选择器&lt;br /&gt;
+&lt;strong&gt;::before&lt;/strong&gt;，选择在元素之前插入的生成内容。&lt;br /&gt;
+&lt;strong&gt;::after&lt;/strong&gt;，选择在元素之后插入的生成内容，例如：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;blockquote&amp;gt;&lt;/span&gt;Lorem ipsum dolor sit amet.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/blockquote&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;和样式：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;\0022&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;\0022&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;“Lorem ipsum dolor sit amet.”&lt;/p&gt;
+
+&lt;h3 id=&quot;selection-伪元素选择器&quot;&gt;::selection 伪元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;::selection&lt;/strong&gt;，选择用户选取的内容，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;::selection&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#b3d4fc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+  &lt;span class=&quot;nl&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/05/css-selector.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/05/css-selector.html</guid>
+        
+        <category>前端开发</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
     
       <item>
         <title>Seven porridge</title>
@@ -1115,11 +1808,11 @@ hello
 
 &lt;h2 id=&quot;01-关于程序的编译和链接&quot;&gt;0.1 关于程序的编译和链接&lt;/h2&gt;
 
-&lt;p&gt;在此，我想多说关于程序编译的一些规范和方法，一般来说，无论是C、C++、还是pas，首先要把源文件编译成中间代码文件，在Windows下也就是 .obj 文件，UNIX下是 .o 文件，即 Object File，这个动作叫做编译（compile）。然后再把大量的Object File合成执行文件，这个动作叫作链接（link）。&lt;/p&gt;
+&lt;p&gt;在此，我想多说关于程序编译的一些规范和方法，一般来说，无论是C、C++、还是pas，首先要把源文件编译成&lt;strong&gt;中间代码文件&lt;/strong&gt;，在Windows下也就是 .obj 文件，UNIX下是 .o 文件，即 Object File，这个动作叫做&lt;strong&gt;编译（compile）&lt;/strong&gt;。然后再把大量的Object File合成执行文件，这个动作叫作链接（link）。&lt;/p&gt;
 
-&lt;p&gt;编译时，编译器需要的是语法的正确，函数与变量的声明的正确。对于后者，通常是你需要告诉编译器头文件的所在位置（头文件中应该只是声明，而定义应该放在C/C++文件中），只要所有的语法正确，编译器就可以编译出中间目标文件。一般来说，每个源文件都应该对应于一个中间目标文件（O文件或是OBJ文件）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;编译时&lt;/strong&gt;，编译器需要的是语法的正确，函数与变量的声明的正确。对于后者，通常是你需要告诉编译器头文件的所在位置（头文件中应该只是声明，而定义应该放在C/C++文件中），只要所有的语法正确，编译器就可以编译出中间目标文件。一般来说，每个源文件都应该对应于一个中间目标文件（O文件或是OBJ文件）。&lt;/p&gt;
 
-&lt;p&gt;链接时，主要是链接函数和全局变量，所以，我们可以使用这些中间目标文件（O文件或是OBJ文件）来链接我们的应用程序。链接器并不管函数所在的源文件，只管函数的中间目标文件（Object File），在大多数时候，由于源文件太多，编译生成的中间目标文件太多，而在链接时需要明显地指出中间目标文件名，这对于编译很不方便，所以，我们要给中间目标文件打个包，在Windows下这种包叫“库文件”（Library File)，也就是 .lib 文件，在UNIX下，是Archive File，也就是 .a 文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接时&lt;/strong&gt;，主要是链接函数和全局变量，所以，我们可以使用这些中间目标文件（O文件或是OBJ文件）来链接我们的应用程序。链接器并不管函数所在的源文件，只管函数的中间目标文件（Object File），在大多数时候，由于源文件太多，编译生成的中间目标文件太多，而在链接时需要明显地指出中间目标文件名，这对于编译很不方便，所以，我们要给中间目标文件打个包，在Windows下这种包叫&lt;strong&gt;“库文件”（Library File)&lt;/strong&gt;，也就是 .lib 文件，在UNIX下，是Archive File，也就是 .a 文件。&lt;/p&gt;
 
 &lt;p&gt;总结一下，源文件首先会生成中间目标文件，再由中间目标文件生成执行文件。在编译时，编译器只检测程序语法，和函数、变量是否被声明。如果函数未被声明，编译器会给出一个警告，但可以生成Object File。而在链接程序时，链接器会在所有的Object File中找寻函数的实现，如果找不到，那到就会报链接错误码（Linker Error），在VC下，这种错误一般是：Link 2001错误，意思说是说，链接器未能找到函数的实现。你需要指定函数的ObjectFile.&lt;/p&gt;
 
@@ -1150,9 +1843,9 @@ hello
           &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
           &lt;span class=&quot;err&quot;&gt;---------------------------------------------------------&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;target也就是一个目标文件，可以是Object File，也可以是执行文件。还可以是一个标签（Label），对于标签这种特性，在后续的“伪目标”章节中会有叙述。&lt;br /&gt;
-prerequisites就是，要生成那个target所需要的文件或是目标。&lt;br /&gt;
-command也就是make需要执行的命令。（任意的Shell命令）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;target&lt;/strong&gt;也就是一个目标文件，可以是&lt;strong&gt;Object File&lt;/strong&gt;，也可以是执行文件。还可以是一个标签（Label），对于标签这种特性，在后续的“伪目标”章节中会有叙述。&lt;br /&gt;
+&lt;strong&gt;prerequisites&lt;/strong&gt;就是，要生成那个target所需要的文件或是目标。&lt;br /&gt;
+&lt;strong&gt;command&lt;/strong&gt;也就是make需要执行的命令。（任意的Shell命令）&lt;/p&gt;
 
 &lt;p&gt;这是一个文件的依赖关系，也就是说，target这一个或多个的目标文件依赖于prerequisites中的文件，其生成规则定义在command中。说白一点就是说，prerequisites中如果有一个以上的文件比target文件要新的话，command所定义的命令就会被执行。这就是Makefile的规则。也就是Makefile中最核心的内容。
 说到底，Makefile的东西就是这样一点，好像我的这篇文档也该结束了。呵呵。还不尽然，这是Makefile的主线和核心，但要写好一个Makefile还不够，我会以后面一点一点地结合我的工作经验给你慢慢到来。内容还多着呢。：）&lt;/p&gt;
@@ -1196,11 +1889,11 @@ command也就是make需要执行的命令。（任意的Shell命令）&lt;/p&gt;
             &lt;span class=&quot;err&quot;&gt;insert.o&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;search.o&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;files.o&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;utils.o&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;反斜杠（\）是换行符的意思。这样比较便于Makefile的易读。我们可以把这个内容保存在文件为“Makefile”或“makefile”的文件中，然后在该目录下直接输入命令“make”就可以生成执行文件edit。如果要删除执行文件和所有的中间目标文件，那么，只要简单地执行一下“make clean”就可以了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;反斜杠（\）&lt;/strong&gt;是换行符的意思。这样比较便于Makefile的易读。我们可以把这个内容保存在文件为“Makefile”或“makefile”的文件中，然后在该目录下直接输入命令“make”就可以生成执行文件edit。如果要删除执行文件和所有的中间目标文件，那么，只要简单地执行一下“make clean”就可以了。&lt;/p&gt;
 
 &lt;p&gt;在这个makefile中，目标文件（target）包含：执行文件edit和中间目标文件（*.o），依赖文件（prerequisites）就是冒号后面的那些 .c 文件和 .h文件。每一个 .o 文件都有一组依赖文件，而这些 .o 文件又是执行文件 edit 的依赖文件。依赖关系的实质上就是说明了目标文件是由哪些文件生成的，换言之，目标文件是哪些文件更新的。&lt;/p&gt;
 
-&lt;p&gt;在定义好依赖关系后，后续的那一行定义了如何生成目标文件的操作系统命令，一定要以一个Tab键作为开头。记住，make并不管命令是怎么工作的，他只管执行所定义的命令。make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。&lt;/p&gt;
+&lt;p&gt;在定义好依赖关系后，后续的那一行定义了如何生成目标文件的&lt;strong&gt;操作系统命令&lt;/strong&gt;，一定要以一个&lt;strong&gt;Tab键作为开头&lt;/strong&gt;。记住，&lt;em&gt;make并不管命令是怎么工作的，他只管执行所定义的命令&lt;/em&gt;。make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。&lt;/p&gt;
 
 &lt;p&gt;这里要说明一点的是，clean不是一个文件，它只不过是一个动作名字，有点像C语言中的lable一样，其冒号后什么也没有，那么，make就不会自动去找文件的依赖性，也就不会自动执行其后所定义的命令。要执行其后的命令，就要在make命令后明显得指出这个lable的名字。这样的方法非常有用，我们可以在一个makefile中定义不用的编译或是和编译无关的命令，比如程序的打包，程序的备份，等等。&lt;/p&gt;
 
@@ -1208,7 +1901,7 @@ command也就是make需要执行的命令。（任意的Shell命令）&lt;/p&gt;
 在默认的方式下，也就是我们只输入make命令。那么，make会在当前目录下找名字叫“Makefile”或“makefile”的文件。如果找到，它会找文件中的第一个目标文件（target），在上面的例子中，他会找到“edit”这个文件，并把这个文件作为最终的目标文件。如果edit文件不存在，或是edit所依赖的后面的 .o 文件的文件修改时间要比edit这个文件新，那么，他就会执行后面所定义的命令来生成edit这个文件。如果edit所依赖的.o文件也存在，那么make会在当前文件中找目标为.o文件的依赖性，如果找到则再根据那一个规则生成.o文件。（这有点像一个堆栈的过程）
 当然，你的C文件和H文件是存在的啦，于是make会生成 .o 文件，然后再用 .o 文件声明make的终极任务，也就是执行文件edit了。&lt;br /&gt;
 这就是整个make的依赖性，make会一层又一层地去找文件的依赖关系，直到最终编译出第一个目标文件。在找寻的过程中，如果出现错误，比如最后被依赖的文件找不到，那么make就会直接退出，并报错，而对于所定义的命令的错误，或是编译不成功，make根本不理。make只管文件的依赖性，即，如果在我找了依赖关系之后，冒号后面的文件还是不在，那么对不起，我就不工作啦。&lt;br /&gt;
-通过上述分析，我们知道，像clean这种，没有被第一个目标文件直接或间接关联，那么它后面所定义的命令将不会被自动执行，不过，我们可以显示要make执行。即命令——“make clean”，以此来清除所有的目标文件，以便重编译。&lt;/p&gt;
+通过上述分析，我们知道，像clean这种，没有被第一个目标文件直接或间接关联，那么它后面所定义的命令将不会被自动执行，不过，我们可以显示要make执行。即命令——&lt;strong&gt;“make clean”，以此来清除所有的目标文件，以便重编译&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;p&gt;于是在我们编程中，如果这个工程已被编译过了，当我们修改了其中一个源文件，比如file.c，那么根据我们的依赖性，我们的目标file.o会被重编译（也就是在这个依性关系后面所定义的命令），于是file.o的文件也是最新的啦，于是file.o的文件修改时间要比edit要新，所以edit也会被重新链接了（详见edit目标文件后定义的命令）。
 而如果我们改变了“command.h”，那么，kdb.o、command.o和files.o都会被重编译，并且，edit会被重链接。&lt;/p&gt;
@@ -1227,7 +1920,7 @@ command也就是make需要执行的命令。（任意的Shell命令）&lt;/p&gt;
       insert.o search.o files.o utils.o
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;于是，我们就可以很方便地在我们的makefile中以“$(objects)”的方式来使用这个变量了，于是我们的改良版makefile就变成下面这个样子：&lt;/p&gt;
+&lt;p&gt;于是，我们就可以很方便地在我们的makefile中以“&lt;strong&gt;$(objects)&lt;/strong&gt;”的方式来使用这个变量了，于是我们的改良版makefile就变成下面这个样子：&lt;/p&gt;
 &lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;objects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; main.o kbd.o command.o display.o &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;            
       &lt;span class=&quot;err&quot;&gt;insert.osearch.o&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;files.o&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;utils.o&lt;/span&gt;    
 
@@ -1319,7 +2012,7 @@ GNU的make很强大，它可以自动推导文件以及文件依赖关系后面�
 
 &lt;p&gt;&lt;strong&gt;2.1 Makefile里有什么？&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Makefile里主要包含了五个东西：显式规则、隐晦规则、变量定义、文件指示和注释。&lt;br /&gt;
+&lt;p&gt;Makefile里主要包含了五个东西：&lt;em&gt;显式规则&lt;/em&gt;、&lt;em&gt;隐晦规则&lt;/em&gt;、&lt;em&gt;变量定义&lt;/em&gt;、&lt;em&gt;文件指示&lt;/em&gt;和&lt;em&gt;注释&lt;/em&gt;。&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;显式规则&lt;/em&gt;&lt;/strong&gt;   显式规则说明了，如何生成一个或多的的目标文件。这是由Makefile的书写者明显指出，要生成的文件，文件的依赖文件，生成的命令。&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;隐晦规则&lt;/em&gt;&lt;/strong&gt;   由于我们的make有自动推导的功能，所以隐晦的规则可以让我们比较粗糙地简略地书写Makefile，这是由make所支持的。&lt;br /&gt;
 &lt;strong&gt;&lt;em&gt;变量定义&lt;/em&gt;&lt;/strong&gt;   在Makefile中我们要定义一系列的变量，变量一般都是字符串，这个有点你C语言中的宏，当Makefile被执行时，其中的变量都会被扩展到相应的引用位置上。&lt;br /&gt;
@@ -1328,14 +2021,14 @@ GNU的make很强大，它可以自动推导文件以及文件依赖关系后面�
 最后，还值得一提的是，在Makefile中的命令，必须要以[Tab]键开始。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2.2Makefile的文件名&lt;/strong&gt;&lt;br /&gt;
-默认的情况下，make命令会在当前目录下按顺序找寻文件名为“GNUmakefile”、“makefile”、“Makefile”的文件，找到了解释这个文件。在这三个文件名中，最好使用“Makefile”这个文件名，因为，这个文件名第一个字符为大写，这样有一种显目的感觉。最好不要用“GNUmakefile”，这个文件是GNU的make识别的。有另外一些make只对全小写的“makefile”文件名敏感，但是基本上来说，大多数的make都支持“makefile”和“Makefile”这两种默认文件名。&lt;br /&gt;
-当然，你可以使用别的文件名来书写Makefile，比如：“Make.Linux”，“Make.Solaris”，“Make.AIX”等，如果要指定特定的Makefile，你可以使用make的“-f”和“–file”参数，如：make -f Make.Linux或make –file Make.AIX。&lt;/p&gt;
+默认的情况下，make命令会在当前目录下按顺序找寻文件名为“&lt;em&gt;GNUmakefile&lt;/em&gt;”、“&lt;em&gt;makefile&lt;/em&gt;”、“&lt;em&gt;Makefile&lt;/em&gt;”的文件，找到了解释这个文件。在这三个文件名中，最好使用“Makefile”这个文件名，因为，这个文件名第一个字符为大写，这样有一种显目的感觉。最好不要用“GNUmakefile”，这个文件是GNU的make识别的。有另外一些make只对全小写的“makefile”文件名敏感，但是基本上来说，大多数的make都支持“&lt;strong&gt;makefile&lt;/strong&gt;”和“&lt;strong&gt;Makefile&lt;/strong&gt;”这两种默认文件名。&lt;br /&gt;
+当然，你可以使用别的文件名来书写Makefile，比如：“Make.Linux”，“Make.Solaris”，“Make.AIX”等，如果要指定特定的Makefile，你可以使用make的“&lt;strong&gt;-f&lt;/strong&gt;”和“&lt;strong&gt;–file&lt;/strong&gt;”参数，如：make -f Make.Linux或make –file Make.AIX。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2.3 引用其它的Makefile&lt;/strong&gt;&lt;br /&gt;
 在Makefile使用include关键字可以把别的Makefile包含进来，这很像C语言的#include，被包含的文件会原模原样的放在当前文件的包含位置。&lt;br /&gt;
 include的语法是：&lt;em&gt;include filename&lt;/em&gt;&lt;br /&gt;
 filename可以是当前操作系统Shell的文件模式（可以保含路径和通配符）&lt;br /&gt;
-在include前面可以有一些空字符，但是绝不能是[Tab]键开始。include和可以用一个或多个空格隔开。举个例子，你有这样几个Makefile：a.mk、b.mk、c.mk，还有一个文件叫foo.make，以及一个变量$(bar)，其包含了e.mk和f.mk，那么，下面的语句：&lt;br /&gt;
+&lt;strong&gt;在include前面可以有一些空字符，但是绝不能是[Tab]键开始&lt;/strong&gt;。include和可以用一个或多个空格隔开。举个例子，你有这样几个Makefile：a.mk、b.mk、c.mk，还有一个文件叫foo.make，以及一个变量$(bar)，其包含了e.mk和f.mk，那么，下面的语句：&lt;br /&gt;
      &lt;em&gt;include foo.make *.mk $(bar)&lt;/em&gt; &lt;br /&gt;
 等价于：&lt;br /&gt;
     &lt;em&gt;include foo.make a.mk b.mk c.mk e.mk f.mk&lt;/em&gt; &lt;br /&gt;
@@ -1374,8 +2067,8 @@ GNU的make工作时的执行步骤入下：（想来其它的make也是类似）
   &lt;h3 id=&quot;3-makefile书写规则&quot;&gt;3 Makefile书写规则&lt;/h3&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;规则包含两个部分，一个是依赖关系，一个是生成目标的方法。&lt;br /&gt;
-在Makefile中，规则的顺序是很重要的，因为，Makefile中只应该有一个最终目标，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。一般来说，定义在Makefile中的目标可能会有很多，但是第一条规则中的目标将被确立为最终的目标。如果第一条规则中的目标有很多个，那么，第一个目标会成为最终的目标。make所完成的也就是这个目标。 &lt;br /&gt;
+&lt;p&gt;规则包含两个部分，一个是&lt;strong&gt;依赖关系&lt;/strong&gt;，一个是&lt;strong&gt;生成目标的方法&lt;/strong&gt;。&lt;br /&gt;
+&lt;strong&gt;在Makefile中，规则的顺序是很重要的&lt;/strong&gt;，因为，&lt;strong&gt;Makefile中只应该有一个最终目标&lt;/strong&gt;，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。一般来说，定义在Makefile中的目标可能会有很多，但是第一条规则中的目标将被确立为最终的目标。如果第一条规则中的目标有很多个，那么，第一个目标会成为最终的目标。make所完成的也就是这个目标。 &lt;br /&gt;
 好了，还是让我们来看一看如何书写规则。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;3.1 规则举例&lt;/strong&gt;&lt;/p&gt;
