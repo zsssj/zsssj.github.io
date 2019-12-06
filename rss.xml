@@ -5,9 +5,33 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 05 Dec 2019 12:59:58 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Dec 2019 12:59:58 +0800</lastBuildDate>
+    <pubDate>Fri, 06 Dec 2019 08:12:42 +0800</pubDate>
+    <lastBuildDate>Fri, 06 Dec 2019 08:12:42 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Bianque</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;魏文王问扁鹊&quot;&gt;魏文王问扁鹊…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;魏文王问名医扁鹊说：“你们家兄弟三人，都精于医术，到底哪一位最好呢？”&lt;br /&gt;
+扁鹊答说：“长兄最好，中兄次之，我最差。”&lt;br /&gt;
+文王再问：“那么为什么你最出名呢？”&lt;br /&gt;
+扁鹊答说：“我长兄治病，是治病于病情发作之前。由于一般人不知道他事先能铲除病因，所以他的名气无法传出去，只有我们家的人才知道。我中兄治病，是治病于病情初起之时。一般人以为他只能治轻微的小病，所以他的名气只及于本乡里。而我扁鹊治病，是治病于病情严重之时。一般人都看到我在经脉上穿针管来放血、在皮肤上敷药等大手术，所以以为我的医术高明，名气因此响遍全国。”  &lt;br /&gt;
+文王说：“你说得好极了。”&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事后控制不如事中控制，事中控制不如事前控制，可惜大多数的事业经营者均未能体认到这一点，等到错误的决策造成了重大的损失才寻求弥补，有时是亡羊补牢，为时已晚。 做决策也是这样，一个公司的领导层做的决策影响的时间越久，对公司以后的发展情况越有良好的指导意义，这样的决策就是良策。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/06/bianque.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/06/bianque.html</guid>
+        
+        <category>story</category>
+        
+        
+      </item>
     
       <item>
         <title>VIM</title>
@@ -154,7 +178,7 @@
 
 &lt;ol&gt;
   &lt;li&gt;NG → 到第 N 行 （注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）&lt;/li&gt;
-  &lt;li&gt;gg → 到第一行。（注：相当于1G，或 :1）&lt;/li&gt;
+  &lt;li&gt;gg → 到第一行。（注：相当于1G，或 :1，另：137gg也可以到137行，我偏向用这条语句）&lt;/li&gt;
   &lt;li&gt;G → 到最后一行。&lt;/li&gt;
   &lt;li&gt;按单词移动：
     &lt;ul&gt;
@@ -443,7 +467,7 @@
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;banner&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/banner.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 不会被选中 --&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;*[attribute&lt;/em&gt;=”value”]&lt;em&gt;*，用于选择带有特定属性并且属性值包含指定字符串的所有元素，例如 [title&lt;/em&gt;=”red”]，选择所有带有 title 属性并且值包含 red 字符串的所有元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[attribute*=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值包含指定字符串的所有元素，例如 [title*=”red”]，选择所有带有 title 属性并且值包含 red 字符串的所有元素。&lt;/p&gt;
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hotredhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
@@ -704,12 +728,14 @@ industry.&lt;/p&gt;
       <item>
         <title>Seven porridge</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;有七个人曾经住在一起，每天分一大桶粥。要命的是，粥每天都是不够的。  &lt;br /&gt;
+  &lt;h2 id=&quot;七人分粥的故事&quot;&gt;七人分粥的故事…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有七个人曾经住在一起，每天分一大桶粥。要命的是，粥每天都是不够的。  &lt;br /&gt;
 &lt;b&gt;一开始&lt;/b&gt;，他们抓阄决定谁来分粥，每天轮一个。于是乎每周下来，他们只有一天是饱的，就是自己分粥的那一天。&lt;br /&gt;
 &lt;b&gt;后来&lt;/b&gt;他们开始推选出一个道德高尚的人出来分粥。强权就会产生腐败，大家开始挖空心思去讨好他，贿赂他，搞得整个小团体乌烟障气。&lt;br /&gt;
 &lt;b&gt;然后&lt;/b&gt;大家开始组成三人的分粥委员会及四人的评选委员会，但他们常常互相攻击，扯皮下来，粥吃到嘴里全是凉的。&lt;br /&gt;
 &lt;b&gt;最后&lt;/b&gt;想出来一个方法：轮流分粥，但分粥的人要等其它人都挑完后拿剩下的最后一碗。为了不让自己吃到最少的，每人都尽量分得平均，就算不平，也只能认了。大家快快乐乐，和和气气，日子越过越好。&lt;/p&gt;
-&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 同样是七个人，不同的分配制度，就会有不同的风气。所以一个单位如果有不好的工作习气，一定是机制问题，一定是没有完全公平公正公开，没有严格的奖勤罚懒。如何制订这样一个制度，是每个领导需要考虑的问题。&lt;/p&gt;
@@ -726,7 +752,10 @@ industry.&lt;/p&gt;
       <item>
         <title>Doctor</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;有一个博士分到一家研究所，成为学历最高的一个人。&lt;br /&gt;
+  &lt;h2 id=&quot;博士和所长钓鱼的故事&quot;&gt;博士和所长钓鱼的故事…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有一个博士分到一家研究所，成为学历最高的一个人。&lt;br /&gt;
 有一天他到单位后面的小池塘去钓鱼，正好正副所长在他的一左一右，也在钓鱼。&lt;br /&gt;
 他只是微微点了点头，这两个本科生，有啥好聊的呢？  &lt;br /&gt;
 不一会儿，正所长放下钓竿，伸伸懒腰，蹭蹭蹭从水面上如飞地走到对面上厕所。  &lt;br /&gt;
@@ -739,7 +768,6 @@ industry.&lt;/p&gt;
 只听咚的一声，博士生栽到了水里。&lt;br /&gt;
 两位所长将他拉了出来，问他为什么要下水，他问：”为什么你们可以走过去呢？”&lt;br /&gt;
 两所长相视一笑：”这池塘里有两排木桩子，由于这两天下雨涨水正好在水面下。我们都知道这木桩的位置，所以可以踩着桩子过去。你怎么不问一声呢？”&lt;/p&gt;
-&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 学历代表过去，只有学习力才能代表将来。尊重经验的人，才能少走弯路。一个好的团队，也应该是学习型的团队。&lt;/p&gt;
@@ -1801,6 +1829,10 @@ hello
       <item>
         <title>Makefile教程</title>
         <description>&lt;blockquote&gt;
+  &lt;p&gt;什么是makefile？或许很多Winodws的程序员都不知道这个东西，因为那些Windows的IDE都为你做了这个工作，但我觉得要作一个好的和professional的程序员，makefile还是要懂。这就好像现在有这么多的HTML的编辑器，但如果你想成为一个专业人士，你还是要了解HTML的标识的含义。特别在Unix下的软件编译，你就不能不自己写makefile了，会不会写makefile，从一个侧面说明了一个人是否具备完成大型工程的能力。因为，makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。makefile带来的好处就是——“自动化编译”，一旦写好，只需要一个make命令，整个工程完全自动编译，极大的提高了软件开发的效率。make是一个命令工具，是一个解释makefile中指令的命令工具，一般来说，大多数的IDE都有这个命令，比如：Delphi的make，Visual C++的nmake，Linux下GNU的make。可见，makefile都成为了一种在工程方面的编译方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
   &lt;p&gt;现在讲述如何写makefile的文章比较少，这是我想写这篇文章的原因。当然，不同产商的make各不相同，也有不同的语法，但其本质都是在“文件依赖性”上做文章，这里，我仅对GNU的make进行讲述，我的环境是RedHat Linux 8.0，make的版本是3.80。必竟，这个make是应用最为广泛的，也是用得最多的。而且其还是最遵循于IEEE 1003.2-1992 标准的（POSIX.2）。
 在这篇文档中，将以C/C++的源码作为我们基础，所以必然涉及一些关于C/C++的编译的知识，相关于这方面的内容，还请各位查看相关的编译器的文档。这里所默认的编译器是UNIX下的GCC和CC。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3071,37 +3103,6 @@ k &amp;= m\oplus c
         
         
         <category>技术</category>
-        
-      </item>
-    
-      <item>
-        <title>Hello Jekyll</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Transform your plain text into static websites and blogs.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;welcome&quot;&gt;Welcome&lt;/h3&gt;
-
-&lt;p&gt;This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing your content, customizing the way your site works and looks, deploying to various environments, and give you some advice on participating in the future development of Jekyll itself.&lt;/p&gt;
-
-&lt;h3 id=&quot;so-what-is-jekyll-exactlypermalink&quot;&gt;So what is Jekyll, exactly?Permalink&lt;/h3&gt;
-
-&lt;p&gt;Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;) and our &lt;a href=&quot;https://github.com/Shopify/liquid/wiki&quot;&gt;Liquid&lt;/a&gt; renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.&lt;/p&gt;
-
-&lt;h3 id=&quot;helpful-hintspermalink&quot;&gt;Helpful HintsPermalink&lt;/h3&gt;
-
-&lt;p&gt;Throughout this guide there are a number of small-but-handy pieces of information that can make using Jekyll easier, more interesting, and less hazardous. Here’s what to look out for.&lt;/p&gt;
-
-&lt;h3 id=&quot;video-test&quot;&gt;Video Test&lt;/h3&gt;
-
-&lt;iframe type=&quot;text/html&quot; width=&quot;100%&quot; height=&quot;385&quot; src=&quot;http://www.youtube.com/embed/gfmjMWjn-Xg&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Tue, 18 Apr 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/04/18/hello-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/18/hello-jekyll.html</guid>
-        
-        <category>jekyll</category>
-        
         
       </item>
     
