@@ -5,8 +5,8 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 06 Dec 2019 08:12:42 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Dec 2019 08:12:42 +0800</lastBuildDate>
+    <pubDate>Fri, 06 Dec 2019 13:51:09 +0800</pubDate>
+    <lastBuildDate>Fri, 06 Dec 2019 13:51:09 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -193,7 +193,7 @@
 &lt;em&gt;如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（注：程序语句）&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/80/v2-b5e57af4876cd5007e3e066e15eeb8c9_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/80/v2-b5e57af4876cd5007e3e066e15eeb8c9_hd.jpg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;下面，让我来说说最强的光标移动：&lt;/p&gt;
 
@@ -246,7 +246,7 @@
   &lt;li&gt;&lt;em&gt;F 和 T → 和 f 和 t 一样，只不过是相反方向。&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/80/v2-d5e3e971f3cc37d1fe13ec958bf367da_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/80/v2-d5e3e971f3cc37d1fe13ec958bf367da_hd.jpg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;还有一个很有用的命令是 &lt;strong&gt;dt”&lt;/strong&gt; → 删除所有的内容，直到遇到双引号—— &lt;strong&gt;“&lt;/strong&gt;。&lt;/p&gt;
 
@@ -266,7 +266,7 @@
   &lt;li&gt;&lt;em&gt;v2a) → 会选择 (map (+) (“foo”))&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/80/v2-739d0dce6dcdbae486fcbf055bebc678_hd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/80/v2-739d0dce6dcdbae486fcbf055bebc678_hd.jpg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;块操作:&lt;/strong&gt; 块操作，典型的操作： 0 I– [ESC]&lt;/p&gt;
 &lt;ul&gt;
@@ -276,14 +276,14 @@
   &lt;li&gt;I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-497d0958b176316c75ab8a645528b52d_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-497d0958b176316c75ab8a645528b52d_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在Windows下的vim，你需要使用 而不是 ， 是拷贝剪贴板。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;自动提示： 和&lt;/strong&gt;&lt;br /&gt;
 在 Insert 模式下，你可以输入一个词的开头，然后按 或是，自动补齐功能就出现了……&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/v2-f4d9b30c062806611d7b2f5f34567cbb_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/v2-f4d9b30c062806611d7b2f5f34567cbb_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;宏录制： qa 操作序列 q, @a, @@&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -304,7 +304,7 @@
   &lt;li&gt;&lt;em&gt;现在做 100@@ 会创建新的100行，并把数据增加到 103.&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-9edbf6dbab3186ec29ed35795d322389_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-9edbf6dbab3186ec29ed35795d322389_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;可视化选择： v,V,&lt;/strong&gt;&lt;br /&gt;
 前面，我们看到了 的示例 （在Windows下应该是），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：&lt;/p&gt;
@@ -314,7 +314,7 @@
   &lt;li&gt;= → 自动给缩进 （注：这个功能相当强大，我太喜欢了）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-7435155e497071705abcd57bac6f29f5_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-7435155e497071705abcd57bac6f29f5_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在所有被选择的行后加上点东西：&lt;/p&gt;
 &lt;ul&gt;
@@ -323,7 +323,7 @@
   &lt;li&gt;A, 输入字符串，按 ESC。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/9a271d2bb03e461b90c13368490d6507_b.webp&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/9a271d2bb03e461b90c13368490d6507_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;分屏: :split 和 vsplit.&lt;/p&gt;
 
