@@ -5,8 +5,8 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 09 Dec 2019 11:10:21 +0800</pubDate>
-    <lastBuildDate>Mon, 09 Dec 2019 11:10:21 +0800</lastBuildDate>
+    <pubDate>Mon, 09 Dec 2019 18:56:36 +0800</pubDate>
+    <lastBuildDate>Mon, 09 Dec 2019 18:56:36 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -312,7 +312,7 @@
 &lt;p&gt;  一个经常被问到的问题是：是不是只能同时使用多行模式和单行模式中的一种？答案是：不是。这两个选项之间没有任何关系，除了它们的名字比较相似（以至于让人感到疑惑）以外。&lt;/p&gt;
 
 &lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
-&lt;p&gt;$\color{#0000FF}{RegEX}$ 正则表达式到这里结束，更多内容需要读者自行去挖掘研究。&lt;br /&gt;
+&lt;p&gt;$\color{#00DDFF}{RegEX}$ 正则表达式到这里结束，更多内容需要读者自行去挖掘研究。&lt;br /&gt;
 正则表达式常用测试链接：&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://c.runoob.com/front-end/854&quot;&gt;菜鸟正则表达式测试网站&lt;/a&gt;&lt;/li&gt;
