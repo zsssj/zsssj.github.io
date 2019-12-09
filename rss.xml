@@ -5,9 +5,330 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 06 Dec 2019 13:58:12 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Dec 2019 13:58:12 +0800</lastBuildDate>
+    <pubDate>Mon, 09 Dec 2019 11:10:21 +0800</pubDate>
+    <lastBuildDate>Mon, 09 Dec 2019 11:10:21 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>RegEX</title>
+        <description>&lt;blockquote&gt;
+  &lt;h1 id=&quot;正则表达式&quot;&gt;正则表达式&lt;/h1&gt;
+  &lt;p&gt;正则表达式是对字符串（包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为“元字符”））操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。正则表达式是一种文本模式，模式描述在搜索文本时要匹配的一个或多个字符串。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;正则表达式非常有用，在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。 正则表达式就是用于描述这些规则的工具。换句话说，&lt;strong&gt;正则表达式就是记录文本规则的代码&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;元字符&quot;&gt;元字符&lt;/h2&gt;
+&lt;p&gt;  有几个很有用的元字符了，如\b,. , * ，还有 \d.正则表达式里还有更多的元字符，比如\s 匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。\w 匹配字母或数字或下划线或汉字等。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的元字符代码&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.&lt;/td&gt;
+      &lt;td&gt;匹配除换行符以外的任意字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\w&lt;/td&gt;
+      &lt;td&gt;匹配字母或数字或下划线或汉字&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\s&lt;/td&gt;
+      &lt;td&gt;匹配任意的空白符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\d&lt;/td&gt;
+      &lt;td&gt;匹配数字&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\b&lt;/td&gt;
+      &lt;td&gt;匹配单词的开始或结束&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;^&lt;/td&gt;
+      &lt;td&gt;匹配字符串的开始&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$&lt;/td&gt;
+      &lt;td&gt;匹配字符串的结束&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;字符转义&quot;&gt;字符转义&lt;/h2&gt;
+&lt;p&gt;  如果你想查找元字符本身的话，比如你查找.,或者*,就出现了问题：你没办法指定它们，因为它们会被解释成别的意思。这时你就得使用\来取消这些字符的特殊意义。因此，你应该使用 \. 和 \*。当然，要查找\本身，你也得用 \\ 。 &lt;br /&gt;
+  例如：deerchao\.net 匹配 deerchao.net，C:\\Windows 匹配 C:\Windows。&lt;/p&gt;
+
+&lt;h2 id=&quot;重复&quot;&gt;重复&lt;/h2&gt;
+&lt;p&gt;  你已经看过了前面的*,+,{2} , {5,12}这几个匹配重复的方式了。下面是正则表达式中所有的限定符(指定数量的代码，例如*,{5,12}等)：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的限定符代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;*&lt;/td&gt;
+      &lt;td&gt;重复零次或更多次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;+&lt;/td&gt;
+      &lt;td&gt;重复一次或更多次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;?&lt;/td&gt;
+      &lt;td&gt;重复零次或一次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n}&lt;/td&gt;
+      &lt;td&gt;重复 n 次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,}&lt;/td&gt;
+      &lt;td&gt;重复 n 次或更多次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,m}&lt;/td&gt;
+      &lt;td&gt;重复 n 到 m 次&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;  下面是一些使用重复的例子：&lt;br /&gt;
+  &lt;em&gt;Windows\d+&lt;/em&gt;匹配 Windows 后面跟1个或更多数字&lt;br /&gt;
+  &lt;em&gt;^\w+&lt;/em&gt;匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)&lt;/p&gt;
+
+&lt;h2 id=&quot;字符类&quot;&gt;字符类&lt;/h2&gt;
+&lt;p&gt;  要想查找数字，字母或数字，空白是很简单的，因为已经有了对应这些字符集合的元字符，但是如果你想匹配没有预定义元字符的字符集合(比如元音字母 a,e,i,o,u)，应该怎么办？&lt;br /&gt;
+  很简单，你只需要在方括号里列出它们就行了，像[aeiou]就匹配任何一个英文元
+音字母，[.?!]匹配标点符号(.或?或!)。&lt;br /&gt;
+  我们也可以轻松地指定一个字符&lt;strong&gt;范围&lt;/strong&gt;，像[0-9]代表的含意与\d 就是完全一致的：一位数字；同理[a-z0-9A-Z_]也完全等同于\w（如果只考虑英文的话）。&lt;/p&gt;
+
+&lt;h2 id=&quot;分枝条件&quot;&gt;分枝条件&lt;/h2&gt;
+&lt;p&gt;  有时候格式比较复杂，可能会匹配到不适合或不符合的数据。要解决这个问题，我们需要用到&lt;strong&gt;分枝条件&lt;/strong&gt;。正则表达式里的分枝条件 &lt;strong&gt;”|”&lt;/strong&gt; 指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用|把不同的规则分隔开。听不明白？没关系，看例子：&lt;br /&gt;
+  0\d{2}-\d{8}|0\d{3}-\d{7}这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号， 8位本地号(如010-12345678) ，一种是 4 位区号， 7位本地号(0376-2233445) 。&lt;br /&gt;
+  \(0\d{2}\)[- ]?\d{8}|0\d{2}[- ]?\d{8}这个表达式匹配3位区号的电话号码，其中区号可以用小括号括起来，也可以不用，区号与本地号间可以用连字号或空格间隔，也可以没有间隔。你可以试试用分枝条件把这个表达式扩展成也支持4位区号的。&lt;/p&gt;
+
+&lt;h2 id=&quot;分组&quot;&gt;分组&lt;/h2&gt;
+&lt;p&gt;  我们已经提到了怎么重复单个字符（直接在字符后面加上限定符就行了）；但如果想要重复多个字符又该怎么办？你可以用小括号来指定&lt;strong&gt;子表达式&lt;/strong&gt;(也叫做&lt;strong&gt;分组&lt;/strong&gt;)，然后你就可以指定这个子表达式的重复次数了，你也可以对子表达式进行其它一些操作(后面会有介绍)。&lt;br /&gt;
+  (\d{1,3}\.){3}\d{1,3}是一个简单的 IP 地址匹配表达式。要理解这个表达式，请按下列顺序分析它：\d{1,3}匹配1到3位的数字，(\d{1,3}\.){3}匹配三位数字加上一个英文句号 (这个整体也就是这个&lt;strong&gt;分组&lt;/strong&gt;)重复 3次，最后再加上 一个一到三位的数字(\d{1,3})。&lt;br /&gt;
+  不幸的是，它也将匹配&lt;em&gt;256.300.888.999&lt;/em&gt;这种不可能存在的IP地址。如果能使用算术比较的话，或许能简单地解决这个问题，但是正则表达式中并不提供关于数学的任何功能，所以只能使用冗长的分组，选择，字符类来描述一个正确的IP地址：((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)。&lt;br /&gt;
+  理解这个表达式的关键是理解2[0-4]\d|25[0-5]|[01]?\d\d?，这里我就不细说了，你自己应该能分析得出来它的意义。&lt;/p&gt;
+
+&lt;h2 id=&quot;反义&quot;&gt;反义&lt;/h2&gt;
+&lt;p&gt;  有时需要查找不属于某个能简单定义的字符类的字符。比如想查找除了数字以外，其它任意字符都行的情况，这时需要用到&lt;strong&gt;反义&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的反义代码代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\W&lt;/td&gt;
+      &lt;td&gt;匹配任意不是字母，数字，下划线，汉字的字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\S&lt;/td&gt;
+      &lt;td&gt;匹配任意不是空白符的字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\D&lt;/td&gt;
+      &lt;td&gt;匹配任意非数字的字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\B&lt;/td&gt;
+      &lt;td&gt;匹配不是单词开头或结束的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[^x]&lt;/td&gt;
+      &lt;td&gt;匹配除了 x 以外的任意字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[^aeiou]&lt;/td&gt;
+      &lt;td&gt;匹配除了 aeiou 这几个字母以外的任意字符&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;后向引用&quot;&gt;后向引用&lt;/h2&gt;
+&lt;p&gt;  使用小括号”&lt;strong&gt;()&lt;/strong&gt;“指定一个子表达式后， &lt;strong&gt;匹配这个子表达式的文本&lt;/strong&gt;(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。默认情况下，每个分组会自动拥有一个&lt;strong&gt;组号&lt;/strong&gt;，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。
+  后向引用用于重复搜索前面某个分组匹配的文本。例如，\1代表分组1匹配的文本。难以理解？请看示例：&lt;br /&gt;
+  \b(\w+)\b\s+\1\b 可以用来匹配&lt;u&gt;重复的单词&lt;/u&gt;，像 &lt;em&gt;go go&lt;/em&gt; , 或者 &lt;em&gt;kitty kitty&lt;/em&gt; 。这个表达式首先是 一个单词 ，也就是 单词开始处和结束处之间的多于一个的字母或数字(\b(\w+)\b)，这个单词会被捕获到编号为1的分组中，然后是1个或几个空白符 (\s+) ，最后是分组1中捕获的内容（也就是前面匹配的那个单词）(\1)。&lt;br /&gt;
+  你也可以自己指定子表达式的&lt;strong&gt;组名&lt;/strong&gt;。要指定一个子表达式的组名，请使用这样的语法：(?&amp;lt;Word&amp;gt;\w+)(或者把尖括号换成’也行：(?’Word’\w+)),这样就把\w+的组名指定为Word了。要反向引用这个分组&lt;strong&gt;捕获&lt;/strong&gt;的内容，你可以使用\k&amp;lt;Word&amp;gt;,所以上一个例子也可以写成这样：\b(?&amp;lt;Word&amp;gt;\w+)\b\s+\k&amp;lt;Word&amp;gt;\b。&lt;br /&gt;
+  使用小括号的时候，还有很多特定用途的语法。下面列出了最常用的一些：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用分组语法分类&lt;/th&gt;
+      &lt;th&gt;代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;捕获&lt;/td&gt;
+      &lt;td&gt;(exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp,并捕获文本到自动命名的组里&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?&lt;name&gt;exp)&lt;/name&gt;&lt;/td&gt;
+      &lt;td&gt;匹配 exp,并捕获文本到名称为 name 的组里，也可以写成(?’name’exp)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?:exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp,不捕获匹配的文本，也不给此分组分配组号&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;零宽断言&lt;/td&gt;
+      &lt;td&gt;(?=exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp 前面的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?&amp;lt;=exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp 后面的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?!exp)&lt;/td&gt;
+      &lt;td&gt;匹配后面跟的不是 exp 的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?&amp;lt;!exp)&lt;/td&gt;
+      &lt;td&gt;匹配前面不是 exp 的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;注释&lt;/td&gt;
+      &lt;td&gt;(?#comment)&lt;/td&gt;
+      &lt;td&gt;这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;零宽断言&quot;&gt;零宽断言&lt;/h2&gt;
+&lt;p&gt;  接下来的四个用于查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^ , $那样用于指定一个位置，这个位置应该满足一定的条件(即断言) ，因此它们也被称为&lt;strong&gt;零宽断言&lt;/strong&gt;。最好还是拿例子来说明吧：&lt;br /&gt;
+  (?=exp)也叫&lt;strong&gt;零宽度正预测先行断言&lt;/strong&gt;，它断言自身出现的位置的后面能匹配表达式exp。比如\b\w+(?=ing\b)，匹配以 ing 结尾的单词的前面部分(除了 ing 以外的部分) ，如查找&lt;em&gt;I’m singing while you’re dancing.&lt;/em&gt;时，它会匹配 &lt;u&gt;sing&lt;/u&gt; 和 &lt;u&gt;danc&lt;/u&gt;。&lt;br /&gt;
+  (?&amp;lt;=exp)也叫&lt;strong&gt;零宽度正回顾后发断言&lt;/strong&gt;，它断言自身出现的位置的前面能匹配表达式 exp。比如(?&amp;lt;=\bre)\w+\b 会匹配以 re 开头的单词的后半部分(除了 re以外的部分)，例如在查找&lt;em&gt;reading a book&lt;/em&gt;时，它匹配 &lt;u&gt;ading&lt;/u&gt; 。&lt;br /&gt;
+  假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分： ((?&amp;lt;=\d)\d{3})+\b，用它对 &lt;em&gt;1234567890&lt;/em&gt; 进行查找时结果是 234567890 。&lt;/p&gt;
+
+&lt;h2 id=&quot;负向零宽断言&quot;&gt;负向零宽断言&lt;/h2&gt;
+&lt;p&gt;  前面我们提到过怎么查找 不是某个字符或不在某个字符类里的字符的方法(反义)。但是如果我们只是想要 确保某个字符没有出现，但并不想去匹配它时怎么办？例如，如果我们想查找这样的单词–它里面出现了字母 q,但是 q 后面跟的不是字母 u,我们可以尝试这样：&lt;br /&gt;
+  \b\w*q[^u]\w*\b 匹配包含&lt;strong&gt;后面不是字母u的字母q&lt;/strong&gt;的单词。但是如果多做测试 (或者你思维足够敏锐，直接就观察出来了)，你会发现，如果 q 出现在单词的结尾的话 ，像 &lt;strong&gt;Iraq,Benq&lt;/strong&gt; 这个表达式就会出错。这是因为[^u]总要匹配一个字符，所以如果 q是单词的最后一个字符的话，后面的[^u]将会匹配 q 后面的单词分隔符( 可能是空格，或者是句号或其它的什么)，后面的\w*\b 将会匹配下一个单词，于是\b\w*q[^u]\w*\b就能匹配整个 &lt;em&gt;Iraq fighting&lt;/em&gt; 。 &lt;strong&gt;负向零宽断言&lt;/strong&gt;能解决这样的问题，因为它只匹配一个位置，并不&lt;strong&gt;消费&lt;/strong&gt;任何字符。现在，我们可以这样来解决这个问题：\b\w*q(?!u)\w*\b。&lt;br /&gt;
+  &lt;strong&gt;零宽度负预测先行断言&lt;/strong&gt;(?!exp)，断言此位置的后面不能匹配表达式 exp。例如：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字；\b((?!abc)\w)+\b 匹配不包含连续字符串 abc的单词。&lt;br /&gt;
+  同理，我们可以用(?&amp;lt;!exp), &lt;strong&gt;零宽度负回顾后发断言&lt;/strong&gt;来断言此位置的前面不能匹配表达式 exp：(?&amp;lt;![a-z])\d{7}匹配前面不是小写字母的七位数字。&lt;/p&gt;
+
+&lt;p&gt;  一个更复杂的例子：(?&amp;lt;=&amp;lt;(\w+)&amp;gt;).*(?=&amp;lt;\/\1&amp;gt;)匹配不包含属性的简单 HTML 标签内里的内容 。 (&amp;lt;?(\w+)&amp;gt;)指定了这样的&lt;strong&gt;前缀&lt;/strong&gt; ： 被尖括号括起来的单词(比如可能是&amp;lt;b&amp;gt;) ，然后是.*(任意的字符串),最后是一个 &lt;strong&gt;后缀&lt;/strong&gt;(?=&amp;lt;\/\1&amp;gt;)。注意后缀里的\/，它用到了前面提过的字符转义；\1则是一个反向引用，引用的正是捕获的第一组，前面的(\w+)匹配的内容，这样如果前缀实际上是&amp;lt;b&amp;gt;的话，后缀就是&amp;lt;/b&amp;gt;了。整个表达式匹配的是&amp;lt;b&amp;gt;和&amp;lt;/b&amp;gt;之间的内容(再次提醒，不包括前缀和后缀本身)。&lt;/p&gt;
+
+&lt;h2 id=&quot;注释&quot;&gt;注释&lt;/h2&gt;
+&lt;p&gt;  小括号的另一种用途是通过语法(?#comment)来包含注释。例如：2[0-4]\d(?#200-249)|25&lt;a href=&quot;?#250-255&quot;&gt;0-5&lt;/a&gt;|[01]?\d\d?(?#0-199)。&lt;br /&gt;
+  要包含注释的话，最好是启用“忽略模式里的空白符”选项，这样在编写表达式时能任意的添加空格，Tab，换行，而实际使用时这些都将被忽略。启用这个选项后，在#后面到这一行结束的所有文本都将被当成注释忽略掉。&lt;/p&gt;
+
+&lt;h2 id=&quot;贪婪与懒惰&quot;&gt;贪婪与懒惰&lt;/h2&gt;
+&lt;p&gt;  当正则表达式中包含能接受重复的限定符时，通常的行为是（在使整个表达式能得到匹配的前提下）匹配&lt;strong&gt;尽可能多&lt;/strong&gt;的字符。以这个表达式为例：$\color{#FF0000}{a.*b}$，它将会匹配最长的以 a开始，以 b 结束的字符串。如果用它来搜索 &lt;em&gt;aabab&lt;/em&gt; 的话，它会匹配整个字符串 aabab。这被称为&lt;strong&gt;贪婪&lt;/strong&gt;匹配。&lt;br /&gt;
+  有时，我们更需要 懒惰匹配，也就是匹配 尽可能少的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号?。这样$\color{#FF0000}{.*?}$就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。现在看看懒惰版的例子吧：&lt;br /&gt;
+  $\color{#FF0000}{a.*?b}$ 匹配最短的，以 a 开始，以 b 结束的字符串。如果把它应用于 &lt;em&gt;aabab&lt;/em&gt; 的话 ，它会匹配 aab（第一到第三个字符）和 ab（第四到第五个字符）。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;懒惰限定符代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;*?&lt;/td&gt;
+      &lt;td&gt;重复任意次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;+?&lt;/td&gt;
+      &lt;td&gt;重复1次或更多次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;??&lt;/td&gt;
+      &lt;td&gt;重复0次或1次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,m}?&lt;/td&gt;
+      &lt;td&gt;重复 n 到 m 次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,}?&lt;/td&gt;
+      &lt;td&gt;重复 n 次以上，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;处理选项&quot;&gt;处理选项&lt;/h2&gt;
+&lt;p&gt;  在 C#中，你可以使用 &lt;em&gt;&lt;u&gt;Regex(String, RegexOptions)&lt;/u&gt;&lt;/em&gt; 构造函数来设置正则表达式的处理选项。如：Regex regex = new Regex(@”\ba\w{6}\b”, RegexOptions.IgnoreCase);&lt;br /&gt;
+  上面介绍了几个选项如忽略大小写，处理多行等，这些选项能用来改变处理正则表达式的方式。下面是.Net 中常用的正则表达式选项：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的处理选项名称&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IgnoreCase(忽略大小写)&lt;/td&gt;
+      &lt;td&gt;匹配时不区分大小写。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Multiline(多行模式)&lt;/td&gt;
+      &lt;td&gt;更改\^和 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下, &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 的精确含意是:匹配\n 之前的位置以及字符串结束前的位置.)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Singleline(单行模式)&lt;/td&gt;
+      &lt;td&gt;更改.的含义，使它与每一个字符匹配（包括换行符\n ）。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IgnorePatternWhitespace(忽略空白)&lt;/td&gt;
+      &lt;td&gt;忽略表达式中的非转义空白并启用由#标记的注释。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ExplicitCapture( 显式 捕获)&lt;/td&gt;
+      &lt;td&gt;仅捕获已被显式命名的组。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;  一个经常被问到的问题是：是不是只能同时使用多行模式和单行模式中的一种？答案是：不是。这两个选项之间没有任何关系，除了它们的名字比较相似（以至于让人感到疑惑）以外。&lt;/p&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;$\color{#0000FF}{RegEX}$ 正则表达式到这里结束，更多内容需要读者自行去挖掘研究。&lt;br /&gt;
+正则表达式常用测试链接：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://c.runoob.com/front-end/854&quot;&gt;菜鸟正则表达式测试网站&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tool.lu/regex&quot;&gt;在线工具-正则表达式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 09 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/09/regex.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/09/regex.html</guid>
+        
+        <category>shell</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
     
       <item>
         <title>Bianque</title>
@@ -2966,143 +3287,6 @@ k &amp;= m\oplus c
         
         
         <category>test</category>
-        
-      </item>
-    
-      <item>
-        <title>H2O theme for Jekyll</title>
-        <description>&lt;p&gt;正如我在&lt;a href=&quot;http://weibo.com/1374146504/profile?topnav=1&amp;amp;wvr=6&quot;&gt;微博&lt;/a&gt;上所说的，使用&lt;a href=&quot;http://jekyll.com.cn/&quot;&gt;Jekyll&lt;/a&gt;半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。&lt;/p&gt;
-
-&lt;h2 id=&quot;h2o&quot;&gt;H2O&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;源码及使用文档 →&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realhome.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;新主题名叫”H2O”，基于Jekyll 3.0.x（使用&lt;code class=&quot;highlighter-rouge&quot;&gt;gem update jekyll&lt;/code&gt;升级Jekyll），Markdown的代码高亮不再支持pygments转而使用rouge，咱已经默认配置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;highlighter: rouge&lt;/code&gt; 。用到的技术栈也很简单：引入jQuery类库，使用Sass编写样式，使用Gulp来编译Sass、合并压缩css、js，开源在&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Github&lt;/a&gt;上，稍作配置即可用于你的Jekyll博客上。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-sketchdesign.png&quot; alt=&quot;Design with Sketch&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;使用Sketch完成H2O主题的原型设计&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-vs.jpg&quot; alt=&quot;My Jekyll themes&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;比之前漂亮不少吧，下面聊聊H2O的新特性。&lt;/p&gt;
-
-&lt;h2 id=&quot;新特性&quot;&gt;新特性&lt;/h2&gt;
-
-&lt;h3 id=&quot;主题配色&quot;&gt;主题配色&lt;/h3&gt;
-
-&lt;p&gt;支持两种主题配色——蓝色和粉色。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/screenshot/jekyll-theme-h2o-themecolor.jpg?raw=true&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;侧边栏&quot;&gt;侧边栏&lt;/h3&gt;
-
-&lt;p&gt;相比自己上一个版本的博客主题，首页增加了侧边栏，方便展示博主的个人信息和文章标签。&lt;/p&gt;
-
-&lt;h3 id=&quot;社交图标&quot;&gt;社交图标&lt;/h3&gt;
-
-&lt;p&gt;使用阿里的图标管理平台&lt;a href=&quot;http://iconfont.cn/&quot;&gt;Iconfont&lt;/a&gt;整理了一套&lt;strike&gt;墙内外&lt;/strike&gt;常用的社交图标，包括微博、知乎、掘金、简书、Github等十多个网站，鼠标悬停会显示该站的主题色。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-snstext.jpg&quot; alt=&quot;social iconfont&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;前后文导航&quot;&gt;前后文导航&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-nextpostnav.png&quot; alt=&quot;Next post navigator&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;自定义文章封面&quot;&gt;自定义文章封面&lt;/h3&gt;
-
-&lt;p&gt;在Markdown的&lt;a href=&quot;http://jekyll.com.cn/docs/frontmatter/&quot;&gt;文章头信息&lt;/a&gt;里添加cover参数来配置文章的封面图片，如果没有配置封面，则默认【主题色+底纹】的组合作为文章封面。值得一提的是，H2O有两种（粉、蓝）主题色和六种底纹（电路板、食物、云海、钻石等等）供你选择。&lt;/p&gt;
-
-&lt;h3 id=&quot;头图个性化底纹&quot;&gt;头图个性化底纹&lt;/h3&gt;
-
-&lt;p&gt;在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-headerpatterns.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;代码高亮&quot;&gt;代码高亮&lt;/h3&gt;
-
-&lt;p&gt;模板引入了&lt;a href=&quot;http://prismjs.com&quot;&gt;Prism.js&lt;/a&gt;，一款轻量、可扩展的代码语法高亮库。&lt;/p&gt;
-
-&lt;p&gt;很多知名网站如&lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;MDN&lt;/a&gt;、&lt;a href=&quot;https://css-tricks.com/&quot;&gt;css-tricks&lt;/a&gt;也在用它，JavaScript 之父 &lt;a href=&quot;https://brendaneich.com/&quot;&gt;Brendan Eich&lt;/a&gt; 也在个人博客上使用。&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;遵循 &lt;a href=&quot;https://www.w3.org/TR/html5/grouping-content.html#the-pre-element&quot;&gt;HTML5&lt;/a&gt; 标准，Prism 使用语义化的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 元素和 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 元素来标记代码区块：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code class=&quot;language-css&quot;&amp;gt;p { color: red }&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在Markdown中你可以这样写：&lt;/p&gt;
-
-&lt;pre&gt;
-```css
-   p { color: red }
-```
-&lt;/pre&gt;
-
-&lt;p&gt;支持语言：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;HTML&lt;/li&gt;
-  &lt;li&gt;CSS&lt;/li&gt;
-  &lt;li&gt;Sass&lt;/li&gt;
-  &lt;li&gt;JavaScript&lt;/li&gt;
-  &lt;li&gt;CoffeeScript&lt;/li&gt;
-  &lt;li&gt;Java&lt;/li&gt;
-  &lt;li&gt;C-like&lt;/li&gt;
-  &lt;li&gt;Swift&lt;/li&gt;
-  &lt;li&gt;PHP&lt;/li&gt;
-  &lt;li&gt;Go&lt;/li&gt;
-  &lt;li&gt;Python&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;第三方评论&quot;&gt;第三方评论&lt;/h3&gt;
-
-&lt;p&gt;由于多说关闭，又对国内其他第三方评论插件无感，所以将&lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;列为首选（目前模板也只提供了这个），请自备梯子。&lt;/p&gt;
-
-&lt;h3 id=&quot;移动端优化&quot;&gt;移动端优化&lt;/h3&gt;
-
-&lt;p&gt;响应式设计，对手机和平板等移动设备做了优化。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;关于阅读体验&quot;&gt;关于阅读体验&lt;/h3&gt;
-
-&lt;p&gt;我认为在内容质量相同的情况下，出色的沉浸式阅读体验是博客的核心。&lt;/p&gt;
-
-&lt;p&gt;H2O在这方面还有很多需要完善的地方，比如：&lt;strike&gt;代码高亮&lt;/strike&gt;、夜间模式、查看大图…&lt;/p&gt;
-
-&lt;h3 id=&quot;其他特性&quot;&gt;其他特性：&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;网页标题SEO优化&lt;/li&gt;
-  &lt;li&gt;标签索引，点击标签跳转到标签目录，即可查看对应的全部文章&lt;/li&gt;
-  &lt;li&gt;漂亮&lt;/li&gt;
-  &lt;li&gt;好看&lt;/li&gt;
-  &lt;li&gt;美&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是&lt;a href=&quot;https://tongji.baidu.com&quot;&gt;百度统计&lt;/a&gt;，这次新增了Google Analytics。&lt;/p&gt;
-
-&lt;p&gt;这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Star&lt;/a&gt;。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Apr 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/04/18/new-theme-h2o.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/18/new-theme-h2o.html</guid>
-        
-        <category>jekyll</category>
-        
-        <category>前端开发</category>
-        
-        <category>设计</category>
-        
-        
-        <category>技术</category>
         
       </item>
     
