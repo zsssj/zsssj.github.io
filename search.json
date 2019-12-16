@@ -1,6 +1,12 @@
 [
   
     {
+      "title"    : "Successful person",
+      "tags"     : "speech",
+      "url"      : "/2019/12/16/successful-person.html"
+    } ,
+  
+    {
       "title"    : "RegEX",
       "tags"     : "shell",
       "url"      : "/2019/12/09/regex.html"
