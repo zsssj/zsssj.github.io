@@ -5,14 +5,14 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 16 Dec 2019 16:21:14 +0800</pubDate>
-    <lastBuildDate>Mon, 16 Dec 2019 16:21:14 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Dec 2019 08:56:08 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Dec 2019 08:56:08 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>Successful person</title>
         <description>&lt;blockquote&gt;
-  &lt;h2 id=&quot;分享一篇鼓舞人心的英文演讲每个人对成功的定义不同但总的来说想要获得成功成为成功人士以下十条内容是应该要做到的&quot;&gt;分享一篇鼓舞人心的英文演讲，每个人对成功的定义不同，但总的来说想要获得成功，成为成功人士，以下十条内容是应该要做到的。&lt;/h2&gt;
+  &lt;h2 id=&quot;鼓舞人心的英文演讲每个人对成功的定义不同但总的来说想要获得成功成为成功人士以下十条内容是应该要做到的&quot;&gt;鼓舞人心的英文演讲，每个人对成功的定义不同，但总的来说想要获得成功，成为成功人士，以下十条内容是应该要做到的。&lt;/h2&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt; &lt;abbr style=&quot;font-size:30px;color:#00ddff&quot;&gt;♪&lt;/abbr&gt; &lt;a href=&quot;/assets/mp3/successful-person.mp3&quot;&gt;&lt;em&gt;音频下载请点这里&lt;/em&gt; MP3&lt;/a&gt;
@@ -491,8 +491,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 
 &lt;p&gt;标记:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;下面的文字中，如果是 Ctrl-↵我会写成 .&lt;/li&gt;
-  &lt;li&gt;以 : 开始的命令你需要输入 回车，例如 — 如果我写成 :q 也就是说你要输入 :q.&lt;/li&gt;
+  &lt;li&gt;下面的文字中，如果是 Ctrl-λ;我会写成 &amp;lt;C-λ&amp;gt;.&lt;/li&gt;
+  &lt;li&gt;以 : 开始的命令你需要输入 &amp;lt;enter&amp;gt;回车，例如 — 如果我写成 :q 也就是说你要输入 :q&amp;lt;enter&amp;gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;第二级--感觉良好&quot;&gt;第二级 – 感觉良好&lt;/h2&gt;
@@ -525,14 +525,14 @@ Your energy is always best spent in the present, and planning for the future. Yo
   &lt;li&gt;&lt;strong&gt;Undo/Redo&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;u → undo&lt;/li&gt;
-      &lt;li&gt;CTRL+r → redo&lt;/li&gt;
+      &lt;li&gt;&amp;lt;C-r&amp;gt; → redo&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;打开/保存/退出/改变文件&lt;/strong&gt;(Buffer)
     &lt;ul&gt;
       &lt;li&gt;&lt;em&gt;:e&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;&lt;em&gt;:w → 存盘&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;:saveas&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:saveas &amp;lt;path/to/file&amp;gt; → 另存为 &amp;lt;path/to/file&amp;gt;&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;&lt;em&gt;:x， ZZ 或 :wq → 保存并退出 (:x 表示仅在需要时保存，ZZ不需要输入冒号并回车)&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;&lt;em&gt;:q! → 退出不保存 :qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。&lt;/em&gt;&lt;/li&gt;
       &lt;li&gt;&lt;em&gt;:bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。（注：我喜欢使用:n到下一个文件）&lt;/em&gt;&lt;/li&gt;
@@ -581,23 +581,21 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;em&gt;如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（注：程序语句）&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/80/v2-b5e57af4876cd5007e3e066e15eeb8c9_hd.jpg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim1.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;下面，让我来说说最强的光标移动：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;% : 匹配括号移动，包括 (, {, [. （注：你需要把光标先移到括号上）&lt;/li&gt;
-  &lt;li&gt;
-    &lt;ul&gt;
-      &lt;li&gt;和 #: 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;* 和 #: 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;相信我，上面这三个命令对程序员来说是相当强大的。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;更快&lt;/strong&gt;&lt;br /&gt;
 你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;start position&amp;gt;&amp;lt;command&amp;gt;&amp;lt;end position&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;例如 0y$ 命令意味着：&lt;/p&gt;
 &lt;ul&gt;
@@ -634,11 +632,15 @@ Your energy is always best spent in the present, and planning for the future. Yo
   &lt;li&gt;&lt;em&gt;F 和 T → 和 f 和 t 一样，只不过是相反方向。&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/80/v2-d5e3e971f3cc37d1fe13ec958bf367da_hd.jpg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim3.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;还有一个很有用的命令是 &lt;strong&gt;dt”&lt;/strong&gt; → 删除所有的内容，直到遇到双引号—— &lt;strong&gt;“&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;区域选择 a&lt;/strong&gt;  在visual 模式下，这些命令很强大，其命令格式为&lt;strong&gt;a&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;区域选择 &amp;lt;action&amp;gt;a&amp;lt;object&amp;gt; 或 &amp;lt;action&amp;gt;i&amp;lt;object&amp;gt;&lt;/strong&gt;  &lt;br /&gt;
+在visual 模式下，这些命令很强大，其命令格式为&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;action&amp;gt;a&amp;lt;object&amp;gt; 和 &amp;lt;action&amp;gt;i&amp;lt;object&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。&lt;/li&gt;
   &lt;li&gt;object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：”、 ‘、 )、 }、 ]。&lt;/li&gt;
@@ -654,24 +656,25 @@ Your energy is always best spent in the present, and planning for the future. Yo
   &lt;li&gt;&lt;em&gt;v2a) → 会选择 (map (+) (“foo”))&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/80/v2-739d0dce6dcdbae486fcbf055bebc678_hd.jpg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim2.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;块操作:&lt;/strong&gt; 块操作，典型的操作： 0 I– [ESC]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;块操作: &amp;lt;C-v&amp;gt;&lt;/strong&gt; &lt;br /&gt;
+块操作，典型的操作： 0 &amp;lt;C-v&amp;gt; &amp;lt;C-d&amp;gt; I– [ESC]&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;^ → 到行头&lt;/li&gt;
-  &lt;li&gt;→ 开始块操作&lt;/li&gt;
-  &lt;li&gt;→ 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)&lt;/li&gt;
-  &lt;li&gt;I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。&lt;/li&gt;
+  &lt;li&gt;&amp;lt;C-v&amp;gt; → 开始块操作&lt;/li&gt;
+  &lt;li&gt;&amp;lt;C-d&amp;gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)&lt;/li&gt;
+  &lt;li&gt;I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-497d0958b176316c75ab8a645528b52d_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim4.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;在Windows下的vim，你需要使用 而不是 ， 是拷贝剪贴板。&lt;/p&gt;
+&lt;p&gt;在Windows下的vim，你需要使用 &amp;lt;C-q&amp;gt; 而不是 &amp;lt;C-v&amp;gt; ，&amp;lt;C-v&amp;gt; 是拷贝剪贴板。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;自动提示： 和&lt;/strong&gt;&lt;br /&gt;
-在 Insert 模式下，你可以输入一个词的开头，然后按 或是，自动补齐功能就出现了……&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自动提示：&amp;lt;C-n&amp;gt; 和 &amp;lt;C-p&amp;gt;&lt;/strong&gt;&lt;br /&gt;
+在 Insert 模式下，你可以输入一个词的开头，然后按&amp;lt;C-p&amp;gt;或是&amp;lt;C-n&amp;gt;，自动补齐功能就出现了……&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/v2-f4d9b30c062806611d7b2f5f34567cbb_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim5.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;宏录制： qa 操作序列 q, @a, @@&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -680,48 +683,52 @@ Your energy is always best spent in the present, and planning for the future. Yo
   &lt;li&gt;@@ 是一个快捷键用来replay最新录制的宏。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;在一个只有一行且这一行只有“1”的文本中，键入如下命令：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;&lt;br /&gt;
+在一个只有一行且这一行只有“1”的文本中，键入如下命令：&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;qaYpq→&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;qaYp&amp;lt;C-a&amp;gt;q→&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;qa 开始录制&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;Yp 复制行.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;增加1.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-a&amp;gt;增加1.&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;q 停止录制.&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;@a → 在1下面写下 2&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;@@ → 在2 正面写下3&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;现在做 100@@ 会创建新的100行，并把数据增加到 103.&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-9edbf6dbab3186ec29ed35795d322389_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim6.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;可视化选择： v,V,&lt;/strong&gt;&lt;br /&gt;
-前面，我们看到了 的示例 （在Windows下应该是），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可视化选择： v,V,&amp;lt;C-v&amp;gt;&lt;/strong&gt;&lt;br /&gt;
+前面，我们看到了&amp;lt;C-v&amp;gt;的示例 （在Windows下应该是&amp;lt;C-q&amp;gt;），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;J → 把所有的行连接起来（变成一行）&lt;/li&gt;
   &lt;li&gt;&amp;lt; 或 &amp;gt; → 左右缩进&lt;/li&gt;
   &lt;li&gt;= → 自动给缩进 （注：这个功能相当强大，我太喜欢了）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-7435155e497071705abcd57bac6f29f5_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim7.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在所有被选择的行后加上点东西：&lt;/p&gt;
 &lt;ul&gt;
+  &lt;li&gt;&amp;lt;C-v&amp;gt;&lt;/li&gt;
   &lt;li&gt;选中相关的行 (可使用 j 或 或是 /pattern 或是 % 等……)&lt;/li&gt;
   &lt;li&gt;$ 到行最后&lt;/li&gt;
   &lt;li&gt;A, 输入字符串，按 ESC。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/9a271d2bb03e461b90c13368490d6507_b.webp&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim8.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;分屏: :split 和 vsplit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分屏: :split 和 vsplit.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;下面是主要的命令，你可以使用VIM的帮助 :help split. 你可以参考本站以前的一篇文章VIM分屏。&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;:split → 创建分屏 (:vsplit创建垂直分屏)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;: dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;_ (或 |) : 最大化尺寸 (| 垂直分屏)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;+ (或 -) : 增加尺寸&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-w&amp;gt;&amp;lt;dir&amp;gt;: dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-w&amp;gt;_ (或&amp;lt;C-w&amp;gt;|) : 最大化尺寸 (&amp;lt;C-w&amp;gt;| 垂直分屏)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-w&amp;gt;+ (或 &amp;lt;C-w&amp;gt;-) : 增加尺寸&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim9.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;结束语&quot;&gt;结束语&lt;/h2&gt;
 
