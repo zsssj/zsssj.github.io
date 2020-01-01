@@ -1,6 +1,12 @@
 [
   
     {
+      "title"    : "Vim setup",
+      "tags"     : "shell",
+      "url"      : "/2020/01/02/vim-setup.html"
+    } ,
+  
+    {
       "title"    : "Successful person",
       "tags"     : "speech",
       "url"      : "/2019/12/16/successful-person.html"

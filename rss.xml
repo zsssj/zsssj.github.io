@@ -5,9 +5,302 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 25 Dec 2019 08:56:08 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Dec 2019 08:56:08 +0800</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2020 07:56:54 +0800</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2020 07:56:54 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Vim setup</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;最近几天在弄树莓派，装完系统，第一时间就更新VIM，新的VIM没有配置，所以简单把VIM基本配置贴在下面。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;简易配置&quot;&gt;简易配置&lt;/h2&gt;
+&lt;p&gt;先安装vim的升级版:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后进入配置文件：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim ~/.vimrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(如果想要超级用户也生效，需要保存到/etc/vim/vimrc.local)&lt;/p&gt;
+
+&lt;p&gt;输入以下命令后保存：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;number 
+filetype on
+&lt;span class=&quot;nb&quot;&gt;set history&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1000 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nocompatible 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shiftwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 
+colorscheme industry 
+syntax on 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindent 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;smartindent 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;showmatch 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;guioptions-&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;T 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;vb &lt;span class=&quot;nv&quot;&gt;t_vb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;ruler 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nohls 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;incsearch 
+&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;has&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;“vms”&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  
+    &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nobackup 
+&lt;span class=&quot;k&quot;&gt;else 
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;backup 
+endif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;colorscheme&lt;/strong&gt; 有好几种，主要有&lt;em&gt;blue&lt;/em&gt;，&lt;em&gt;darkblue&lt;/em&gt;，&lt;em&gt;default&lt;/em&gt;，&lt;em&gt;delek&lt;/em&gt;，&lt;em&gt;desert&lt;/em&gt;，&lt;em&gt;elflord&lt;/em&gt;，&lt;em&gt;koehler&lt;/em&gt;，&lt;em&gt;murphy&lt;/em&gt;。大家可以在vim的本地安装配置文件夹下找到。&lt;/p&gt;
+
+&lt;p&gt;以上是简易配置，适用于初次安装使用的时候，没行号颜色不清晰改文件什么的很麻烦。&lt;/p&gt;
+
+&lt;h2 id=&quot;mac下vimrc配置&quot;&gt;Mac下.vimrc配置&lt;/h2&gt;
+&lt;p&gt;下面介绍一个我自己常用的配置，我的Macbook Air使用的如下Vim配置，推荐给大家。&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; Author: Nick Kuta
+&lt;span class=&quot;s2&quot;&gt;&quot; Date: 2019-2-18
+&quot;&lt;/span&gt; File: .vimrc
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+let skip_defaults_vim=1
+&quot;&lt;/span&gt; Configuration file &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;vim
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;modelines&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0	&lt;span class=&quot;s2&quot;&gt;&quot; CVE-2007-2438
+
+&quot;&lt;/span&gt; Normally we use vim-extensions. If you want &lt;span class=&quot;nb&quot;&gt;true &lt;/span&gt;vi-compatibility
+&lt;span class=&quot;s2&quot;&gt;&quot; remove change the following statements
+set nocompatible	&quot;&lt;/span&gt; Use Vim defaults instead of 100% vi compatibility
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;backspace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2	&lt;span class=&quot;s2&quot;&gt;&quot; more powerful backspacing
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;显示行号
+set nu
+
+&quot;&lt;/span&gt;启动时隐去援助提示
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shortmess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;atI
+
+&lt;span class=&quot;s2&quot;&gt;&quot;语法高亮
+syntax on
+
+&quot;&lt;/span&gt;不需要备份
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nobackup
+
+&lt;span class=&quot;s2&quot;&gt;&quot;没有保存或文件只读时弹出确认
+set confirm
+
+&quot;&lt;/span&gt;鼠标可用
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mouse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;a
+
+&lt;span class=&quot;s2&quot;&gt;&quot;tab缩进
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+&quot;&lt;/span&gt;文件自动检测外部更改
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoread
+
+&lt;span class=&quot;s2&quot;&gt;&quot;c文件自动缩进
+set cindent
+
+&quot;&lt;/span&gt;自动对齐
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindent
+
+&lt;span class=&quot;s2&quot;&gt;&quot;智能缩进
+set smartindent
+
+&quot;&lt;/span&gt;高亮查找匹配
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;hlsearch
+
+&lt;span class=&quot;s2&quot;&gt;&quot;显示匹配
+set showmatch
+
+&quot;&lt;/span&gt;显示标尺，就是在右下角显示光标位置
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;ruler
+
+&lt;span class=&quot;s2&quot;&gt;&quot;------------------------------
+set splitbelow
+set splitright
+&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;split &lt;/span&gt;navigations
+nnoremap &amp;lt;C-J&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-J&amp;gt;
+nnoremap &amp;lt;C-K&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-K&amp;gt;
+nnoremap &amp;lt;C-L&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-L&amp;gt;
+nnoremap &amp;lt;C-H&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-H&amp;gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;------------------------------
+&quot;&lt;/span&gt; Enable folding with the spacebar
+nnoremap &amp;lt;space&amp;gt; za
+&lt;span class=&quot;s2&quot;&gt;&quot;设置键盘映射，通过空格设置折叠
+&quot;&lt;/span&gt;nnoremap &amp;lt;space&amp;gt; @&lt;span class=&quot;o&quot;&gt;=((&lt;/span&gt;foldclosed&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&amp;lt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;?&lt;span class=&quot;s1&quot;&gt;'zc'&lt;/span&gt;:&lt;span class=&quot;s1&quot;&gt;'zo'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&amp;lt;CR&amp;gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;不要闪烁
+set novisualbell
+
+&quot;&lt;/span&gt;启动显示状态行
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;laststatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2
+
+&lt;span class=&quot;s2&quot;&gt;&quot;浅色显示当前行
+autocmd InsertLeave * se nocul
+
+&quot;&lt;/span&gt;用浅色高亮当前行
+autocmd InsertEnter &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; se cul
+
+&lt;span class=&quot;s2&quot;&gt;&quot;显示输入的命令
+set showcmd
+
+&quot;&lt;/span&gt;被分割窗口之间显示空白
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fillchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;vert:/
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fillchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;stl:/
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fillchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;stlnc:/
+
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; vundle 环境设置
+filetype off
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;rtp+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/bundle/Vundle.vim
+&lt;span class=&quot;s2&quot;&gt;&quot; vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tomasr/molokai'
+Plugin 'Lokaltog/vim-powerline' &quot;&lt;/span&gt;状态条
+Plugin &lt;span class=&quot;s1&quot;&gt;'octol/vim-cpp-enhanced-highlight'&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Cpp语法高亮
+Plugin 'Raimondi/delimitMate' &quot;&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;'vim-scripts/phd'&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;'vim-scripts/indentpython.vim'&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;python缩进
+Plugin 'scrooloose/syntastic' &quot;&lt;/span&gt;语法检查
+Plugin &lt;span class=&quot;s1&quot;&gt;'nvie/vim-flake8'&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PEP8代码风格检查
+Plugin 'jnurmine/Zenburn' &quot;&lt;/span&gt;配色
+Plugin &lt;span class=&quot;s1&quot;&gt;'https://github.com/vim-scripts/The-NERD-Commenter'&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+&quot;&lt;/span&gt; 插件列表结束
+call vundle#end&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+filetype plugin indent on
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 作者名称
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:DoxygenToolkit_authorName&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Nick - xxxx@xxx.com&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:DoxygenToolkit_briefTag_funcName&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt;
+map &amp;lt;leader&amp;gt;da :DoxAuthor&amp;lt;CR&amp;gt;
+map &amp;lt;leader&amp;gt;df :Dox&amp;lt;CR&amp;gt;
+map &amp;lt;leader&amp;gt;db :DoxBlock&amp;lt;CR&amp;gt;
+map &amp;lt;leader&amp;gt;dc a /&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/&amp;lt;LEFT&amp;gt;&amp;lt;LEFT&amp;gt;&amp;lt;LEFT&amp;gt;
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 配色方案
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dark
+colorscheme molokai
+&lt;span class=&quot;s2&quot;&gt;&quot;colorscheme phd
+&quot;&lt;/span&gt;colorscheme Zenburn
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+let g:NERDSpaceDelims = 1 &quot;&lt;/span&gt; 注释的时候自动加个空格
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 禁止显示菜单和工具条
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;guioptions-&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;m
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;guioptions-&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;T
+
+&lt;span class=&quot;s2&quot;&gt;&quot; 总是显示状态栏
+set laststatus=2
+
+&quot;&lt;/span&gt; 禁止折行
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nowrap
+
+&lt;span class=&quot;s2&quot;&gt;&quot; 设置状态栏主题风格
+let g:Powerline_colorscheme='solarized256'
+
+syntax keyword cppSTLtype initializer_list 
+let python_highlight_all=1 &quot;&lt;/span&gt;python语法高亮
+
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:syntastic_always_populate_loc_list &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:syntastic_check_on_open &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:syntastic_auto_jump &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 基于缩进或语法进行代码折叠
+&lt;span class=&quot;s2&quot;&gt;&quot;set foldmethod=indent
+set foldmethod=syntax
+&quot;&lt;/span&gt; 启动 vim 时关闭折叠代码
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nofoldenable
+
+&lt;span class=&quot;s2&quot;&gt;&quot;允许用退格键删除字符
+set backspace=indent,eol,start
+
+&quot;&lt;/span&gt;编码设置
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8
+
+&lt;span class=&quot;s2&quot;&gt;&quot;共享剪切板
+set clipboard=unnamed
+
+&quot;&lt;/span&gt;标记多余空白
+&lt;span class=&quot;s2&quot;&gt;&quot;au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s\+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+au BufNewFile,BufRead &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.py
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;softtabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shiftwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;textwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;79 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;expandtab |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindent |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileformat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;unix |
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+au BufNewFile,BufRead *.js,*.html,*.css
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;set tabstop=2 |
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;set softtabstop=2 |
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;set shiftwidth=2 |
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;宏定义
+iabbrev #b /************************************************************
+iabbrev #e &amp;lt;Space&amp;gt;************************************************************/
+iabbrev NK Nick Kuta
+iabbrev ad advertisement
+iabbrev #i #include
+iabbrev #d #define
+abbrev teh the
+
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;VIM实际效果如下图所示：&lt;/strong&gt;
+&lt;img src=&quot;/assets/img/Mac_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安装需要的插件&lt;/strong&gt;&lt;br /&gt;
+将想要安装的插件，按照地址填写方法，将地址填写在 vundle#begin 和 vundle#end 之间就可以保存之后，有两种方法安装插件。&lt;br /&gt;
+运行 vim ,再运行 &lt;strong&gt;:PluginInstall&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim xxx
+:PluginInstall
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;通过命令行直接安装 &lt;strong&gt;vim +PluginInstall +qall&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim +PluginInstall +qall 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装完成之后，插件就可以使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;移除不需要的插件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;编辑.vimrc文件移除的你要移除的插件所对应的plugin那一行。&lt;/li&gt;
+  &lt;li&gt;保存退出当前的vim&lt;/li&gt;
+  &lt;li&gt;重新打开vim，输入命令 &lt;em&gt;BundleClean&lt;/em&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;其他常用命令&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;更新插件 &lt;em&gt;BundleUpdate&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;列出所有插件 &lt;em&gt;BundleList&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;查找插件 &lt;em&gt;BundleSearch&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;最后再给一张我Windows下的VIM配色效果：&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/Win_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/01/02/vim-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/01/02/vim-setup.html</guid>
+        
+        <category>shell</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
     
       <item>
         <title>Successful person</title>
@@ -659,7 +952,7 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;p&gt;&lt;img src=&quot;/assets/img/vim2.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;块操作: &amp;lt;C-v&amp;gt;&lt;/strong&gt; &lt;br /&gt;
-块操作，典型的操作： 0 &amp;lt;C-v&amp;gt; &amp;lt;C-d&amp;gt; I– [ESC]&lt;/p&gt;
+块操作，典型的操作： 0 &amp;lt;C-v&amp;gt; &amp;lt;C-d&amp;gt; I-- [ESC]&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;^ → 到行头&lt;/li&gt;
   &lt;li&gt;&amp;lt;C-v&amp;gt; → 开始块操作&lt;/li&gt;
@@ -3082,248 +3375,6 @@ make 运行时的系统环境变量可以在make开始运行时被载入到Makef
         <pubDate>Mon, 02 Dec 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2019/12/02/makefile.html</link>
         <guid isPermaLink="true">http://localhost:4000/2019/12/02/makefile.html</guid>
-        
-        <category>makefile</category>
-        
-        
-        <category>Debug</category>
-        
-      </item>
-    
-      <item>
-        <title>Debug skill (C&amp;Make)</title>
-        <description>&lt;h2 id=&quot;c语言类调试技巧&quot;&gt;C语言类调试技巧&lt;/h2&gt;
-&lt;h3 id=&quot;1-使用不同的颜色打印调试信息区分调试等级&quot;&gt;1 使用不同的颜色打印调试信息,区分调试等级.&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;stdarg.h&amp;gt;
-
-//仅仅是打印函数名字替换 DEBUG &amp;lt;--&amp;gt; printf
-#define DEBUG(format, ...) printf(format, ##__VA_ARGS__)
-
-//替换打印函数，在打印出来的内容加上前缀
-#define XFUNC_PRINT(format, arg...) printf(&quot;XFUNC: &quot; format &quot;&quot;, ##arg)
-
-//名字替换，并在打印出来的内容加上前缀,同时加入定位的功能。
-#define TRC_P(fmt, args...) fprintf(stderr,&quot;  TRC_P(%s:%d):\t&quot; fmt, __func__, __LINE__, ##args)
-
-//名字替换，并在打印出来的内容加上前缀,同时加入定位的功能，并让打印的前缀具备特殊颜色(\033[1;32m  \033[0m这些表示颜色，\t一定程度上使屏幕输出对齐)
-#define TRC_PG(fmt, args...) fprintf(stderr, &quot;\033[1;32m  TRC_PG(%s:%d):\t\033[0m&quot; fmt, __func__, __LINE__, ## args)
-
-//名字替换，并在打印出来的内容加上前缀,同时加入定位的功能，并让打印的前缀具备特殊颜色
-#define TRC_PR(fmt, args...) fprintf(stderr, &quot;\033[1;31m  TRC_PR(%s:%d):\t\033[0m&quot; fmt, __func__, __LINE__, ## args)
-
-int main(void)
-{    
-    int i= 0;    
-    
-    DEBUG(&quot;hello,%d\n&quot;,i++);    
-    XFUNC_PRINT(&quot;hello,%d\n&quot;,i++);    
-    TRC_P(&quot;hello,%d\n&quot;,i++);    
-    TRC_PG(&quot;hello,%d\n&quot;,i++);    
-    TRC_PR(&quot;hello,%d\n&quot;,i++);    
-    
-    return0;
-}
-    
-/*
-[root@localhost jz2440]# gcc test.c ;./a.out 
-hello,0
-XFUNC: hello,1  
-TRC_P(main:27):       hello,2  
-TRC_PG(main:28):      hello,3  ----这里前缀是绿色的  
-TRC_PR(main:29):      hello,4  ----这里前缀是红色的
-*/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;2-以不同格式打印数据&quot;&gt;2 以不同格式打印数据.&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-
-//以十六进制打印一个数val的值，输出格式为val=0x...
-#define HEX_PI(VAL)\
-do{\
-    printf(#VAL&quot;=%#x,fuc:%s,line:%d\n&quot;, VAL, __FUNCTION__, __LINE__);\
-}while(0)
-
-//以十进制打印一个数val的值，输出格式为val=...
-#define DEC_PI(VAL)\
-do{\
-    printf(#VAL&quot;=%#d,fuc:%s,line:%d\n&quot;, VAL, __FUNCTION__, __LINE__);\
-}while(0)    
-
-void main(void){    
-int i = 123;    
-int j = 123;    
-HEX_PI(i);    
-HEX_PI(j);            
-
-DEC_PI(i);    	
-DEC_PI(j);
-}
-
-//i=0x7b,fuc:main,line:17
-//j=0x7b,fuc:main,line:18
-//i=123,fuc:main,line:20
-//j=123,fuc:main,line:21
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;3-配合宏开关在编译前静态指定打印等级&quot;&gt;3 配合宏开关在编译前静态指定打印等级&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-clike&quot;&gt;#if CUR_PLEVEL &amp;gt; 5
-#define TRC_PR(fmt, args...) fprintf(stderr,&quot; TRC_P(%s:%d):\t&quot; fmt, __func__, __LINE__, ##args)
-#endif
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;makefile调试信息输出&quot;&gt;Makefile调试信息输出&lt;/h2&gt;
-
-&lt;h3 id=&quot;i-使用infowarningerror增加调试信息&quot;&gt;I. 使用info/warning/error增加调试信息&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;方法1: &lt;code class=&quot;highlighter-rouge&quot;&gt;$(info, &quot;here add the debug info&quot;)&lt;/code&gt;但是此不能打印出.mk的行号&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;方法2: &lt;code class=&quot;highlighter-rouge&quot;&gt;$(warning, &quot;here add the debug info&quot;)&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;方法3: &lt;code class=&quot;highlighter-rouge&quot;&gt;$(error, &quot;error: this will stop the compile&quot;)&lt;/code&gt;这个可以停止当前makefile的编译&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;方法4: &lt;code class=&quot;highlighter-rouge&quot;&gt;$(info, $(TARGET_DEVICE))&lt;/code&gt;打印变量的值&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ii-使用echo增加调试信息echo只能在target后面的语句中使用且前面是个tab&quot;&gt;II. 使用echo增加调试信息（echo只能在target：后面的语句中使用，且前面是个TAB）&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;方法1：&lt;code class=&quot;highlighter-rouge&quot;&gt; @echo &quot;start the compilexxxxxxxxxxxxxxxxxxxxxxx&quot;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;方法2: &lt;code class=&quot;highlighter-rouge&quot;&gt;@echo $(files)&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;字体颜色控制&quot;&gt;字体颜色控制&lt;/h2&gt;
-&lt;p&gt;格式: echo -e “\033[字背景颜色;字体颜色m字符串\033[0m”&lt;/p&gt;
-
-&lt;p&gt;例如:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;33[41;36m something here &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;33[0m&quot;&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;其中41的位置代表底色, 36的位置是代表字的颜色&lt;/p&gt;
-
-&lt;p&gt;那些ascii code 是对颜色调用的始末.&lt;br /&gt;
-\033[ ; m …… \033[0m&lt;/p&gt;
-
-&lt;p&gt;字背景颜色范围:40———49&lt;br /&gt;
-40:   $\color{#000000}{黑色}$ &lt;br /&gt;
-41:   $\color{#880000}{深红}$ &lt;br /&gt;
-42:   $\color{#00ff00}{绿色}$  &lt;br /&gt;
-43:   $\color{#dddd00}{黄色}$ &lt;br /&gt;
-44:   $\color{#0000ff}{蓝色}$ &lt;br /&gt;
-45:   $\color{#ff00ff}{紫色}$ &lt;br /&gt;
-46:   $\color{#007700}{深绿}$ &lt;br /&gt;
-47:   $\color{#bbbbbb}{白色}$&lt;/p&gt;
-
-&lt;p&gt;字颜色:30———39 &lt;br /&gt;
-30:   $\color{#000000}{黑色}$&lt;br /&gt;
-31:   $\color{#ff0000}{红色}$ &lt;br /&gt;
-32:   $\color{#00ff00}{绿色}$ &lt;br /&gt;
-33:   $\color{#dddd00}{黄色}$ &lt;br /&gt;
-34:   $\color{#0000ff}{蓝色}$ &lt;br /&gt;
-35:   $\color{#ff00ff}{紫色}$ &lt;br /&gt;
-36:   $\color{#008800}{深绿}$ &lt;br /&gt;
-37:   $\color{#bbbbbb}{白色}$&lt;/p&gt;
-
-&lt;p&gt;======ANSI控制码的说明=========================================&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[0m&lt;/td&gt;
-      &lt;td&gt;关闭所有属性&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[1m&lt;/td&gt;
-      &lt;td&gt;设置高亮度&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[4m&lt;/td&gt;
-      &lt;td&gt;下划线&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[5m&lt;/td&gt;
-      &lt;td&gt;闪烁&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[7m&lt;/td&gt;
-      &lt;td&gt;反显&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[8m&lt;/td&gt;
-      &lt;td&gt;消隐&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[30m – \33[37m&lt;/td&gt;
-      &lt;td&gt;设置前景色&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[40m – \33[47m&lt;/td&gt;
-      &lt;td&gt;设置背景色&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[nA&lt;/td&gt;
-      &lt;td&gt;光标上移n行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[nB&lt;/td&gt;
-      &lt;td&gt;光标下移n行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[nC&lt;/td&gt;
-      &lt;td&gt;光标右移n行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[nD&lt;/td&gt;
-      &lt;td&gt;光标左移n行&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[y;xH&lt;/td&gt;
-      &lt;td&gt;设置光标位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[2J&lt;/td&gt;
-      &lt;td&gt;清屏&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[K&lt;/td&gt;
-      &lt;td&gt;清除从光标到行尾的内容&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[s&lt;/td&gt;
-      &lt;td&gt;保存光标位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[u&lt;/td&gt;
-      &lt;td&gt;恢复光标位置&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[?25l&lt;/td&gt;
-      &lt;td&gt;隐藏光标&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;\33[?25h&lt;/td&gt;
-      &lt;td&gt;显示光标&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Mon, 02 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/02/debug-skill.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/02/debug-skill.html</guid>
         
         <category>makefile</category>
         
