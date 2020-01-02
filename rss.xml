@@ -5,8 +5,8 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 02 Jan 2020 07:56:54 +0800</pubDate>
-    <lastBuildDate>Thu, 02 Jan 2020 07:56:54 +0800</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2020 09:01:16 +0800</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2020 09:01:16 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -288,7 +288,7 @@ abbrev teh the
   &lt;li&gt;查找插件 &lt;em&gt;BundleSearch&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;最后再给一张我Windows下的VIM配色效果：&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;最后是一张Windows下的VIM配色效果：&lt;/strong&gt;&lt;br /&gt;
 &lt;img src=&quot;/assets/img/Win_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
