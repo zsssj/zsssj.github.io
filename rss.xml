@@ -3,10 +3,10 @@
   <channel>
     <title>Kuta's Blog</title>
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
-    <link>http://0.0.0.0:4000//</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 16 Feb 2020 21:27:37 +0800</pubDate>
-    <lastBuildDate>Sun, 16 Feb 2020 21:27:37 +0800</lastBuildDate>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 07 May 2020 23:40:59 +0800</pubDate>
+    <lastBuildDate>Thu, 07 May 2020 23:40:59 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -23,8 +23,8 @@
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事有”本末”、”轻重”、”缓急”，关门是本，加高笼子是末，舍本而逐末，当然就不得要领了。管理是什么？管理就是先分析事情的主要矛盾和次要矛盾，认清事情的”本末”、”轻重”、”缓急”，然后从重要的方面下手。&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Feb 2020 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2020/02/11/kangaroos-and-the-cage.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2020/02/11/kangaroos-and-the-cage.html</guid>
+        <link>http://localhost:4000/2020/02/11/kangaroos-and-the-cage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/02/11/kangaroos-and-the-cage.html</guid>
         
         <category>story</category>
         
@@ -314,8 +314,8 @@ abbrev teh the
 &lt;img src=&quot;/assets/img/Win_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2020/01/02/vim-setup.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2020/01/02/vim-setup.html</guid>
+        <link>http://localhost:4000/2020/01/02/vim-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/01/02/vim-setup.html</guid>
         
         <category>shell</category>
         
@@ -383,8 +383,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;p&gt;如需要原版音频，请前往&lt;strong&gt;喜马拉雅&lt;/strong&gt; 搜索用户 【英文原版读物】。&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/16/successful-person.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/16/successful-person.html</guid>
+        <link>http://localhost:4000/2019/12/16/successful-person.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/16/successful-person.html</guid>
         
         <category>speech</category>
         
@@ -702,8 +702,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 09 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/09/regex.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/09/regex.html</guid>
+        <link>http://localhost:4000/2019/12/09/regex.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/09/regex.html</guid>
         
         <category>shell</category>
         
@@ -728,8 +728,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事后控制不如事中控制，事中控制不如事前控制，可惜大多数的事业经营者均未能体认到这一点，等到错误的决策造成了重大的损失才寻求弥补，有时是亡羊补牢，为时已晚。 做决策也是这样，一个公司的领导层做的决策影响的时间越久，对公司以后的发展情况越有良好的指导意义，这样的决策就是良策。&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/06/bianque.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/06/bianque.html</guid>
+        <link>http://localhost:4000/2019/12/06/bianque.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/06/bianque.html</guid>
         
         <category>story</category>
         
@@ -1060,8 +1060,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/05/vim-editor.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/05/vim-editor.html</guid>
+        <link>http://localhost:4000/2019/12/05/vim-editor.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/05/vim-editor.html</guid>
         
         <category>shell</category>
         
@@ -1425,8 +1425,8 @@ industry.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/05/css-selector.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/05/css-selector.html</guid>
+        <link>http://localhost:4000/2019/12/05/css-selector.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/05/css-selector.html</guid>
         
         <category>前端开发</category>
         
@@ -1451,8 +1451,8 @@ industry.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 同样是七个人，不同的分配制度，就会有不同的风气。所以一个单位如果有不好的工作习气，一定是机制问题，一定是没有完全公平公正公开，没有严格的奖勤罚懒。如何制订这样一个制度，是每个领导需要考虑的问题。&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/03/seven-porridge.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/03/seven-porridge.html</guid>
+        <link>http://localhost:4000/2019/12/03/seven-porridge.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/03/seven-porridge.html</guid>
         
         <category>story</category>
         
@@ -1483,8 +1483,8 @@ industry.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 学历代表过去，只有学习力才能代表将来。尊重经验的人，才能少走弯路。一个好的团队，也应该是学习型的团队。&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/03/doctor.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/03/doctor.html</guid>
+        <link>http://localhost:4000/2019/12/03/doctor.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/03/doctor.html</guid>
         
         <category>story</category>
         
@@ -2528,8 +2528,8 @@ hello
 这本书内容翔实，实例丰富，既可做精钻细研的教材，又可作为手册时时查阅，真是居家旅行必备良品;-)&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://0.0.0.0:4000/2019/12/03/bash-shell.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/12/03/bash-shell.html</guid>
+        <link>http://localhost:4000/2019/12/03/bash-shell.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/03/bash-shell.html</guid>
         
         <category>shell</category>
         
