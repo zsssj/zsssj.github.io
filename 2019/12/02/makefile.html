@@ -10,7 +10,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Makefile教程 - Kuta's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/12/02/makefile.html">
+    <meta property="og:url" content="http://0.0.0.0:4000/2019/12/02/makefile.html">
     <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
     <meta property="og:site_name" content="Kuta's Blog"> 
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Clicky Analytics -->
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101183951);</script>
+    <script async src="//static.getclicky.com/js"></script>   
     <!-- gitalk javascript -->
     <!--
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
@@ -140,6 +143,10 @@ Author: Ray-Eldath
 
     <article class="markdown-body">
       <blockquote>
+  <p>什么是makefile？或许很多Winodws的程序员都不知道这个东西，因为那些Windows的IDE都为你做了这个工作，但我觉得要作一个好的和professional的程序员，makefile还是要懂。这就好像现在有这么多的HTML的编辑器，但如果你想成为一个专业人士，你还是要了解HTML的标识的含义。特别在Unix下的软件编译，你就不能不自己写makefile了，会不会写makefile，从一个侧面说明了一个人是否具备完成大型工程的能力。因为，makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。makefile带来的好处就是——“自动化编译”，一旦写好，只需要一个make命令，整个工程完全自动编译，极大的提高了软件开发的效率。make是一个命令工具，是一个解释makefile中指令的命令工具，一般来说，大多数的IDE都有这个命令，比如：Delphi的make，Visual C++的nmake，Linux下GNU的make。可见，makefile都成为了一种在工程方面的编译方法。</p>
+</blockquote>
+
+<blockquote>
   <p>现在讲述如何写makefile的文章比较少，这是我想写这篇文章的原因。当然，不同产商的make各不相同，也有不同的语法，但其本质都是在“文件依赖性”上做文章，这里，我仅对GNU的make进行讲述，我的环境是RedHat Linux 8.0，make的版本是3.80。必竟，这个make是应用最为广泛的，也是用得最多的。而且其还是最遵循于IEEE 1003.2-1992 标准的（POSIX.2）。
 在这篇文档中，将以C/C++的源码作为我们基础，所以必然涉及一些关于C/C++的编译的知识，相关于这方面的内容，还请各位查看相关的编译器的文档。这里所默认的编译器是UNIX下的GCC和CC。</p>
 </blockquote>
@@ -1072,7 +1079,7 @@ make 运行时的系统环境变量可以在make开始运行时被载入到Makef
     2017
     -
   
-  2019
+  2020
   </section>
   <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
 </footer>
@@ -1106,8 +1113,7 @@ make 运行时的系统环境变量可以在make开始运行时被载入到Makef
 
   
 
-  
-
+  <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101183951ns.gif" /></p></noscript>
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>
 </body>
