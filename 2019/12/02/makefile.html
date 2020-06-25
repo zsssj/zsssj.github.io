@@ -195,8 +195,8 @@ Author: Ray-Eldath
 <p>这是一个文件的依赖关系，也就是说，target这一个或多个的目标文件依赖于prerequisites中的文件，其生成规则定义在command中。说白一点就是说，prerequisites中如果有一个以上的文件比target文件要新的话，command所定义的命令就会被执行。这就是Makefile的规则。也就是Makefile中最核心的内容。
 说到底，Makefile的东西就是这样一点，好像我的这篇文档也该结束了。呵呵。还不尽然，这是Makefile的主线和核心，但要写好一个Makefile还不够，我会以后面一点一点地结合我的工作经验给你慢慢到来。内容还多着呢。：）</p>
 
-<p>【注】：在看别人写的Makefile文件时，你可能会碰到以下三个变量：<code class="highlighter-rouge">$@</code>，<code class="highlighter-rouge">$^</code>，<code class="highlighter-rouge">$&lt;</code>，他们三个是十分重要的三个变量，所代表的含义分别是：<br />
-<code class="highlighter-rouge">$@</code>–目标文件，<code class="highlighter-rouge">$^</code>–所有的依赖文件，<code class="highlighter-rouge">$&lt;</code>–第一个依赖文件。</p>
+<p>【注】：在看别人写的Makefile文件时，你可能会碰到以下三个变量：<code class="language-plaintext highlighter-rouge">$@</code>，<code class="language-plaintext highlighter-rouge">$^</code>，<code class="language-plaintext highlighter-rouge">$&lt;</code>，他们三个是十分重要的三个变量，所代表的含义分别是：<br />
+<code class="language-plaintext highlighter-rouge">$@</code>–目标文件，<code class="language-plaintext highlighter-rouge">$^</code>–所有的依赖文件，<code class="language-plaintext highlighter-rouge">$&lt;</code>–第一个依赖文件。</p>
 
 <p><strong>1.2 一个示例</strong><br />
 正如前面所说的，如果一个工程有3个头文件，和8个C文件，我们为了完成前面所述的那三个规则，我们的Makefile应该是下面的这个样子的。</p>
@@ -550,7 +550,7 @@ Makefile的规则中的目标可以不止一个，其支持多目标，有可能
 <span class="nl">littleoutput </span><span class="o">:</span> <span class="nf">text.g</span>
       <span class="err">generate</span> <span class="err">text.g</span> <span class="err">-little</span> <span class="err">&gt;</span> <span class="err">littleoutput</span>
 </code></pre></div></div>
-<p>其中，<code class="highlighter-rouge">-$(subst output,,$@)</code>中的“<code class="highlighter-rouge">$</code>”表示执行一个Makefile的函数，函数名为<code class="highlighter-rouge">subst</code>，后面的为参数。关于函数，将在后面讲述。这里的这个函数是截取字符串的意思，“<code class="highlighter-rouge">$@</code>”表示目标的集合，就像一个数组，“<code class="highlighter-rouge">$@</code>”依次取出目标，并执于命令。</p>
+<p>其中，<code class="language-plaintext highlighter-rouge">-$(subst output,,$@)</code>中的“<code class="language-plaintext highlighter-rouge">$</code>”表示执行一个Makefile的函数，函数名为<code class="language-plaintext highlighter-rouge">subst</code>，后面的为参数。关于函数，将在后面讲述。这里的这个函数是截取字符串的意思，“<code class="language-plaintext highlighter-rouge">$@</code>”表示目标的集合，就像一个数组，“<code class="language-plaintext highlighter-rouge">$@</code>”依次取出目标，并执于命令。</p>
 
 <p><strong>3.7 静态模式</strong> <br />
 静态模式可以更加容易地定义多目标的规则，可以让我们的规则变得更加的有弹性和灵活。我们还是先来看一下语法：</p>
@@ -570,7 +570,7 @@ prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式�
 <span class="nl">$(objects)</span><span class="o">:</span> <span class="nf">%.o: %.c</span>
       <span class="err">$(CC)</span> <span class="err">-c</span> <span class="err">$(CFLAGS)</span> <span class="err">$&lt;</span> <span class="err">-o</span> <span class="err">$@</span>
 </code></pre></div></div>
-<p>上面的例子中，指明了我们的目标从<code class="highlighter-rouge">$(object)</code>中获取，“%.o”表明要所有以“.o”结尾的目标，也就是“foo.o bar.o”，也就是变量<code class="highlighter-rouge">$object</code>集合的模式，而依赖模式“%.c”则取模式“%.o”的“%”，也就是“foobar”，并为其加下“.c”的后缀，于是，我们的依赖目标就是“foo.c bar.c”。而命令中的“<code class="highlighter-rouge">$&lt;</code>”和“<code class="highlighter-rouge">$@</code>”则是自动化变量，“<code class="highlighter-rouge">$&lt;</code>”表示所有的依赖目标集（也就是“foo.c bar.c”），“<code class="highlighter-rouge">$@</code>”表示目标集（也就是”foo.o bar.o”）。于是，上面的规则展开后等价于下面的规则：</p>
+<p>上面的例子中，指明了我们的目标从<code class="language-plaintext highlighter-rouge">$(object)</code>中获取，“%.o”表明要所有以“.o”结尾的目标，也就是“foo.o bar.o”，也就是变量<code class="language-plaintext highlighter-rouge">$object</code>集合的模式，而依赖模式“%.c”则取模式“%.o”的“%”，也就是“foobar”，并为其加下“.c”的后缀，于是，我们的依赖目标就是“foo.c bar.c”。而命令中的“<code class="language-plaintext highlighter-rouge">$&lt;</code>”和“<code class="language-plaintext highlighter-rouge">$@</code>”则是自动化变量，“<code class="language-plaintext highlighter-rouge">$&lt;</code>”表示所有的依赖目标集（也就是“foo.c bar.c”），“<code class="language-plaintext highlighter-rouge">$@</code>”表示目标集（也就是”foo.o bar.o”）。于是，上面的规则展开后等价于下面的规则：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">foo.o </span><span class="o">:</span> <span class="nf">foo.c</span>
       <span class="err">$(CC)</span> <span class="err">-c</span> <span class="err">$(CFLAGS)</span> <span class="err">foo.c</span> <span class="err">-o</span> <span class="err">foo.o</span>
 
@@ -586,7 +586,7 @@ prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式�
 <span class="nl">$(filter %.elc,$(files))</span><span class="o">:</span> <span class="nf">%.elc: %.el</span>
       <span class="err">emacs</span> <span class="err">-f</span> <span class="err">batch-byte-compile</span> <span class="err">$&lt;</span>
 </code></pre></div></div>
-<p><code class="highlighter-rouge">$(filter %.o,$(files))</code>表示调用Makefile的filter函数，过滤“<code class="highlighter-rouge">$filter</code>”集，只要其中模式为“%.o”的内容。其的它内容，我就不用多说了吧。这个例字展示了Makefile中更大的弹性。</p>
+<p><code class="language-plaintext highlighter-rouge">$(filter %.o,$(files))</code>表示调用Makefile的filter函数，过滤“<code class="language-plaintext highlighter-rouge">$filter</code>”集，只要其中模式为“%.o”的内容。其的它内容，我就不用多说了吧。这个例字展示了Makefile中更大的弹性。</p>
 
 <p><strong>3.8 自动生成依赖性</strong><br />
 在Makefile中，我们的依赖关系可能会需要包含一系列的头文件，比如，如果我们的main.c中有一句“#include “defs.h””，那么我们的依赖关系应该是：</p>
@@ -600,7 +600,7 @@ prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式�
 </code></pre></div></div>
 <p>于是由编译器自动生成的依赖关系，这样一来，你就不必再手动书写若干文件的依赖关系，而由编译器自动生成了。需要提醒一句的是，如果你使用GNU的C/C++编译器，你得用“-MM”参数，不然，“-M”参数会把一些标准库的头文件也包含进来。</p>
 
-<p><code class="highlighter-rouge">gcc -M main.c</code>的输出是：</p>
+<p><code class="language-plaintext highlighter-rouge">gcc -M main.c</code>的输出是：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">main.o</span><span class="o">:</span> <span class="nf">main.c defs.h /usr/include/stdio.h /usr/include/features.h </span>\
 <span class="nf">      /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h </span>\
 <span class="nf">      /usr/lib/gcc-lib/i486-suse-linux/2.95.3/include/stddef.h </span>\
@@ -611,8 +611,8 @@ prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式�
 <span class="nf">      /usr/lib/gcc-lib/i486-suse-linux/2.95.3/include/stdarg.h </span>\
 <span class="nf">      /usr/include/bits/stdio_lim.h</span>
 </code></pre></div></div>
-<p><code class="highlighter-rouge">gcc -MM main.c</code>的输出则是：<br />
-<code class="highlighter-rouge">main.o: main.c defs.h</code></p>
+<p><code class="language-plaintext highlighter-rouge">gcc -MM main.c</code>的输出则是：<br />
+<code class="language-plaintext highlighter-rouge">main.o: main.c defs.h</code></p>
 
 <p>那么，编译器的这个功能如何与我们的Makefile联系在一起呢。因为这样一来，我们的Makefile也要根据这些源文件重新生成，让Makefile自已依赖于源文件？这个功能并不现实，不过我们可以有其它手段来迂回地实现这一功能。GNU组织建议把编译器为每一个源文件的自动生成的依赖关系放到一个文件中，为每一个“name.c”的文件都生成一个“name.d”的Makefile文件，[.d]文件中就存放对应[.c]文件的依赖关系。<br />
 于是，我们可以写出[.c]文件和[.d]文件的依赖关系，并让make自动更新或自成[.d]文件，并把其包含在我们的主Makefile中，这样，我们就可以自动化地生成每个文件的依赖关系了。<br />
@@ -623,7 +623,7 @@ prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式�
       <span class="nl">sed 's,\($*\)\.o[ </span><span class="o">:</span><span class="nf">]*</span><span class="p">,</span>\1<span class="nf">.o $@ : </span><span class="p">,</span><span class="nf">g' &lt; $@.$$$$ &gt; $@; </span>\
 <span class="nf">      rm -f $@.$$$$</span>
 </code></pre></div></div>
-<p>这个规则的意思是，所有的[.d]文件依赖于[.c]文件，“<code class="highlighter-rouge">rm-f $@</code>”的意思是删除所有的目标，也就是[.d]文件，第二行的意思是，为每个依赖文件“<code class="highlighter-rouge">$&lt;</code>”，也就是[.c]文件生成依赖文件，“<code class="highlighter-rouge">$@</code>”表示模式“%.d”文件，如果有一个C文件是name.c，那么“%”就是“name”，<code class="highlighter-rouge">$$$$</code>为字符串”<code class="highlighter-rouge">$$</code>“意为进程号，一个随机编号，第二行生成的文件有可能是“name.d.12345”，第三行使用sed命令做了一个替换，关于sed命令的用法请参看相关的使用文档，<code class="highlighter-rouge">($*)</code>为第一个分组依赖去掉后缀，依次取出所有依赖分组，重组后赋给$@。第四行就是删除临时文件。
+<p>这个规则的意思是，所有的[.d]文件依赖于[.c]文件，“<code class="language-plaintext highlighter-rouge">rm-f $@</code>”的意思是删除所有的目标，也就是[.d]文件，第二行的意思是，为每个依赖文件“<code class="language-plaintext highlighter-rouge">$&lt;</code>”，也就是[.c]文件生成依赖文件，“<code class="language-plaintext highlighter-rouge">$@</code>”表示模式“%.d”文件，如果有一个C文件是name.c，那么“%”就是“name”，<code class="language-plaintext highlighter-rouge">$$$$</code>为字符串”<code class="language-plaintext highlighter-rouge">$$</code>“意为进程号，一个随机编号，第二行生成的文件有可能是“name.d.12345”，第三行使用sed命令做了一个替换，关于sed命令的用法请参看相关的使用文档，<code class="language-plaintext highlighter-rouge">($*)</code>为第一个分组依赖去掉后缀，依次取出所有依赖分组，重组后赋给$@。第四行就是删除临时文件。
 总而言之，这个模式要做的事就是在编译器生成的依赖关系中加入[.d]文件的依赖，即把依赖关系：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">main.o </span><span class="o">:</span> <span class="nf">main.c defs.h</span>
 </code></pre></div></div>
@@ -634,7 +634,7 @@ prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式�
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">sources</span> <span class="o">=</span> foo.c bar.c
 <span class="k">include</span><span class="sx"> $(sources:.c=.d)</span>
 </code></pre></div></div>
-<p>上述语句中的“<code class="highlighter-rouge">$(sources:.c=.d)</code>”中的“.c=.d”的意思是做一个替换，把变量<code class="highlighter-rouge">$(sources)</code>所有[.c]的字串都替换成[.d]，关于这个“替换”的内容，在后面我会有更为详细的讲述。当然，你得注意次序，因为include是按次来载入文件，最先载入的[.d]文件中的目标会成为默认目标
+<p>上述语句中的“<code class="language-plaintext highlighter-rouge">$(sources:.c=.d)</code>”中的“.c=.d”的意思是做一个替换，把变量<code class="language-plaintext highlighter-rouge">$(sources)</code>所有[.c]的字串都替换成[.d]，关于这个“替换”的内容，在后面我会有更为详细的讲述。当然，你得注意次序，因为include是按次来载入文件，最先载入的[.d]文件中的目标会成为默认目标
 <br />
 <br /></p>
 
@@ -744,7 +744,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">foo.c </span><span class="o">:</span> <span class="nf">foo.y</span>
       <span class="err">$(run-yacc)</span>
 </code></pre></div></div>
-<p>我们可以看见，要使用这个命令包，我们就好像使用变量一样。在这个命令包的使用中，命令包“run-yacc”中的“<code class="highlighter-rouge">$^</code>”就是“foo.y”，“<code class="highlighter-rouge">$@</code>”就是“foo.c”（有关这种以“$”开头的特殊变量，我们会在后面介绍），make在执行命令包时，命令包中的每个命令会被依次独立执行。<br />
+<p>我们可以看见，要使用这个命令包，我们就好像使用变量一样。在这个命令包的使用中，命令包“run-yacc”中的“<code class="language-plaintext highlighter-rouge">$^</code>”就是“foo.y”，“<code class="language-plaintext highlighter-rouge">$@</code>”就是“foo.c”（有关这种以“$”开头的特殊变量，我们会在后面介绍），make在执行命令包时，命令包中的每个命令会被依次独立执行。<br />
 <br />
 <br /></p>
 
@@ -754,7 +754,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 </blockquote>
 
 <p><strong>一、变量的基础</strong><br />
-变量在声明时需要给予初值，而在使用时，需要给在变量名前加上“<code class="highlighter-rouge">$</code>”符号，但最好用小括号“()”或是大括号“{}”把变量给包括起来。如果你要使用真实的“<code class="highlighter-rouge">$</code>”字符，那么你需要用“<code class="highlighter-rouge">$$</code>”来表示。变量可以使用在许多地方，如规则中的“目标”、“依赖”、“命令”以及新的变量中。</p>
+变量在声明时需要给予初值，而在使用时，需要给在变量名前加上“<code class="language-plaintext highlighter-rouge">$</code>”符号，但最好用小括号“()”或是大括号“{}”把变量给包括起来。如果你要使用真实的“<code class="language-plaintext highlighter-rouge">$</code>”字符，那么你需要用“<code class="language-plaintext highlighter-rouge">$$</code>”来表示。变量可以使用在许多地方，如规则中的“目标”、“依赖”、“命令”以及新的变量中。</p>
 
 <p>先看一个例子：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">objects</span> <span class="o">=</span> program.o foo.o utils.o
@@ -783,7 +783,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <span class="nl">all</span><span class="o">:</span>
       <span class="err">echo</span> <span class="err">$(foo)</span>
 </code></pre></div></div>
-<p>我们执行“make all”将会打出变量<code class="highlighter-rouge">$(foo)</code>的值是“Huh?”（ <code class="highlighter-rouge">$(foo)</code>的值是<code class="highlighter-rouge">$(bar)</code>，<code class="highlighter-rouge">$(bar)</code>的值是<code class="highlighter-rouge">$(ugh)</code>，<code class="highlighter-rouge">$(ugh)</code>的值是“Huh?”）可见，变量是可以使用后面的变量来定义的。
+<p>我们执行“make all”将会打出变量<code class="language-plaintext highlighter-rouge">$(foo)</code>的值是“Huh?”（ <code class="language-plaintext highlighter-rouge">$(foo)</code>的值是<code class="language-plaintext highlighter-rouge">$(bar)</code>，<code class="language-plaintext highlighter-rouge">$(bar)</code>的值是<code class="language-plaintext highlighter-rouge">$(ugh)</code>，<code class="language-plaintext highlighter-rouge">$(ugh)</code>的值是“Huh?”）可见，变量是可以使用后面的变量来定义的。
 这个功能有好的地方，也有不好的地方，好的地方是，我们可以把变量的真实值推到后面来定义，如：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CFLAGS</span> <span class="o">=</span> <span class="nv">$(include_dirs)</span> <span class="nt">-O</span>
 <span class="nv">include_dirs</span> <span class="o">=</span> <span class="nt">-Ifoo</span> <span class="nt">-Ibar</span>
@@ -840,13 +840,13 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 </code></pre></div></div>
 <p><strong>三、变量高级用法</strong><br />
 这里介绍两种变量的高级使用方法，第一种是变量值的替换。
-我们可以替换变量中的共有的部分，其格式是“<code class="highlighter-rouge">$(var:a=b)</code>”或是“<code class="highlighter-rouge">${var:a=b}</code>”，其意思是，把变量“var”中所有以“a”字串“结尾”的“a”替换成“b”字串。这里的“结尾”意思是“空格”或是“结束符”。</p>
+我们可以替换变量中的共有的部分，其格式是“<code class="language-plaintext highlighter-rouge">$(var:a=b)</code>”或是“<code class="language-plaintext highlighter-rouge">${var:a=b}</code>”，其意思是，把变量“var”中所有以“a”字串“结尾”的“a”替换成“b”字串。这里的“结尾”意思是“空格”或是“结束符”。</p>
 
 <p>还是看一个示例吧：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">foo</span> <span class="o">:=</span> a.o b.o c.o
 <span class="nv">bar</span> <span class="o">:=</span> <span class="nv">$(foo:.o=.c)</span>
 </code></pre></div></div>
-<p>这个示例中，我们先定义了一个“<code class="highlighter-rouge">$(foo)</code>”变量，而第二行的意思是把“<code class="highlighter-rouge">$(foo)</code>”中所有以“.o”字串“结尾”全部替换成“.c”，所以我们的“<code class="highlighter-rouge">$(bar)</code>”的值就是“a.c b.c c.c”。
+<p>这个示例中，我们先定义了一个“<code class="language-plaintext highlighter-rouge">$(foo)</code>”变量，而第二行的意思是把“<code class="language-plaintext highlighter-rouge">$(foo)</code>”中所有以“.o”字串“结尾”全部替换成“.c”，所以我们的“<code class="language-plaintext highlighter-rouge">$(bar)</code>”的值就是“a.c b.c c.c”。
 另外一种变量替换的技术是以“静态模式”（参见前面章节）定义的，如：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">foo</span> <span class="o">:=</span> a.o b.o c.o
 <span class="nv">bar</span> <span class="o">:=</span> <span class="nv">$(foo:%.o=%.c)</span>
@@ -858,7 +858,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <span class="nv">y</span> <span class="o">=</span> z
 <span class="nv">a</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span><span class="nv">$(x)</span><span class="o">)</span>
 </code></pre></div></div>
-<p>在这个例子中，<code class="highlighter-rouge">$(x)</code>的值是“y”，所以<code class="highlighter-rouge">$($(x))</code>就是<code class="highlighter-rouge">$(y)</code>，于是<code class="highlighter-rouge">$(a)</code>的值就是“z”。（注意，是“x=y”，而不是“<code class="highlighter-rouge">x=$(y)</code>”）</p>
+<p>在这个例子中，<code class="language-plaintext highlighter-rouge">$(x)</code>的值是“y”，所以<code class="language-plaintext highlighter-rouge">$($(x))</code>就是<code class="language-plaintext highlighter-rouge">$(y)</code>，于是<code class="language-plaintext highlighter-rouge">$(a)</code>的值就是“z”。（注意，是“x=y”，而不是“<code class="language-plaintext highlighter-rouge">x=$(y)</code>”）</p>
 
 <p>我们还可以使用更多的层次：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">x</span> <span class="o">=</span> y
@@ -873,7 +873,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <span class="nv">z</span> <span class="o">=</span> Hello
 <span class="nv">a</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span><span class="nv">$(x)</span><span class="o">)</span>
 </code></pre></div></div>
-<p>这里的<code class="highlighter-rouge">$($(x))</code>被替换成了<code class="highlighter-rouge">$($(y))</code>，因为<code class="highlighter-rouge">$(y)</code>值是“z”，所以，最终结果是：<code class="highlighter-rouge">a:=$(z)</code>，也就是“Hello”。
+<p>这里的<code class="language-plaintext highlighter-rouge">$($(x))</code>被替换成了<code class="language-plaintext highlighter-rouge">$($(y))</code>，因为<code class="language-plaintext highlighter-rouge">$(y)</code>值是“z”，所以，最终结果是：<code class="language-plaintext highlighter-rouge">a:=$(z)</code>，也就是“Hello”。
 再复杂一点，我们再加上函数：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">x</span> <span class="o">=</span> variable1
 <span class="nv">variable2</span> <span class="o">:=</span> Hello
@@ -881,20 +881,20 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <span class="nv">z</span> <span class="o">=</span> y
 <span class="nv">a</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span><span class="err">$</span><span class="o">(</span><span class="nv">$(z)</span><span class="o">))</span>
 </code></pre></div></div>
-<p>这个例子中，“<code class="highlighter-rouge">$($($(z)))</code>”扩展为“<code class="highlighter-rouge">$($(y))</code>”，而其再次被扩展为“<code class="highlighter-rouge">$($(subst 1,2,$(x)))</code>”。<code class="highlighter-rouge">$(x)</code>的值是“variable1”，subst函数把“variable1”中的所有“1”字串替换成“2”字串，于是，“variable1”变成“variable2”，再取其值，所以，最终，<code class="highlighter-rouge">$(a)</code>的值就是<code class="highlighter-rouge">$(variable2)</code>的值—— “Hello”。（喔，好不容易）
+<p>这个例子中，“<code class="language-plaintext highlighter-rouge">$($($(z)))</code>”扩展为“<code class="language-plaintext highlighter-rouge">$($(y))</code>”，而其再次被扩展为“<code class="language-plaintext highlighter-rouge">$($(subst 1,2,$(x)))</code>”。<code class="language-plaintext highlighter-rouge">$(x)</code>的值是“variable1”，subst函数把“variable1”中的所有“1”字串替换成“2”字串，于是，“variable1”变成“variable2”，再取其值，所以，最终，<code class="language-plaintext highlighter-rouge">$(a)</code>的值就是<code class="language-plaintext highlighter-rouge">$(variable2)</code>的值—— “Hello”。（喔，好不容易）
 在这种方式中，或要可以使用多个变量来组成一个变量的名字，然后再取其值：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">first_second</span> <span class="o">=</span> Hello
 <span class="nv">a</span> <span class="o">=</span> first
 <span class="nv">b</span> <span class="o">=</span> second
 <span class="nv">all</span> <span class="o">=</span> <span class="err">$</span><span class="o">(</span><span class="nv">$a_$b</span><span class="o">)</span>
 </code></pre></div></div>
-<p>这里的“<code class="highlighter-rouge">$a_$b</code>”组成了“first_second”，于是，<code class="highlighter-rouge">$(all)</code>的值就是“Hello”。
+<p>这里的“<code class="language-plaintext highlighter-rouge">$a_$b</code>”组成了“first_second”，于是，<code class="language-plaintext highlighter-rouge">$(all)</code>的值就是“Hello”。
 再来看看结合第一种技术的例子：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">a_objects</span> <span class="o">:=</span> a.o b.o c.o
 <span class="nv">1_objects</span> <span class="o">:=</span> 1.o 2.o 3.o
 <span class="nv">sources</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span><span class="nv">$(a1)</span>_objects:.o<span class="o">=</span>.c<span class="o">)</span>
 </code></pre></div></div>
-<p>这个例子中，如果<code class="highlighter-rouge">$(a1)</code>的值是“a”的话，那么，$(sources)的值就是“a.c b.c c.c”；如果<code class="highlighter-rouge">$(a1)</code>的值是“1”，那么<code class="highlighter-rouge">$(sources)</code>的值是“1.c 2.c 3.c”。
+<p>这个例子中，如果<code class="language-plaintext highlighter-rouge">$(a1)</code>的值是“a”的话，那么，$(sources)的值就是“a.c b.c c.c”；如果<code class="language-plaintext highlighter-rouge">$(a1)</code>的值是“1”，那么<code class="language-plaintext highlighter-rouge">$(sources)</code>的值是“1.c 2.c 3.c”。
 再来看一个这种技术和“函数”与“条件语句”一同使用的例子：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ifdef</span> <span class="nv">do_sort</span>
       <span class="nv">func</span> <span class="o">:=</span> <span class="nb">sort</span>
@@ -904,7 +904,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <span class="nv">bar</span> <span class="o">:=</span> a d b g q c
 <span class="nv">foo</span> <span class="o">:=</span> <span class="err">$</span><span class="o">(</span><span class="nv">$(func)</span> <span class="nv">$(bar)</span><span class="o">)</span>
 </code></pre></div></div>
-<p>这个示例中，如果定义了“do_sort”，那么：<code class="highlighter-rouge">foo := $(sort a d b g q c)</code>，于是$(foo)的值就是“a b c d g q”，而如果没有定义“do_sort”，那么：<code class="highlighter-rouge">foo := $(sort a d bg q c)</code>，调用的就是strip函数。
+<p>这个示例中，如果定义了“do_sort”，那么：<code class="language-plaintext highlighter-rouge">foo := $(sort a d b g q c)</code>，于是$(foo)的值就是“a b c d g q”，而如果没有定义“do_sort”，那么：<code class="language-plaintext highlighter-rouge">foo := $(sort a d bg q c)</code>，调用的就是strip函数。
 当然，“把变量的值再当成变量”这种技术，同样可以用在操作符的左边：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">dir</span> <span class="o">=</span> foo
 <span class="nv">$(dir)_sources</span> <span class="o">:=</span> <span class="nf">$(</span><span class="nb">wildcard</span> <span class="nv">$(dir)</span>/<span class="k">*</span>.c<span class="nf">)</span>
@@ -919,7 +919,7 @@ make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">objects</span> <span class="o">=</span> main.o foo.o bar.o utils.o
 <span class="nv">objects</span> <span class="o">+=</span> another.o
 </code></pre></div></div>
-<p>于是，我们的<code class="highlighter-rouge">$(objects)</code>值变成：“main.o foo.o bar.o utils.o another.o”（another.o被追加进去了）
+<p>于是，我们的<code class="language-plaintext highlighter-rouge">$(objects)</code>值变成：“main.o foo.o bar.o utils.o another.o”（another.o被追加进去了）
 使用“+=”操作符，可以模拟为下面的这种例子：</p>
 <div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">objects</span> <span class="o">=</span> main.o foo.o bar.o utils.o
 <span class="nv">objects</span> <span class="o">:=</span> <span class="nv">$(objects)</span> another.o
@@ -988,7 +988,7 @@ make 运行时的系统环境变量可以在make开始运行时被载入到Makef
 <span class="nl">bar.o </span><span class="o">:</span> <span class="nf">bar.c</span>
       <span class="err">$(CC)</span> <span class="err">$(CFLAGS)</span> <span class="err">bar.c</span>
 </code></pre></div></div>
-<p>在这个示例中，不管全局的<code class="highlighter-rouge">$(CFLAGS)</code>的值是什么，在prog目标，以及其所引发的所有规则中（prog.o foo.o bar.o的规则），<code class="highlighter-rouge">$(CFLAGS)</code>的值都是“-g”</p>
+<p>在这个示例中，不管全局的<code class="language-plaintext highlighter-rouge">$(CFLAGS)</code>的值是什么，在prog目标，以及其所引发的所有规则中（prog.o foo.o bar.o的规则），<code class="language-plaintext highlighter-rouge">$(CFLAGS)</code>的值都是“-g”</p>
 
 <p><strong>九、模式变量</strong><br />
 在GNU的make中，还支持模式变量（Pattern-specific Variable），通过上面的目标变量中，我们知道，变量可以定义在某个目标上。模式变量的好处就是，我们可以给定一种“模式”，可以把变量定义在符合这种模式的所有目标上。</p>

@@ -232,26 +232,26 @@ DEC_PI(j);
 <h3 id="i-使用infowarningerror增加调试信息">I. 使用info/warning/error增加调试信息</h3>
 <ul>
   <li>
-    <p>方法1: <code class="highlighter-rouge">$(info, "here add the debug info")</code>但是此不能打印出.mk的行号</p>
+    <p>方法1: <code class="language-plaintext highlighter-rouge">$(info, "here add the debug info")</code>但是此不能打印出.mk的行号</p>
   </li>
   <li>
-    <p>方法2: <code class="highlighter-rouge">$(warning, "here add the debug info")</code></p>
+    <p>方法2: <code class="language-plaintext highlighter-rouge">$(warning, "here add the debug info")</code></p>
   </li>
   <li>
-    <p>方法3: <code class="highlighter-rouge">$(error, "error: this will stop the compile")</code>这个可以停止当前makefile的编译</p>
+    <p>方法3: <code class="language-plaintext highlighter-rouge">$(error, "error: this will stop the compile")</code>这个可以停止当前makefile的编译</p>
   </li>
   <li>
-    <p>方法4: <code class="highlighter-rouge">$(info, $(TARGET_DEVICE))</code>打印变量的值</p>
+    <p>方法4: <code class="language-plaintext highlighter-rouge">$(info, $(TARGET_DEVICE))</code>打印变量的值</p>
   </li>
 </ul>
 
 <h3 id="ii-使用echo增加调试信息echo只能在target后面的语句中使用且前面是个tab">II. 使用echo增加调试信息（echo只能在target：后面的语句中使用，且前面是个TAB）</h3>
 <ul>
   <li>
-    <p>方法1：<code class="highlighter-rouge"> @echo "start the compilexxxxxxxxxxxxxxxxxxxxxxx"</code></p>
+    <p>方法1：<code class="language-plaintext highlighter-rouge"> @echo "start the compilexxxxxxxxxxxxxxxxxxxxxxx"</code></p>
   </li>
   <li>
-    <p>方法2: <code class="highlighter-rouge">@echo $(files)</code></p>
+    <p>方法2: <code class="language-plaintext highlighter-rouge">@echo $(files)</code></p>
   </li>
 </ul>
 
