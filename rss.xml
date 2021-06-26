@@ -3,11 +3,11 @@
   <channel>
     <title>Kuta's Blog</title>
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 26 Jun 2021 10:22:03 +0800</pubDate>
-    <lastBuildDate>Sat, 26 Jun 2021 10:22:03 +0800</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <link>http://zsssj.github.io//</link>
+    <atom:link href="http://zsssj.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 26 Jun 2021 13:21:56 +0800</pubDate>
+    <lastBuildDate>Sat, 26 Jun 2021 13:21:56 +0800</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Kangaroos and the Cage</title>
@@ -23,8 +23,8 @@
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事有”本末”、”轻重”、”缓急”，关门是本，加高笼子是末，舍本而逐末，当然就不得要领了。管理是什么？管理就是先分析事情的主要矛盾和次要矛盾，认清事情的”本末”、”轻重”、”缓急”，然后从重要的方面下手。&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Feb 2020 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2020/02/11/kangaroos-and-the-cage.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/02/11/kangaroos-and-the-cage.html</guid>
+        <link>http://zsssj.github.io/2020/02/11/kangaroos-and-the-cage.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2020/02/11/kangaroos-and-the-cage.html</guid>
         
         <category>story</category>
         
@@ -314,8 +314,8 @@ abbrev teh the
 &lt;img src=&quot;/assets/img/Win_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2020/01/02/vim-setup.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/01/02/vim-setup.html</guid>
+        <link>http://zsssj.github.io/2020/01/02/vim-setup.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2020/01/02/vim-setup.html</guid>
         
         <category>shell</category>
         
@@ -383,8 +383,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;p&gt;如需要原版音频，请前往&lt;strong&gt;喜马拉雅&lt;/strong&gt; 搜索用户 【英文原版读物】。&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/16/successful-person.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/16/successful-person.html</guid>
+        <link>http://zsssj.github.io/2019/12/16/successful-person.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/16/successful-person.html</guid>
         
         <category>speech</category>
         
@@ -674,7 +674,7 @@ Your energy is always best spent in the present, and planning for the future. Yo
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Multiline(多行模式)&lt;/td&gt;
-      &lt;td&gt;更改\^和 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下, &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 的精确含意是:匹配\n 之前的位置以及字符串结束前的位置.)&lt;/td&gt;
+      &lt;td&gt;更改\^和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; 的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; 的精确含意是:匹配\n 之前的位置以及字符串结束前的位置.)&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Singleline(单行模式)&lt;/td&gt;
@@ -702,8 +702,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 09 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/09/regex.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/09/regex.html</guid>
+        <link>http://zsssj.github.io/2019/12/09/regex.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/09/regex.html</guid>
         
         <category>shell</category>
         
@@ -728,8 +728,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事后控制不如事中控制，事中控制不如事前控制，可惜大多数的事业经营者均未能体认到这一点，等到错误的决策造成了重大的损失才寻求弥补，有时是亡羊补牢，为时已晚。 做决策也是这样，一个公司的领导层做的决策影响的时间越久，对公司以后的发展情况越有良好的指导意义，这样的决策就是良策。&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/06/bianque.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/06/bianque.html</guid>
+        <link>http://zsssj.github.io/2019/12/06/bianque.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/06/bianque.html</guid>
         
         <category>story</category>
         
@@ -1060,8 +1060,8 @@ Your energy is always best spent in the present, and planning for the future. Yo
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/05/vim-editor.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/05/vim-editor.html</guid>
+        <link>http://zsssj.github.io/2019/12/05/vim-editor.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/05/vim-editor.html</guid>
         
         <category>shell</category>
         
@@ -1425,8 +1425,8 @@ industry.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/05/css-selector.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/05/css-selector.html</guid>
+        <link>http://zsssj.github.io/2019/12/05/css-selector.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/05/css-selector.html</guid>
         
         <category>前端开发</category>
         
@@ -1451,8 +1451,8 @@ industry.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 同样是七个人，不同的分配制度，就会有不同的风气。所以一个单位如果有不好的工作习气，一定是机制问题，一定是没有完全公平公正公开，没有严格的奖勤罚懒。如何制订这样一个制度，是每个领导需要考虑的问题。&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/03/seven-porridge.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/03/seven-porridge.html</guid>
+        <link>http://zsssj.github.io/2019/12/03/seven-porridge.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/03/seven-porridge.html</guid>
         
         <category>story</category>
         
@@ -1483,8 +1483,8 @@ industry.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 学历代表过去，只有学习力才能代表将来。尊重经验的人，才能少走弯路。一个好的团队，也应该是学习型的团队。&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/03/doctor.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/03/doctor.html</guid>
+        <link>http://zsssj.github.io/2019/12/03/doctor.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/03/doctor.html</guid>
         
         <category>story</category>
         
@@ -1831,27 +1831,27 @@ a is : hello
     &lt;tr&gt;
       &lt;td&gt;=&lt;/td&gt;
       &lt;td&gt;检测两个字符串是否相等，相等返回 true&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ $a = $b ]&lt;/code&gt; 返回 false&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ $a = $b ]&lt;/code&gt; 返回 false&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;!=&lt;/td&gt;
       &lt;td&gt;检测两个字符串是否相等，不相等返回 true&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ $a != $b ]&lt;/code&gt; 返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ $a != $b ]&lt;/code&gt; 返回 true&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;-z&lt;/td&gt;
       &lt;td&gt;检测字符串长度是否为0，为0返回 true&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ -z $a ]&lt;/code&gt; 返回 false&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ -z $a ]&lt;/code&gt; 返回 false&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;-n&lt;/td&gt;
       &lt;td&gt;检测字符串长度是否为0，不为0返回 true&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ -n $a ]&lt;/code&gt; 返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ -n $a ]&lt;/code&gt; 返回 true&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;str_name&lt;/td&gt;
       &lt;td&gt;检测字符串是否为空，不为空返回 true&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ $a ]&lt;/code&gt; 返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ $a ]&lt;/code&gt; 返回 true&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2029,15 +2029,15 @@ util结构在循环的顶部判断条件,并且如果条件一直为 false 那�
 &lt;h2 id=&quot;5-bash支持的编程模型&quot;&gt;5 Bash支持的编程模型&lt;/h2&gt;
 &lt;p&gt;Bash只支持过程式的编程模型，不支持面向对象和函数式等高级编程模型，更不支持对高级设计模式的实现。所以，如果要实现比较复杂的功能，还是使用Perl、Python或者Ruby等高级语言吧。&lt;/p&gt;
 &lt;h3 id=&quot;51-bash的传参机制&quot;&gt;5.1 Bash的传参机制&lt;/h3&gt;
-&lt;p&gt;shell通过位置参数（positional parameters）来给脚本文件传递参数，就是从命令行中传进来的参数,&lt;code class=&quot;highlighter-rouge&quot;&gt;$0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt;… 其中：&lt;/p&gt;
+&lt;p&gt;shell通过位置参数（positional parameters）来给脚本文件传递参数，就是从命令行中传进来的参数,&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$0&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$2&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$3&lt;/code&gt;… 其中：&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$0&lt;/code&gt; 是该脚本文件的名字&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; 是第一个参数, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt; 是第 2 个参数…&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$0&lt;/code&gt; 是该脚本文件的名字&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$1&lt;/code&gt; 是第一个参数, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$2&lt;/code&gt; 是第 2 个参数…&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;注意：&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$9&lt;/code&gt; 以后就需要大括号了,如 &lt;code class=&quot;highlighter-rouge&quot;&gt;${10}&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;${11}&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;${12}&lt;/code&gt;…&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$9&lt;/code&gt; 以后就需要大括号了,如 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;${10}&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;${11}&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;${12}&lt;/code&gt;…&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;另外，还有几个特殊字符用来处理参数：&lt;/p&gt;
@@ -2051,37 +2051,37 @@ util结构在循环的顶部判断条件,并且如果条件一直为 false 那�
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$#&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$#&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;传递到脚本的参数个数&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$*&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$*&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;以一个单字符串显示所有向脚本传递的参数。&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$@&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;$*&lt;/code&gt;相同，但是使用时加引号，并在引号中返回每个参数。&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$@&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;与&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$*&lt;/code&gt;相同，但是使用时加引号，并在引号中返回每个参数。&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;脚本运行的当前进程ID号&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$!&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$!&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;后台运行的最后一个进程的ID号&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$-&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$-&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;显示Shell使用的当前选项，与set命令功能相同&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$?&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$?&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$*&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;$@&lt;/code&gt; 区别:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$*&lt;/code&gt; 与 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$@&lt;/code&gt; 区别:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;相同点：都表示引用所有的位置参数;&lt;/li&gt;
   &lt;li&gt;不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 “ * “ 等价于 “1 2 3”（传递了一个参数），而 “@” 等价于 “1” “2” “3”（传递了三个参数）。&lt;br /&gt;
@@ -2103,7 +2103,7 @@ util结构在循环的顶部判断条件,并且如果条件一直为 false 那�
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;函数的参数传递&lt;/strong&gt;  &lt;br /&gt;
-函数以位置来引用传递过来的参数(就好像他们是位置参数一样), 例如&lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, …&lt;br /&gt;
+函数以位置来引用传递过来的参数(就好像他们是位置参数一样), 例如&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$2&lt;/code&gt;, …&lt;br /&gt;
 &lt;strong&gt;函数的调用&lt;/strong&gt;&lt;br /&gt;
 函数被调用或被触发, 只需要简单地用函数名来调用，有参数的话将参数依次置于函数名之后。&lt;/p&gt;
 &lt;h3 id=&quot;62-无参函数的调用&quot;&gt;6.2 无参函数的调用&lt;/h3&gt;
@@ -2375,19 +2375,19 @@ hello
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;${string/substring/replacement}&lt;/td&gt;
-      &lt;td&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt; 来代替第一个匹配的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$replacement&lt;/code&gt; 来代替第一个匹配的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;${string//substring/replacement}&lt;/td&gt;
-      &lt;td&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt; 代替所有匹配的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$replacement&lt;/code&gt; 代替所有匹配的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;${string/#substring/replacement}&lt;/td&gt;
-      &lt;td&gt;如果&lt;code class=&quot;highlighter-rouge&quot;&gt;$string&lt;/code&gt;的前缀匹配&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;, 那么就用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt;来代替匹配到的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;如果&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$string&lt;/code&gt;的前缀匹配&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$substring&lt;/code&gt;, 那么就用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$replacement&lt;/code&gt;来代替匹配到的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;${string/%substring/replacement}&lt;/td&gt;
-      &lt;td&gt;如果&lt;code class=&quot;highlighter-rouge&quot;&gt;$string&lt;/code&gt;的后缀匹配&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;, 那么就用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt;来代替匹配到的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;如果&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$string&lt;/code&gt;的后缀匹配&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$substring&lt;/code&gt;, 那么就用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$replacement&lt;/code&gt;来代替匹配到的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2528,8 +2528,8 @@ hello
 这本书内容翔实，实例丰富，既可做精钻细研的教材，又可作为手册时时查阅，真是居家旅行必备良品;-)&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/03/bash-shell.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/03/bash-shell.html</guid>
+        <link>http://zsssj.github.io/2019/12/03/bash-shell.html</link>
+        <guid isPermaLink="true">http://zsssj.github.io/2019/12/03/bash-shell.html</guid>
         
         <category>shell</category>
         

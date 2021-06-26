@@ -10,7 +10,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Bash shell - Kuta's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/12/03/bash-shell.html">
+    <meta property="og:url" content="http://zsssj.github.io/2019/12/03/bash-shell.html">
     <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
     <meta property="og:site_name" content="Kuta's Blog"> 
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -480,27 +480,27 @@ a is : hello
     <tr>
       <td>=</td>
       <td>检测两个字符串是否相等，相等返回 true</td>
-      <td><code class="highlighter-rouge">[ $a = $b ]</code> 返回 false</td>
+      <td><code class="language-plaintext highlighter-rouge">[ $a = $b ]</code> 返回 false</td>
     </tr>
     <tr>
       <td>!=</td>
       <td>检测两个字符串是否相等，不相等返回 true</td>
-      <td><code class="highlighter-rouge">[ $a != $b ]</code> 返回 true</td>
+      <td><code class="language-plaintext highlighter-rouge">[ $a != $b ]</code> 返回 true</td>
     </tr>
     <tr>
       <td>-z</td>
       <td>检测字符串长度是否为0，为0返回 true</td>
-      <td><code class="highlighter-rouge">[ -z $a ]</code> 返回 false</td>
+      <td><code class="language-plaintext highlighter-rouge">[ -z $a ]</code> 返回 false</td>
     </tr>
     <tr>
       <td>-n</td>
       <td>检测字符串长度是否为0，不为0返回 true</td>
-      <td><code class="highlighter-rouge">[ -n $a ]</code> 返回 true</td>
+      <td><code class="language-plaintext highlighter-rouge">[ -n $a ]</code> 返回 true</td>
     </tr>
     <tr>
       <td>str_name</td>
       <td>检测字符串是否为空，不为空返回 true</td>
-      <td><code class="highlighter-rouge">[ $a ]</code> 返回 true</td>
+      <td><code class="language-plaintext highlighter-rouge">[ $a ]</code> 返回 true</td>
     </tr>
   </tbody>
 </table>
@@ -678,15 +678,15 @@ util结构在循环的顶部判断条件,并且如果条件一直为 false 那�
 <h2 id="5-bash支持的编程模型">5 Bash支持的编程模型</h2>
 <p>Bash只支持过程式的编程模型，不支持面向对象和函数式等高级编程模型，更不支持对高级设计模式的实现。所以，如果要实现比较复杂的功能，还是使用Perl、Python或者Ruby等高级语言吧。</p>
 <h3 id="51-bash的传参机制">5.1 Bash的传参机制</h3>
-<p>shell通过位置参数（positional parameters）来给脚本文件传递参数，就是从命令行中传进来的参数,<code class="highlighter-rouge">$0</code>, <code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, <code class="highlighter-rouge">$3</code>… 其中：</p>
+<p>shell通过位置参数（positional parameters）来给脚本文件传递参数，就是从命令行中传进来的参数,<code class="language-plaintext highlighter-rouge">$0</code>, <code class="language-plaintext highlighter-rouge">$1</code>, <code class="language-plaintext highlighter-rouge">$2</code>, <code class="language-plaintext highlighter-rouge">$3</code>… 其中：</p>
 <ul>
-  <li><code class="highlighter-rouge">$0</code> 是该脚本文件的名字</li>
-  <li><code class="highlighter-rouge">$1</code> 是第一个参数, <code class="highlighter-rouge">$2</code> 是第 2 个参数…</li>
+  <li><code class="language-plaintext highlighter-rouge">$0</code> 是该脚本文件的名字</li>
+  <li><code class="language-plaintext highlighter-rouge">$1</code> 是第一个参数, <code class="language-plaintext highlighter-rouge">$2</code> 是第 2 个参数…</li>
 </ul>
 
 <p>注意：</p>
 <ul>
-  <li><code class="highlighter-rouge">$9</code> 以后就需要大括号了,如 <code class="highlighter-rouge">${10}</code>, <code class="highlighter-rouge">${11}</code>, <code class="highlighter-rouge">${12}</code>…</li>
+  <li><code class="language-plaintext highlighter-rouge">$9</code> 以后就需要大括号了,如 <code class="language-plaintext highlighter-rouge">${10}</code>, <code class="language-plaintext highlighter-rouge">${11}</code>, <code class="language-plaintext highlighter-rouge">${12}</code>…</li>
 </ul>
 
 <p>另外，还有几个特殊字符用来处理参数：</p>
@@ -700,37 +700,37 @@ util结构在循环的顶部判断条件,并且如果条件一直为 false 那�
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">$#</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$#</code></td>
       <td>传递到脚本的参数个数</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">$*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$*</code></td>
       <td>以一个单字符串显示所有向脚本传递的参数。</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">$@</code></td>
-      <td>与<code class="highlighter-rouge">$*</code>相同，但是使用时加引号，并在引号中返回每个参数。</td>
+      <td><code class="language-plaintext highlighter-rouge">$@</code></td>
+      <td>与<code class="language-plaintext highlighter-rouge">$*</code>相同，但是使用时加引号，并在引号中返回每个参数。</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">$$</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$$</code></td>
       <td>脚本运行的当前进程ID号</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">$!</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$!</code></td>
       <td>后台运行的最后一个进程的ID号</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">$-</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$-</code></td>
       <td>显示Shell使用的当前选项，与set命令功能相同</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">$?</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$?</code></td>
       <td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。</td>
     </tr>
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">$*</code> 与 <code class="highlighter-rouge">$@</code> 区别:</p>
+<p><code class="language-plaintext highlighter-rouge">$*</code> 与 <code class="language-plaintext highlighter-rouge">$@</code> 区别:</p>
 <ul>
   <li>相同点：都表示引用所有的位置参数;</li>
   <li>不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 “ * “ 等价于 “1 2 3”（传递了一个参数），而 “@” 等价于 “1” “2” “3”（传递了三个参数）。<br />
@@ -752,7 +752,7 @@ util结构在循环的顶部判断条件,并且如果条件一直为 false 那�
 </ul>
 
 <p><strong>函数的参数传递</strong>  <br />
-函数以位置来引用传递过来的参数(就好像他们是位置参数一样), 例如<code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, …<br />
+函数以位置来引用传递过来的参数(就好像他们是位置参数一样), 例如<code class="language-plaintext highlighter-rouge">$1</code>, <code class="language-plaintext highlighter-rouge">$2</code>, …<br />
 <strong>函数的调用</strong><br />
 函数被调用或被触发, 只需要简单地用函数名来调用，有参数的话将参数依次置于函数名之后。</p>
 <h3 id="62-无参函数的调用">6.2 无参函数的调用</h3>
@@ -1024,19 +1024,19 @@ hello
   <tbody>
     <tr>
       <td>${string/substring/replacement}</td>
-      <td>使用<code class="highlighter-rouge">$replacement</code> 来代替第一个匹配的<code class="highlighter-rouge">$substring</code></td>
+      <td>使用<code class="language-plaintext highlighter-rouge">$replacement</code> 来代替第一个匹配的<code class="language-plaintext highlighter-rouge">$substring</code></td>
     </tr>
     <tr>
       <td>${string//substring/replacement}</td>
-      <td>使用<code class="highlighter-rouge">$replacement</code> 代替所有匹配的<code class="highlighter-rouge">$substring</code></td>
+      <td>使用<code class="language-plaintext highlighter-rouge">$replacement</code> 代替所有匹配的<code class="language-plaintext highlighter-rouge">$substring</code></td>
     </tr>
     <tr>
       <td>${string/#substring/replacement}</td>
-      <td>如果<code class="highlighter-rouge">$string</code>的前缀匹配<code class="highlighter-rouge">$substring</code>, 那么就用<code class="highlighter-rouge">$replacement</code>来代替匹配到的<code class="highlighter-rouge">$substring</code></td>
+      <td>如果<code class="language-plaintext highlighter-rouge">$string</code>的前缀匹配<code class="language-plaintext highlighter-rouge">$substring</code>, 那么就用<code class="language-plaintext highlighter-rouge">$replacement</code>来代替匹配到的<code class="language-plaintext highlighter-rouge">$substring</code></td>
     </tr>
     <tr>
       <td>${string/%substring/replacement}</td>
-      <td>如果<code class="highlighter-rouge">$string</code>的后缀匹配<code class="highlighter-rouge">$substring</code>, 那么就用<code class="highlighter-rouge">$replacement</code>来代替匹配到的<code class="highlighter-rouge">$substring</code></td>
+      <td>如果<code class="language-plaintext highlighter-rouge">$string</code>的后缀匹配<code class="language-plaintext highlighter-rouge">$substring</code>, 那么就用<code class="language-plaintext highlighter-rouge">$replacement</code>来代替匹配到的<code class="language-plaintext highlighter-rouge">$substring</code></td>
     </tr>
   </tbody>
 </table>
