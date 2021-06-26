@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug skill (C&Make) - Kuta's Blog</title>
+    <meta name="author"  content="zsssj">
+    <meta name="description" content="Debug skill (C&Make)">
+    <meta name="keywords"  content="makefile">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Debug skill (C&Make) - Kuta's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2019/12/02/debug-skill.html">
+    <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
+    <meta property="og:site_name" content="Kuta's Blog"> 
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Clicky Analytics -->
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101183951);</script>
+    <script async src="//static.getclicky.com/js"></script>   
+    <!-- gitalk javascript -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>    
+    -->
+    <!-- gitalk will conflict with prism, please use it carefully. --> 
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#makefile" class="post-tag">makefile</a>
+          
+        
+      </div>
+      <h1>Debug skill (C&Make)</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>zsssj</span>
+        <time class="post-meta-item" datetime="19-12-02"><i class="iconfont icon-date"></i>02 Dec 2019</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <h2 id="c语言类调试技巧">C语言类调试技巧</h2>
+<h3 id="1-使用不同的颜色打印调试信息区分调试等级">1 使用不同的颜色打印调试信息,区分调试等级.</h3>
+
+<pre><code class="language-clike">#include &lt;stdio.h&gt;
+#include &lt;stdarg.h&gt;
+
+//仅仅是打印函数名字替换 DEBUG &lt;--&gt; printf
+#define DEBUG(format, ...) printf(format, ##__VA_ARGS__)
+
+//替换打印函数，在打印出来的内容加上前缀
+#define XFUNC_PRINT(format, arg...) printf("XFUNC: " format "", ##arg)
+
+//名字替换，并在打印出来的内容加上前缀,同时加入定位的功能。
+#define TRC_P(fmt, args...) fprintf(stderr,"  TRC_P(%s:%d):\t" fmt, __func__, __LINE__, ##args)
+
+//名字替换，并在打印出来的内容加上前缀,同时加入定位的功能，并让打印的前缀具备特殊颜色(\033[1;32m  \033[0m这些表示颜色，\t一定程度上使屏幕输出对齐)
+#define TRC_PG(fmt, args...) fprintf(stderr, "\033[1;32m  TRC_PG(%s:%d):\t\033[0m" fmt, __func__, __LINE__, ## args)
+
+//名字替换，并在打印出来的内容加上前缀,同时加入定位的功能，并让打印的前缀具备特殊颜色
+#define TRC_PR(fmt, args...) fprintf(stderr, "\033[1;31m  TRC_PR(%s:%d):\t\033[0m" fmt, __func__, __LINE__, ## args)
+
+int main(void)
+{    
+    int i= 0;    
+    
+    DEBUG("hello,%d\n",i++);    
+    XFUNC_PRINT("hello,%d\n",i++);    
+    TRC_P("hello,%d\n",i++);    
+    TRC_PG("hello,%d\n",i++);    
+    TRC_PR("hello,%d\n",i++);    
+    
+    return0;
+}
+    
+/*
+[root@localhost jz2440]# gcc test.c ;./a.out 
+hello,0
+XFUNC: hello,1  
+TRC_P(main:27):       hello,2  
+TRC_PG(main:28):      hello,3  ----这里前缀是绿色的  
+TRC_PR(main:29):      hello,4  ----这里前缀是红色的
+*/
+</code></pre>
+
+<h3 id="2-以不同格式打印数据">2 以不同格式打印数据.</h3>
+
+<pre><code class="language-clike">#include &lt;stdio.h&gt;
+
+//以十六进制打印一个数val的值，输出格式为val=0x...
+#define HEX_PI(VAL)\
+do{\
+    printf(#VAL"=%#x,fuc:%s,line:%d\n", VAL, __FUNCTION__, __LINE__);\
+}while(0)
+
+//以十进制打印一个数val的值，输出格式为val=...
+#define DEC_PI(VAL)\
+do{\
+    printf(#VAL"=%#d,fuc:%s,line:%d\n", VAL, __FUNCTION__, __LINE__);\
+}while(0)    
+
+void main(void){    
+int i = 123;    
+int j = 123;    
+HEX_PI(i);    
+HEX_PI(j);            
+
+DEC_PI(i);    	
+DEC_PI(j);
+}
+
+//i=0x7b,fuc:main,line:17
+//j=0x7b,fuc:main,line:18
+//i=123,fuc:main,line:20
+//j=123,fuc:main,line:21
+</code></pre>
+
+<h3 id="3-配合宏开关在编译前静态指定打印等级">3 配合宏开关在编译前静态指定打印等级</h3>
+
+<pre><code class="language-clike">#if CUR_PLEVEL &gt; 5
+#define TRC_PR(fmt, args...) fprintf(stderr," TRC_P(%s:%d):\t" fmt, __func__, __LINE__, ##args)
+#endif
+</code></pre>
+
+<hr />
+
+<h2 id="makefile调试信息输出">Makefile调试信息输出</h2>
+
+<h3 id="i-使用infowarningerror增加调试信息">I. 使用info/warning/error增加调试信息</h3>
+<ul>
+  <li>
+    <p>方法1: <code class="highlighter-rouge">$(info, "here add the debug info")</code>但是此不能打印出.mk的行号</p>
+  </li>
+  <li>
+    <p>方法2: <code class="highlighter-rouge">$(warning, "here add the debug info")</code></p>
+  </li>
+  <li>
+    <p>方法3: <code class="highlighter-rouge">$(error, "error: this will stop the compile")</code>这个可以停止当前makefile的编译</p>
+  </li>
+  <li>
+    <p>方法4: <code class="highlighter-rouge">$(info, $(TARGET_DEVICE))</code>打印变量的值</p>
+  </li>
+</ul>
+
+<h3 id="ii-使用echo增加调试信息echo只能在target后面的语句中使用且前面是个tab">II. 使用echo增加调试信息（echo只能在target：后面的语句中使用，且前面是个TAB）</h3>
+<ul>
+  <li>
+    <p>方法1：<code class="highlighter-rouge"> @echo "start the compilexxxxxxxxxxxxxxxxxxxxxxx"</code></p>
+  </li>
+  <li>
+    <p>方法2: <code class="highlighter-rouge">@echo $(files)</code></p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="字体颜色控制">字体颜色控制</h2>
+<p>格式: echo -e “\033[字背景颜色;字体颜色m字符串\033[0m”</p>
+
+<p>例如:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[41;36m something here </span><span class="se">\0</span><span class="s2">33[0m"</span> 
+</code></pre></div></div>
+<p>其中41的位置代表底色, 36的位置是代表字的颜色</p>
+
+<p>那些ascii code 是对颜色调用的始末.<br />
+\033[ ; m …… \033[0m</p>
+
+<p>字背景颜色范围:40———49<br />
+40:   $\color{#000000}{黑色}$ <br />
+41:   $\color{#880000}{深红}$ <br />
+42:   $\color{#00ff00}{绿色}$  <br />
+43:   $\color{#dddd00}{黄色}$ <br />
+44:   $\color{#0000ff}{蓝色}$ <br />
+45:   $\color{#ff00ff}{紫色}$ <br />
+46:   $\color{#007700}{深绿}$ <br />
+47:   $\color{#bbbbbb}{白色}$</p>
+
+<p>字颜色:30———39 <br />
+30:   $\color{#000000}{黑色}$<br />
+31:   $\color{#ff0000}{红色}$ <br />
+32:   $\color{#00ff00}{绿色}$ <br />
+33:   $\color{#dddd00}{黄色}$ <br />
+34:   $\color{#0000ff}{蓝色}$ <br />
+35:   $\color{#ff00ff}{紫色}$ <br />
+36:   $\color{#008800}{深绿}$ <br />
+37:   $\color{#bbbbbb}{白色}$</p>
+
+<p>======ANSI控制码的说明=========================================</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>\33[0m</td>
+      <td>关闭所有属性</td>
+    </tr>
+    <tr>
+      <td>\33[1m</td>
+      <td>设置高亮度</td>
+    </tr>
+    <tr>
+      <td>\33[4m</td>
+      <td>下划线</td>
+    </tr>
+    <tr>
+      <td>\33[5m</td>
+      <td>闪烁</td>
+    </tr>
+    <tr>
+      <td>\33[7m</td>
+      <td>反显</td>
+    </tr>
+    <tr>
+      <td>\33[8m</td>
+      <td>消隐</td>
+    </tr>
+    <tr>
+      <td>\33[30m – \33[37m</td>
+      <td>设置前景色</td>
+    </tr>
+    <tr>
+      <td>\33[40m – \33[47m</td>
+      <td>设置背景色</td>
+    </tr>
+    <tr>
+      <td>\33[nA</td>
+      <td>光标上移n行</td>
+    </tr>
+    <tr>
+      <td>\33[nB</td>
+      <td>光标下移n行</td>
+    </tr>
+    <tr>
+      <td>\33[nC</td>
+      <td>光标右移n行</td>
+    </tr>
+    <tr>
+      <td>\33[nD</td>
+      <td>光标左移n行</td>
+    </tr>
+    <tr>
+      <td>\33[y;xH</td>
+      <td>设置光标位置</td>
+    </tr>
+    <tr>
+      <td>\33[2J</td>
+      <td>清屏</td>
+    </tr>
+    <tr>
+      <td>\33[K</td>
+      <td>清除从光标到行尾的内容</td>
+    </tr>
+    <tr>
+      <td>\33[s</td>
+      <td>保存光标位置</td>
+    </tr>
+    <tr>
+      <td>\33[u</td>
+      <td>恢复光标位置</td>
+    </tr>
+    <tr>
+      <td>\33[?25l</td>
+      <td>隐藏光标</td>
+    </tr>
+    <tr>
+      <td>\33[?25h</td>
+      <td>显示光标</td>
+    </tr>
+  </tbody>
+</table>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">zsssj</div>
+      <div class="bio">
+        <p>全栈设计,极客,热爱技术&设计,简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/2675326420" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//zhihu.com/people/zsssjc" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="mailto:7_xi@163.com" target="_blank">
+                    <i class="iconfont icon-email"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/zsssj" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2019/12/02/makefile.html" class="read-next-link"></a>
+        <section>
+          <span>Makefile教程</span>
+          <p>  什么是makefile？或许很多Winodws的程序员都不知道这个东西，因为那些Windows的IDE都为你做...</p>
+        </section>
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2017/07/30/mathjax-test.html" class="read-next-link"></a>
+          <section>
+            <span>MathJax Test</span>
+            <p>mathjax in markdown :)这是一个不align的公式：这是一个align的公式：注意：公式块要想...</p>
+          </section>
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Kuta's Blog ©
+  
+  
+    2017
+    -
+  
+  2021
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101183951ns.gif" /></p></noscript>
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

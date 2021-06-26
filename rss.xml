@@ -1,0 +1,2540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kuta's Blog</title>
+    <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 26 Jun 2021 10:22:03 +0800</pubDate>
+    <lastBuildDate>Sat, 26 Jun 2021 10:22:03 +0800</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Kangaroos and the Cage</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;袋鼠与笼子&quot;&gt;袋鼠与笼子…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一天动物园管理员发现袋鼠从笼子里跑出来了，于是开会讨论，一致认为是笼子的高度过低。所以他们决定将笼子的高度由原来的10米加高到20米。结果第二天他们发现袋鼠还是跑到外面来，所以他们又决定再将高度加高到30米。&lt;br /&gt;
+没想到隔天居然又看到袋鼠全跑到外面，于是管理员们大为紧张，决定一不做二不休，将笼子的高度加高到100米。&lt;br /&gt;
+一天长颈鹿和几只袋鼠们在闲聊，”你们看，这些人会不会再继续加高你们的笼子？”长颈鹿问。”很难说。”袋鼠说∶”如果他们再继续忘记关门的话！”&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事有”本末”、”轻重”、”缓急”，关门是本，加高笼子是末，舍本而逐末，当然就不得要领了。管理是什么？管理就是先分析事情的主要矛盾和次要矛盾，认清事情的”本末”、”轻重”、”缓急”，然后从重要的方面下手。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Feb 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/02/11/kangaroos-and-the-cage.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/02/11/kangaroos-and-the-cage.html</guid>
+        
+        <category>story</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Vim setup</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;最近几天在弄树莓派，装完系统，第一时间就更新VIM，新的VIM没有配置，所以简单把VIM基本配置贴在下面。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;简易配置&quot;&gt;简易配置&lt;/h2&gt;
+&lt;p&gt;先安装vim的升级版:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;vim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后进入配置文件：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim ~/.vimrc 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(如果想要超级用户也生效，需要保存到/etc/vim/vimrc.local)&lt;/p&gt;
+
+&lt;p&gt;输入以下命令后保存：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;number 
+filetype on
+&lt;span class=&quot;nb&quot;&gt;set history&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1000 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nocompatible 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shiftwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 
+colorscheme industry 
+syntax on 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindent 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;smartindent 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;showmatch 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;guioptions-&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;T 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;vb &lt;span class=&quot;nv&quot;&gt;t_vb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;ruler 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nohls 
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;incsearch 
+&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;has&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;“vms”&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  
+    &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nobackup 
+&lt;span class=&quot;k&quot;&gt;else 
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;backup 
+endif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;colorscheme&lt;/strong&gt; 有好几种，主要有&lt;em&gt;blue&lt;/em&gt;，&lt;em&gt;darkblue&lt;/em&gt;，&lt;em&gt;default&lt;/em&gt;，&lt;em&gt;delek&lt;/em&gt;，&lt;em&gt;desert&lt;/em&gt;，&lt;em&gt;elflord&lt;/em&gt;，&lt;em&gt;koehler&lt;/em&gt;，&lt;em&gt;murphy&lt;/em&gt;。大家可以在vim的本地安装配置文件夹下找到。&lt;/p&gt;
+
+&lt;p&gt;以上是简易配置，适用于初次安装使用的时候，没行号颜色不清晰改文件什么的很麻烦。&lt;/p&gt;
+
+&lt;h2 id=&quot;mac下vimrc配置&quot;&gt;Mac下.vimrc配置&lt;/h2&gt;
+&lt;p&gt;下面介绍一个我自己常用的配置，我的Macbook Air使用的如下Vim配置，推荐给大家。&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; Author: Nick Kuta
+&lt;span class=&quot;s2&quot;&gt;&quot; Date: 2019-2-18
+&quot;&lt;/span&gt; File: .vimrc
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+let skip_defaults_vim=1
+&quot;&lt;/span&gt; Configuration file &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;vim
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;modelines&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0	&lt;span class=&quot;s2&quot;&gt;&quot; CVE-2007-2438
+
+&quot;&lt;/span&gt; Normally we use vim-extensions. If you want &lt;span class=&quot;nb&quot;&gt;true &lt;/span&gt;vi-compatibility
+&lt;span class=&quot;s2&quot;&gt;&quot; remove change the following statements
+set nocompatible	&quot;&lt;/span&gt; Use Vim defaults instead of 100% vi compatibility
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;backspace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2	&lt;span class=&quot;s2&quot;&gt;&quot; more powerful backspacing
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;显示行号
+set nu
+
+&quot;&lt;/span&gt;启动时隐去援助提示
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shortmess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;atI
+
+&lt;span class=&quot;s2&quot;&gt;&quot;语法高亮
+syntax on
+
+&quot;&lt;/span&gt;不需要备份
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nobackup
+
+&lt;span class=&quot;s2&quot;&gt;&quot;没有保存或文件只读时弹出确认
+set confirm
+
+&quot;&lt;/span&gt;鼠标可用
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mouse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;a
+
+&lt;span class=&quot;s2&quot;&gt;&quot;tab缩进
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+&quot;&lt;/span&gt;文件自动检测外部更改
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoread
+
+&lt;span class=&quot;s2&quot;&gt;&quot;c文件自动缩进
+set cindent
+
+&quot;&lt;/span&gt;自动对齐
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindent
+
+&lt;span class=&quot;s2&quot;&gt;&quot;智能缩进
+set smartindent
+
+&quot;&lt;/span&gt;高亮查找匹配
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;hlsearch
+
+&lt;span class=&quot;s2&quot;&gt;&quot;显示匹配
+set showmatch
+
+&quot;&lt;/span&gt;显示标尺，就是在右下角显示光标位置
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;ruler
+
+&lt;span class=&quot;s2&quot;&gt;&quot;------------------------------
+set splitbelow
+set splitright
+&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;split &lt;/span&gt;navigations
+nnoremap &amp;lt;C-J&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-J&amp;gt;
+nnoremap &amp;lt;C-K&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-K&amp;gt;
+nnoremap &amp;lt;C-L&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-L&amp;gt;
+nnoremap &amp;lt;C-H&amp;gt; &amp;lt;C-W&amp;gt;&amp;lt;C-H&amp;gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;------------------------------
+&quot;&lt;/span&gt; Enable folding with the spacebar
+nnoremap &amp;lt;space&amp;gt; za
+&lt;span class=&quot;s2&quot;&gt;&quot;设置键盘映射，通过空格设置折叠
+&quot;&lt;/span&gt;nnoremap &amp;lt;space&amp;gt; @&lt;span class=&quot;o&quot;&gt;=((&lt;/span&gt;foldclosed&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&amp;lt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;?&lt;span class=&quot;s1&quot;&gt;'zc'&lt;/span&gt;:&lt;span class=&quot;s1&quot;&gt;'zo'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&amp;lt;CR&amp;gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;不要闪烁
+set novisualbell
+
+&quot;&lt;/span&gt;启动显示状态行
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;laststatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2
+
+&lt;span class=&quot;s2&quot;&gt;&quot;浅色显示当前行
+autocmd InsertLeave * se nocul
+
+&quot;&lt;/span&gt;用浅色高亮当前行
+autocmd InsertEnter &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; se cul
+
+&lt;span class=&quot;s2&quot;&gt;&quot;显示输入的命令
+set showcmd
+
+&quot;&lt;/span&gt;被分割窗口之间显示空白
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fillchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;vert:/
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fillchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;stl:/
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fillchars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;stlnc:/
+
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; vundle 环境设置
+filetype off
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;rtp+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/bundle/Vundle.vim
+&lt;span class=&quot;s2&quot;&gt;&quot; vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tomasr/molokai'
+Plugin 'Lokaltog/vim-powerline' &quot;&lt;/span&gt;状态条
+Plugin &lt;span class=&quot;s1&quot;&gt;'octol/vim-cpp-enhanced-highlight'&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Cpp语法高亮
+Plugin 'Raimondi/delimitMate' &quot;&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;'vim-scripts/phd'&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;'vim-scripts/indentpython.vim'&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;python缩进
+Plugin 'scrooloose/syntastic' &quot;&lt;/span&gt;语法检查
+Plugin &lt;span class=&quot;s1&quot;&gt;'nvie/vim-flake8'&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PEP8代码风格检查
+Plugin 'jnurmine/Zenburn' &quot;&lt;/span&gt;配色
+Plugin &lt;span class=&quot;s1&quot;&gt;'https://github.com/vim-scripts/The-NERD-Commenter'&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+&quot;&lt;/span&gt; 插件列表结束
+call vundle#end&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+filetype plugin indent on
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 作者名称
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:DoxygenToolkit_authorName&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Nick - xxxx@xxx.com&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:DoxygenToolkit_briefTag_funcName&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yes&quot;&lt;/span&gt;
+map &amp;lt;leader&amp;gt;da :DoxAuthor&amp;lt;CR&amp;gt;
+map &amp;lt;leader&amp;gt;df :Dox&amp;lt;CR&amp;gt;
+map &amp;lt;leader&amp;gt;db :DoxBlock&amp;lt;CR&amp;gt;
+map &amp;lt;leader&amp;gt;dc a /&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/&amp;lt;LEFT&amp;gt;&amp;lt;LEFT&amp;gt;&amp;lt;LEFT&amp;gt;
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 配色方案
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dark
+colorscheme molokai
+&lt;span class=&quot;s2&quot;&gt;&quot;colorscheme phd
+&quot;&lt;/span&gt;colorscheme Zenburn
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+let g:NERDSpaceDelims = 1 &quot;&lt;/span&gt; 注释的时候自动加个空格
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 禁止显示菜单和工具条
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;guioptions-&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;m
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;guioptions-&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;T
+
+&lt;span class=&quot;s2&quot;&gt;&quot; 总是显示状态栏
+set laststatus=2
+
+&quot;&lt;/span&gt; 禁止折行
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nowrap
+
+&lt;span class=&quot;s2&quot;&gt;&quot; 设置状态栏主题风格
+let g:Powerline_colorscheme='solarized256'
+
+syntax keyword cppSTLtype initializer_list 
+let python_highlight_all=1 &quot;&lt;/span&gt;python语法高亮
+
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:syntastic_always_populate_loc_list &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:syntastic_check_on_open &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;g:syntastic_auto_jump &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+&quot;&lt;/span&gt; 基于缩进或语法进行代码折叠
+&lt;span class=&quot;s2&quot;&gt;&quot;set foldmethod=indent
+set foldmethod=syntax
+&quot;&lt;/span&gt; 启动 vim 时关闭折叠代码
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;nofoldenable
+
+&lt;span class=&quot;s2&quot;&gt;&quot;允许用退格键删除字符
+set backspace=indent,eol,start
+
+&quot;&lt;/span&gt;编码设置
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8
+
+&lt;span class=&quot;s2&quot;&gt;&quot;共享剪切板
+set clipboard=unnamed
+
+&quot;&lt;/span&gt;标记多余空白
+&lt;span class=&quot;s2&quot;&gt;&quot;au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s\+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+au BufNewFile,BufRead &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.py
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;softtabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;shiftwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;textwidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;79 |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;expandtab |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindent |
+&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileformat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;unix |
+
+&lt;span class=&quot;s2&quot;&gt;&quot;=====================================================
+au BufNewFile,BufRead *.js,*.html,*.css
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;set tabstop=2 |
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;set softtabstop=2 |
+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;set shiftwidth=2 |
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;宏定义
+iabbrev #b /************************************************************
+iabbrev #e &amp;lt;Space&amp;gt;************************************************************/
+iabbrev NK Nick Kuta
+iabbrev ad advertisement
+iabbrev #i #include
+iabbrev #d #define
+abbrev teh the
+
+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;VIM实际效果如下图所示：&lt;/strong&gt;
+&lt;img src=&quot;/assets/img/Mac_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安装需要的插件&lt;/strong&gt;&lt;br /&gt;
+将想要安装的插件，按照地址填写方法，将地址填写在 vundle#begin 和 vundle#end 之间就可以保存之后，有两种方法安装插件。&lt;br /&gt;
+运行 vim ,再运行 &lt;strong&gt;:PluginInstall&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim xxx
+:PluginInstall
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;通过命令行直接安装 &lt;strong&gt;vim +PluginInstall +qall&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim +PluginInstall +qall 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装完成之后，插件就可以使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;移除不需要的插件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;编辑.vimrc文件移除的你要移除的插件所对应的plugin那一行。&lt;/li&gt;
+  &lt;li&gt;保存退出当前的vim&lt;/li&gt;
+  &lt;li&gt;重新打开vim，输入命令 &lt;em&gt;BundleClean&lt;/em&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;其他常用命令&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;更新插件 &lt;em&gt;BundleUpdate&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;列出所有插件 &lt;em&gt;BundleList&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;查找插件 &lt;em&gt;BundleSearch&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;最后是一张Windows下的VIM配色效果：&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/Win_vim_web.png&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/01/02/vim-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/01/02/vim-setup.html</guid>
+        
+        <category>shell</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
+    
+      <item>
+        <title>Successful person</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;鼓舞人心的英文演讲每个人对成功的定义不同但总的来说想要获得成功成为成功人士以下十条内容是应该要做到的&quot;&gt;鼓舞人心的英文演讲，每个人对成功的定义不同，但总的来说想要获得成功，成为成功人士，以下十条内容是应该要做到的。&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt; &lt;abbr style=&quot;font-size:30px;color:#00ddff&quot;&gt;♪&lt;/abbr&gt; &lt;a href=&quot;/assets/mp3/successful-person.mp3&quot;&gt;&lt;em&gt;音频下载请点这里&lt;/em&gt; MP3&lt;/a&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;原始演讲内容-original-speech-content&quot;&gt;原始演讲内容 Original speech content：&lt;/h2&gt;
+
+&lt;p&gt;Success means different things to different people. For some, success might mean financial achievements: becoming a millionaire for example. For some, it might mean accolades, for sportsmen it may mean trophies, championships or medals. For some, being successful might simply mean achieving a state of wellness, health or happiness. Whatever it means to you, take note of these 10 habits of all successful people. They apply to any area, and any meaning of success.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-they-set-goals&quot;&gt;1. They Set GOALS.&lt;/h3&gt;
+
+&lt;p&gt;You’ve probably never met a successful person who doesn’t set goals, because the chances of you finding what you want without a clear target to move toward are right around zero. If you don’t know where you are going, you will end up some place you didn’t plan to be. Setting goals should be the NUMBER ONE priority for anyone seeking success. Define exactly what it is you want – your END GOAL. Break down exactly what is required to get there – MINI GOALS. Make sure your why, your reason for doing what you must do is strong. So when you hit those roadblocks, when things go wrong as they always do, you have the strength and purpose to keep going.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-they-take-responsibility-for-their-life&quot;&gt;2. They Take Responsibility For Their Life.&lt;/h3&gt;
+
+&lt;p&gt;Another key attribute of all successful people is they take complete responsibility for the success and the failures in their life. Unlike the majority, they never play the victim role. If something doesn’t work out, they don’t blame others – they learn the lesson, learn one more way NOT to do something, and move on quickly.
+Your energy is always best spent in the present, and planning for the future. Your thought process should always be “how can I make this work” and “what can I learn from this”. Never living in the past or making excuses as to why you aren’t where you should be. Remember EVERYONE suffers setbacks, everyone has the opportunity to either blame others and circumstances, or to focus on moving on and creating a better future, regardless of what has happened, you decide what you do now.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-they-have-great-self-discipline&quot;&gt;3. They Have Great Self Discipline&lt;/h3&gt;
+
+&lt;p&gt;Discipline is a strong trait of all successful people, and it is one that can be developed with consistent use. Anyone that works from home or unsupervised knows the importance of self discipline – when you’re alone will you choose to go through social media, watch cat videos on YouTube, or do something that will be beneficial for your future? It is much easier to have discipline if you have clear goals and a meaningful purpose, something that is much more important than meaningless distractions.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-they-are-obsessed-with-self-development&quot;&gt;4. They Are Obsessed With Self Development&lt;/h3&gt;
+
+&lt;p&gt;You can’t really claim to be successful if you have given up working on yourself. This doesn’t mean you are never satisfied, just that you know it is human nature to want to grow and learn new things. Be open to learn new things and develop your mind, through mentors, audio books and reading. The more you learn the more you will earn financially and spiritually.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-they-read-a-lot&quot;&gt;5. They Read. A LOT!&lt;/h3&gt;
+
+&lt;p&gt;Reading is a common past time of many highly successful people. The majority these days can’t sit alone for 2 minutes without becoming “bored” picking up their phone to go on social media, probably to post about how bored they are. Successful people you however are almost always happy to be alone, to be alone in quiet, to have the opportunity to read or listen to something that will benefit their mind, and their future. If you’re not a reader, try audio books. You can play them in your car, in the gym work while you shower, and use time that might normally be wasted to gain new skills, new strengths.&lt;/p&gt;
+
+&lt;h3 id=&quot;6-they-manage-their-time-well&quot;&gt;6. They Manage Their Time Well&lt;/h3&gt;
+
+&lt;p&gt;Time management is essential to success. Unsuccessful people usually get stressed and overwhelmed when there are too many tasks on their to-do list. Successful people are rarely fazed, they prioritize the big-payoff and most rewarding tasks first, and leave the insignificant ones last, knowing it matters most to do the most valuable tasks first successful people plan in advance, days, weeks, months ahead, knowing clearly what needs to be done to complete their jobs and reach their goals.&lt;/p&gt;
+
+&lt;h3 id=&quot;7-they-take-risks&quot;&gt;7. They Take Risks&lt;/h3&gt;
+
+&lt;p&gt;If you don’t by a ticket, you can’t win the raffle. If you don’t take big risks you can’t achieve big rewards. Successful people know that there will be times they will need to take risks in order to get where they need to go. Often most people won’t take those same risks for fear of failure, however the greater failure to successful people would be that of regret. Risk going for the life you want, or guarantee living with one you don’t want.&lt;/p&gt;
+
+&lt;h3 id=&quot;8-they-keep-going-when-they-suffer-failure--setbacks&quot;&gt;8. They Keep Going When They Suffer Failure &amp;amp; Setbacks&lt;/h3&gt;
+
+&lt;p&gt;We all suffer setbacks. Every single person that attempts to live their dream life will suffers through failure, many of them might even lose everything. Most quit, the successful never quit. They keep going, knowing their greatest character is formed in adversity. Knowing their success story is being written in every moment, and it will be especially good now they have a comeback story.&lt;/p&gt;
+
+&lt;h3 id=&quot;9-they-find-a-way-to-win&quot;&gt;9. They Find A Way To Win&lt;/h3&gt;
+
+&lt;p&gt;Successful people FIND A WAY. Period. Whatever life throws their way, they deal with it, dodge it, smash through it, whatever is required they find a way to win. It’s the whatever it takes mentality. It’s the confidence in knowing whatever happens, I will give my all and leave nothing on the table. I WILL FIND A WAY TO WIN!&lt;/p&gt;
+
+&lt;h3 id=&quot;10-they-do-what-they-love&quot;&gt;10. They Do What They Love&lt;/h3&gt;
+
+&lt;p&gt;If you are not doing what you love, you can’t really claim yourself a success. Spending the majority of your working hours also known as the majority of your life doing things you hate for money is not successful living. It’s torture to the soul. If you need to suffer doing something you don’t like to get to a life you love, do that, but do not lose sight of exactly that, your ultimate purpose, find your life purpose think of all the things you love to do more than anything in the world, then brainstorm how you can turn those passions into profit. Doing what you love every day, even if you were taking a big cut it will be worth it, do you love everyday, and you will never work a day in your life.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;如需要原版音频，请前往&lt;strong&gt;喜马拉雅&lt;/strong&gt; 搜索用户 【英文原版读物】。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/16/successful-person.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/16/successful-person.html</guid>
+        
+        <category>speech</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RegEX</title>
+        <description>&lt;blockquote&gt;
+  &lt;h1 id=&quot;正则表达式&quot;&gt;正则表达式&lt;/h1&gt;
+  &lt;p&gt;正则表达式是对字符串（包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为“元字符”））操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。正则表达式是一种文本模式，模式描述在搜索文本时要匹配的一个或多个字符串。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;正则表达式非常有用，在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。 正则表达式就是用于描述这些规则的工具。换句话说，&lt;strong&gt;正则表达式就是记录文本规则的代码&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;元字符&quot;&gt;元字符&lt;/h2&gt;
+&lt;p&gt;  有几个很有用的元字符了，如\b,. , * ，还有 \d.正则表达式里还有更多的元字符，比如\s 匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。\w 匹配字母或数字或下划线或汉字等。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的元字符代码&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;.&lt;/td&gt;
+      &lt;td&gt;匹配除换行符以外的任意字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\w&lt;/td&gt;
+      &lt;td&gt;匹配字母或数字或下划线或汉字&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\s&lt;/td&gt;
+      &lt;td&gt;匹配任意的空白符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\d&lt;/td&gt;
+      &lt;td&gt;匹配数字&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\b&lt;/td&gt;
+      &lt;td&gt;匹配单词的开始或结束&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;^&lt;/td&gt;
+      &lt;td&gt;匹配字符串的开始&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$&lt;/td&gt;
+      &lt;td&gt;匹配字符串的结束&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;字符转义&quot;&gt;字符转义&lt;/h2&gt;
+&lt;p&gt;  如果你想查找元字符本身的话，比如你查找.,或者*,就出现了问题：你没办法指定它们，因为它们会被解释成别的意思。这时你就得使用\来取消这些字符的特殊意义。因此，你应该使用 \. 和 \*。当然，要查找\本身，你也得用 \\ 。 &lt;br /&gt;
+  例如：deerchao\.net 匹配 deerchao.net，C:\\Windows 匹配 C:\Windows。&lt;/p&gt;
+
+&lt;h2 id=&quot;重复&quot;&gt;重复&lt;/h2&gt;
+&lt;p&gt;  你已经看过了前面的*,+,{2} , {5,12}这几个匹配重复的方式了。下面是正则表达式中所有的限定符(指定数量的代码，例如*,{5,12}等)：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的限定符代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;*&lt;/td&gt;
+      &lt;td&gt;重复零次或更多次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;+&lt;/td&gt;
+      &lt;td&gt;重复一次或更多次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;?&lt;/td&gt;
+      &lt;td&gt;重复零次或一次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n}&lt;/td&gt;
+      &lt;td&gt;重复 n 次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,}&lt;/td&gt;
+      &lt;td&gt;重复 n 次或更多次&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,m}&lt;/td&gt;
+      &lt;td&gt;重复 n 到 m 次&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;  下面是一些使用重复的例子：&lt;br /&gt;
+  &lt;em&gt;Windows\d+&lt;/em&gt;匹配 Windows 后面跟1个或更多数字&lt;br /&gt;
+  &lt;em&gt;^\w+&lt;/em&gt;匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)&lt;/p&gt;
+
+&lt;h2 id=&quot;字符类&quot;&gt;字符类&lt;/h2&gt;
+&lt;p&gt;  要想查找数字，字母或数字，空白是很简单的，因为已经有了对应这些字符集合的元字符，但是如果你想匹配没有预定义元字符的字符集合(比如元音字母 a,e,i,o,u)，应该怎么办？&lt;br /&gt;
+  很简单，你只需要在方括号里列出它们就行了，像[aeiou]就匹配任何一个英文元
+音字母，[.?!]匹配标点符号(.或?或!)。&lt;br /&gt;
+  我们也可以轻松地指定一个字符&lt;strong&gt;范围&lt;/strong&gt;，像[0-9]代表的含意与\d 就是完全一致的：一位数字；同理[a-z0-9A-Z_]也完全等同于\w（如果只考虑英文的话）。&lt;/p&gt;
+
+&lt;h2 id=&quot;分枝条件&quot;&gt;分枝条件&lt;/h2&gt;
+&lt;p&gt;  有时候格式比较复杂，可能会匹配到不适合或不符合的数据。要解决这个问题，我们需要用到&lt;strong&gt;分枝条件&lt;/strong&gt;。正则表达式里的分枝条件 &lt;strong&gt;”|”&lt;/strong&gt; 指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用|把不同的规则分隔开。听不明白？没关系，看例子：&lt;br /&gt;
+  0\d{2}-\d{8}|0\d{3}-\d{7}这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号， 8位本地号(如010-12345678) ，一种是 4 位区号， 7位本地号(0376-2233445) 。&lt;br /&gt;
+  \(0\d{2}\)[- ]?\d{8}|0\d{2}[- ]?\d{8}这个表达式匹配3位区号的电话号码，其中区号可以用小括号括起来，也可以不用，区号与本地号间可以用连字号或空格间隔，也可以没有间隔。你可以试试用分枝条件把这个表达式扩展成也支持4位区号的。&lt;/p&gt;
+
+&lt;h2 id=&quot;分组&quot;&gt;分组&lt;/h2&gt;
+&lt;p&gt;  我们已经提到了怎么重复单个字符（直接在字符后面加上限定符就行了）；但如果想要重复多个字符又该怎么办？你可以用小括号来指定&lt;strong&gt;子表达式&lt;/strong&gt;(也叫做&lt;strong&gt;分组&lt;/strong&gt;)，然后你就可以指定这个子表达式的重复次数了，你也可以对子表达式进行其它一些操作(后面会有介绍)。&lt;br /&gt;
+  (\d{1,3}\.){3}\d{1,3}是一个简单的 IP 地址匹配表达式。要理解这个表达式，请按下列顺序分析它：\d{1,3}匹配1到3位的数字，(\d{1,3}\.){3}匹配三位数字加上一个英文句号 (这个整体也就是这个&lt;strong&gt;分组&lt;/strong&gt;)重复 3次，最后再加上 一个一到三位的数字(\d{1,3})。&lt;br /&gt;
+  不幸的是，它也将匹配&lt;em&gt;256.300.888.999&lt;/em&gt;这种不可能存在的IP地址。如果能使用算术比较的话，或许能简单地解决这个问题，但是正则表达式中并不提供关于数学的任何功能，所以只能使用冗长的分组，选择，字符类来描述一个正确的IP地址：((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)。&lt;br /&gt;
+  理解这个表达式的关键是理解2[0-4]\d|25[0-5]|[01]?\d\d?，这里我就不细说了，你自己应该能分析得出来它的意义。&lt;/p&gt;
+
+&lt;h2 id=&quot;反义&quot;&gt;反义&lt;/h2&gt;
+&lt;p&gt;  有时需要查找不属于某个能简单定义的字符类的字符。比如想查找除了数字以外，其它任意字符都行的情况，这时需要用到&lt;strong&gt;反义&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的反义代码代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\W&lt;/td&gt;
+      &lt;td&gt;匹配任意不是字母，数字，下划线，汉字的字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\S&lt;/td&gt;
+      &lt;td&gt;匹配任意不是空白符的字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\D&lt;/td&gt;
+      &lt;td&gt;匹配任意非数字的字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\B&lt;/td&gt;
+      &lt;td&gt;匹配不是单词开头或结束的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[^x]&lt;/td&gt;
+      &lt;td&gt;匹配除了 x 以外的任意字符&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[^aeiou]&lt;/td&gt;
+      &lt;td&gt;匹配除了 aeiou 这几个字母以外的任意字符&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;后向引用&quot;&gt;后向引用&lt;/h2&gt;
+&lt;p&gt;  使用小括号”&lt;strong&gt;()&lt;/strong&gt;“指定一个子表达式后， &lt;strong&gt;匹配这个子表达式的文本&lt;/strong&gt;(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。默认情况下，每个分组会自动拥有一个&lt;strong&gt;组号&lt;/strong&gt;，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。
+  后向引用用于重复搜索前面某个分组匹配的文本。例如，\1代表分组1匹配的文本。难以理解？请看示例：&lt;br /&gt;
+  \b(\w+)\b\s+\1\b 可以用来匹配&lt;u&gt;重复的单词&lt;/u&gt;，像 &lt;em&gt;go go&lt;/em&gt; , 或者 &lt;em&gt;kitty kitty&lt;/em&gt; 。这个表达式首先是 一个单词 ，也就是 单词开始处和结束处之间的多于一个的字母或数字(\b(\w+)\b)，这个单词会被捕获到编号为1的分组中，然后是1个或几个空白符 (\s+) ，最后是分组1中捕获的内容（也就是前面匹配的那个单词）(\1)。&lt;br /&gt;
+  你也可以自己指定子表达式的&lt;strong&gt;组名&lt;/strong&gt;。要指定一个子表达式的组名，请使用这样的语法：(?&amp;lt;Word&amp;gt;\w+)(或者把尖括号换成’也行：(?’Word’\w+)),这样就把\w+的组名指定为Word了。要反向引用这个分组&lt;strong&gt;捕获&lt;/strong&gt;的内容，你可以使用\k&amp;lt;Word&amp;gt;,所以上一个例子也可以写成这样：\b(?&amp;lt;Word&amp;gt;\w+)\b\s+\k&amp;lt;Word&amp;gt;\b。&lt;br /&gt;
+  使用小括号的时候，还有很多特定用途的语法。下面列出了最常用的一些：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用分组语法分类&lt;/th&gt;
+      &lt;th&gt;代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;捕获&lt;/td&gt;
+      &lt;td&gt;(exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp,并捕获文本到自动命名的组里&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?&lt;name&gt;exp)&lt;/name&gt;&lt;/td&gt;
+      &lt;td&gt;匹配 exp,并捕获文本到名称为 name 的组里，也可以写成(?’name’exp)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?:exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp,不捕获匹配的文本，也不给此分组分配组号&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;零宽断言&lt;/td&gt;
+      &lt;td&gt;(?=exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp 前面的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?&amp;lt;=exp)&lt;/td&gt;
+      &lt;td&gt;匹配 exp 后面的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?!exp)&lt;/td&gt;
+      &lt;td&gt;匹配后面跟的不是 exp 的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;(?&amp;lt;!exp)&lt;/td&gt;
+      &lt;td&gt;匹配前面不是 exp 的位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;注释&lt;/td&gt;
+      &lt;td&gt;(?#comment)&lt;/td&gt;
+      &lt;td&gt;这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;零宽断言&quot;&gt;零宽断言&lt;/h2&gt;
+&lt;p&gt;  接下来的四个用于查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^ , $那样用于指定一个位置，这个位置应该满足一定的条件(即断言) ，因此它们也被称为&lt;strong&gt;零宽断言&lt;/strong&gt;。最好还是拿例子来说明吧：&lt;br /&gt;
+  (?=exp)也叫&lt;strong&gt;零宽度正预测先行断言&lt;/strong&gt;，它断言自身出现的位置的后面能匹配表达式exp。比如\b\w+(?=ing\b)，匹配以 ing 结尾的单词的前面部分(除了 ing 以外的部分) ，如查找&lt;em&gt;I’m singing while you’re dancing.&lt;/em&gt;时，它会匹配 &lt;u&gt;sing&lt;/u&gt; 和 &lt;u&gt;danc&lt;/u&gt;。&lt;br /&gt;
+  (?&amp;lt;=exp)也叫&lt;strong&gt;零宽度正回顾后发断言&lt;/strong&gt;，它断言自身出现的位置的前面能匹配表达式 exp。比如(?&amp;lt;=\bre)\w+\b 会匹配以 re 开头的单词的后半部分(除了 re以外的部分)，例如在查找&lt;em&gt;reading a book&lt;/em&gt;时，它匹配 &lt;u&gt;ading&lt;/u&gt; 。&lt;br /&gt;
+  假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分： ((?&amp;lt;=\d)\d{3})+\b，用它对 &lt;em&gt;1234567890&lt;/em&gt; 进行查找时结果是 234567890 。&lt;/p&gt;
+
+&lt;h2 id=&quot;负向零宽断言&quot;&gt;负向零宽断言&lt;/h2&gt;
+&lt;p&gt;  前面我们提到过怎么查找 不是某个字符或不在某个字符类里的字符的方法(反义)。但是如果我们只是想要 确保某个字符没有出现，但并不想去匹配它时怎么办？例如，如果我们想查找这样的单词–它里面出现了字母 q,但是 q 后面跟的不是字母 u,我们可以尝试这样：&lt;br /&gt;
+  \b\w*q[^u]\w*\b 匹配包含&lt;strong&gt;后面不是字母u的字母q&lt;/strong&gt;的单词。但是如果多做测试 (或者你思维足够敏锐，直接就观察出来了)，你会发现，如果 q 出现在单词的结尾的话 ，像 &lt;strong&gt;Iraq,Benq&lt;/strong&gt; 这个表达式就会出错。这是因为[^u]总要匹配一个字符，所以如果 q是单词的最后一个字符的话，后面的[^u]将会匹配 q 后面的单词分隔符( 可能是空格，或者是句号或其它的什么)，后面的\w*\b 将会匹配下一个单词，于是\b\w*q[^u]\w*\b就能匹配整个 &lt;em&gt;Iraq fighting&lt;/em&gt; 。 &lt;strong&gt;负向零宽断言&lt;/strong&gt;能解决这样的问题，因为它只匹配一个位置，并不&lt;strong&gt;消费&lt;/strong&gt;任何字符。现在，我们可以这样来解决这个问题：\b\w*q(?!u)\w*\b。&lt;br /&gt;
+  &lt;strong&gt;零宽度负预测先行断言&lt;/strong&gt;(?!exp)，断言此位置的后面不能匹配表达式 exp。例如：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字；\b((?!abc)\w)+\b 匹配不包含连续字符串 abc的单词。&lt;br /&gt;
+  同理，我们可以用(?&amp;lt;!exp), &lt;strong&gt;零宽度负回顾后发断言&lt;/strong&gt;来断言此位置的前面不能匹配表达式 exp：(?&amp;lt;![a-z])\d{7}匹配前面不是小写字母的七位数字。&lt;/p&gt;
+
+&lt;p&gt;  一个更复杂的例子：(?&amp;lt;=&amp;lt;(\w+)&amp;gt;).*(?=&amp;lt;\/\1&amp;gt;)匹配不包含属性的简单 HTML 标签内里的内容 。 (&amp;lt;?(\w+)&amp;gt;)指定了这样的&lt;strong&gt;前缀&lt;/strong&gt; ： 被尖括号括起来的单词(比如可能是&amp;lt;b&amp;gt;) ，然后是.*(任意的字符串),最后是一个 &lt;strong&gt;后缀&lt;/strong&gt;(?=&amp;lt;\/\1&amp;gt;)。注意后缀里的\/，它用到了前面提过的字符转义；\1则是一个反向引用，引用的正是捕获的第一组，前面的(\w+)匹配的内容，这样如果前缀实际上是&amp;lt;b&amp;gt;的话，后缀就是&amp;lt;/b&amp;gt;了。整个表达式匹配的是&amp;lt;b&amp;gt;和&amp;lt;/b&amp;gt;之间的内容(再次提醒，不包括前缀和后缀本身)。&lt;/p&gt;
+
+&lt;h2 id=&quot;注释&quot;&gt;注释&lt;/h2&gt;
+&lt;p&gt;  小括号的另一种用途是通过语法(?#comment)来包含注释。例如：2[0-4]\d(?#200-249)|25&lt;a href=&quot;?#250-255&quot;&gt;0-5&lt;/a&gt;|[01]?\d\d?(?#0-199)。&lt;br /&gt;
+  要包含注释的话，最好是启用“忽略模式里的空白符”选项，这样在编写表达式时能任意的添加空格，Tab，换行，而实际使用时这些都将被忽略。启用这个选项后，在#后面到这一行结束的所有文本都将被当成注释忽略掉。&lt;/p&gt;
+
+&lt;h2 id=&quot;贪婪与懒惰&quot;&gt;贪婪与懒惰&lt;/h2&gt;
+&lt;p&gt;  当正则表达式中包含能接受重复的限定符时，通常的行为是（在使整个表达式能得到匹配的前提下）匹配&lt;strong&gt;尽可能多&lt;/strong&gt;的字符。以这个表达式为例：$\color{#FF0000}{a.*b}$，它将会匹配最长的以 a开始，以 b 结束的字符串。如果用它来搜索 &lt;em&gt;aabab&lt;/em&gt; 的话，它会匹配整个字符串 aabab。这被称为&lt;strong&gt;贪婪&lt;/strong&gt;匹配。&lt;br /&gt;
+  有时，我们更需要 懒惰匹配，也就是匹配 尽可能少的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号?。这样$\color{#FF0000}{.*?}$就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。现在看看懒惰版的例子吧：&lt;br /&gt;
+  $\color{#FF0000}{a.*?b}$ 匹配最短的，以 a 开始，以 b 结束的字符串。如果把它应用于 &lt;em&gt;aabab&lt;/em&gt; 的话 ，它会匹配 aab（第一到第三个字符）和 ab（第四到第五个字符）。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;懒惰限定符代码/语法&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;*?&lt;/td&gt;
+      &lt;td&gt;重复任意次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;+?&lt;/td&gt;
+      &lt;td&gt;重复1次或更多次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;??&lt;/td&gt;
+      &lt;td&gt;重复0次或1次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,m}?&lt;/td&gt;
+      &lt;td&gt;重复 n 到 m 次，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;{n,}?&lt;/td&gt;
+      &lt;td&gt;重复 n 次以上，但尽可能少重复&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;处理选项&quot;&gt;处理选项&lt;/h2&gt;
+&lt;p&gt;  在 C#中，你可以使用 &lt;em&gt;&lt;u&gt;Regex(String, RegexOptions)&lt;/u&gt;&lt;/em&gt; 构造函数来设置正则表达式的处理选项。如：Regex regex = new Regex(@”\ba\w{6}\b”, RegexOptions.IgnoreCase);&lt;br /&gt;
+  上面介绍了几个选项如忽略大小写，处理多行等，这些选项能用来改变处理正则表达式的方式。下面是.Net 中常用的正则表达式选项：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常用的处理选项名称&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IgnoreCase(忽略大小写)&lt;/td&gt;
+      &lt;td&gt;匹配时不区分大小写。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Multiline(多行模式)&lt;/td&gt;
+      &lt;td&gt;更改\^和 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下, &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 的精确含意是:匹配\n 之前的位置以及字符串结束前的位置.)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Singleline(单行模式)&lt;/td&gt;
+      &lt;td&gt;更改.的含义，使它与每一个字符匹配（包括换行符\n ）。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IgnorePatternWhitespace(忽略空白)&lt;/td&gt;
+      &lt;td&gt;忽略表达式中的非转义空白并启用由#标记的注释。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ExplicitCapture( 显式 捕获)&lt;/td&gt;
+      &lt;td&gt;仅捕获已被显式命名的组。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;  一个经常被问到的问题是：是不是只能同时使用多行模式和单行模式中的一种？答案是：不是。这两个选项之间没有任何关系，除了它们的名字比较相似（以至于让人感到疑惑）以外。&lt;/p&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;$\color{#00DDFF}{RegEX}$ 正则表达式到这里结束，更多内容需要读者自行去挖掘研究。&lt;br /&gt;
+正则表达式常用测试链接：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://c.runoob.com/front-end/854&quot;&gt;菜鸟正则表达式测试网站&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tool.lu/regex&quot;&gt;在线工具-正则表达式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 09 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/09/regex.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/09/regex.html</guid>
+        
+        <category>shell</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
+    
+      <item>
+        <title>Bianque</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;魏文王问扁鹊&quot;&gt;魏文王问扁鹊…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;魏文王问名医扁鹊说：“你们家兄弟三人，都精于医术，到底哪一位最好呢？”&lt;br /&gt;
+扁鹊答说：“长兄最好，中兄次之，我最差。”&lt;br /&gt;
+文王再问：“那么为什么你最出名呢？”&lt;br /&gt;
+扁鹊答说：“我长兄治病，是治病于病情发作之前。由于一般人不知道他事先能铲除病因，所以他的名气无法传出去，只有我们家的人才知道。我中兄治病，是治病于病情初起之时。一般人以为他只能治轻微的小病，所以他的名气只及于本乡里。而我扁鹊治病，是治病于病情严重之时。一般人都看到我在经脉上穿针管来放血、在皮肤上敷药等大手术，所以以为我的医术高明，名气因此响遍全国。”  &lt;br /&gt;
+文王说：“你说得好极了。”&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 事后控制不如事中控制，事中控制不如事前控制，可惜大多数的事业经营者均未能体认到这一点，等到错误的决策造成了重大的损失才寻求弥补，有时是亡羊补牢，为时已晚。 做决策也是这样，一个公司的领导层做的决策影响的时间越久，对公司以后的发展情况越有良好的指导意义，这样的决策就是良策。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/06/bianque.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/06/bianque.html</guid>
+        
+        <category>story</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>VIM</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《Learn Vim Progressively》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;你想以最快的速度学习人类史上最好的文本编辑器VIM吗？你先得懂得如何在VIM幸存下来，然后一点一点地学习各种戏法。&lt;/p&gt;
+
+&lt;p&gt;Vim the Six Billion Dollar editor&lt;br /&gt;
+  &lt;em&gt;Better, Stronger, Faster.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;学习 vim 并且其会成为你最后一个使用的文本编辑器。没有比这个更好的文本编辑器了，非常地难学，但是却不可思议地好用。&lt;/p&gt;
+
+&lt;p&gt;我建议下面这四个步骤：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;存活&lt;/li&gt;
+  &lt;li&gt;感觉良好&lt;/li&gt;
+  &lt;li&gt;觉得更好，更强，更快&lt;/li&gt;
+  &lt;li&gt;使用VIM的超能力&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当你走完这篇文章，你会成为一个vim的 superstar。&lt;/p&gt;
+
+&lt;p&gt;在开始学习以前，我需要给你一些警告：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;学习vim在开始时是痛苦的。&lt;/li&gt;
+  &lt;li&gt;需要时间&lt;/li&gt;
+  &lt;li&gt;需要不断地练习，就像你学习一个乐器一样。&lt;/li&gt;
+  &lt;li&gt;不要期望你能在3天内把vim练得比别的编辑器更有效率。&lt;/li&gt;
+  &lt;li&gt;事实上，你需要2周时间的苦练，而不是3天。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第一级--存活&quot;&gt;第一级 – 存活&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;安装 vim&lt;/li&gt;
+  &lt;li&gt;启动 vim&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;什么也别干！请先阅读&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当你安装好一个编辑器后，你一定会想在其中输入点什么东西，然后看看这个编辑器是什么样子。但vim不是这样的，请按照下面的命令操作：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;启动Vim后，vim在 &lt;em&gt;Normal&lt;/em&gt; 模式下。&lt;/li&gt;
+  &lt;li&gt;让我们进入 &lt;em&gt;Insert&lt;/em&gt; 模式，请按下键 i 。(注：你会看到vim左下角有一个–insert–字样，表示，你可以以插入的方式输入了）&lt;/li&gt;
+  &lt;li&gt;此时，你可以输入文本了，就像你用“记事本”一样。&lt;/li&gt;
+  &lt;li&gt;如果你想返回 Normal 模式，请按 ESC 键。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现在，你知道如何在 &lt;em&gt;Insert&lt;/em&gt; 和 &lt;em&gt;Normal&lt;/em&gt; 模式下切换了。下面是一些命令，可以让你在 &lt;em&gt;Normal&lt;/em&gt; 模式下幸存下来：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;i → Insert 模式，按 ESC 回到 Normal 模式.&lt;/li&gt;
+  &lt;li&gt;x → 删当前光标所在的一个字符。&lt;/li&gt;
+  &lt;li&gt;:wq → 存盘 + 退出 (:w 存盘, :q 退出) （注：:w 后可以跟文件名）&lt;/li&gt;
+  &lt;li&gt;dd → 删除当前行，并把删除的行存到剪贴板里&lt;/li&gt;
+  &lt;li&gt;p → 粘贴剪贴板&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;推荐:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;hjkl (强例推荐使用其移动光标，但不必需) →你也可以使用光标键 (←↓↑→). 注: j 就像下箭头。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;:help → 显示相关命令的帮助。你也可以就输入 :help 而不跟命令。（注：退出帮助需要输入:q）&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;你能在vim幸存下来只需要上述的那5个命令，你就可以编辑文本了，你一定要把这些命令练成一种下意识的状态。于是你就可以开始进阶到第二级了。&lt;/p&gt;
+
+&lt;p&gt;但是，在你进入第二级时，需要再说一下 &lt;em&gt;Normal&lt;/em&gt; 模式。在一般的编辑器下，当你需要copy一段文字的时候，你需要使用 Ctrl 键，比如：Ctrl-C。也就是说，Ctrl键就好像功能键一样，当你按下了功能键Ctrl后，C就不在是C了，而且就是一个命令或是一个快键键了，&lt;strong&gt;在VIM的Normal模式下，所有的键就是功能键了&lt;/strong&gt;。这个你需要知道。&lt;/p&gt;
+
+&lt;p&gt;标记:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;下面的文字中，如果是 Ctrl-λ;我会写成 &amp;lt;C-λ&amp;gt;.&lt;/li&gt;
+  &lt;li&gt;以 : 开始的命令你需要输入 &amp;lt;enter&amp;gt;回车，例如 — 如果我写成 :q 也就是说你要输入 :q&amp;lt;enter&amp;gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;第二级--感觉良好&quot;&gt;第二级 – 感觉良好&lt;/h2&gt;
+&lt;p&gt;上面的那些命令只能让你存活下来，现在是时候学习一些更多的命令了，下面是我的建议：（注：所有的命令都需要在Normal模式下使用，如果你不知道现在在什么样的模式，你就狂按几次ESC键）&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;各种插入模式&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;a → 在光标后插入&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;o → 在当前行后插入一个新行&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;O → 在当前行前插入一个新行&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;cw → 替换从光标所在位置后到一个单词结尾的字符&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;简单的移动光标&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;0 → 数字零，到行头&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;^ → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;$ → 到本行行尾&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;g_ → 到本行最后一个不是blank字符的位置。&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;/pattern → 搜索 pattern 的字符串（注：如果搜索出多个匹配，可按n键到下一个）&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;拷贝/粘贴&lt;/strong&gt; （注：p/P都可以，p是表示在当前位置之后，P表示在当前位置之前）
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;P → 粘贴&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;yy → 拷贝当前行当行于 ddP&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Undo/Redo&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;u → undo&lt;/li&gt;
+      &lt;li&gt;&amp;lt;C-r&amp;gt; → redo&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;打开/保存/退出/改变文件&lt;/strong&gt;(Buffer)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;:e&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:w → 存盘&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:saveas &amp;lt;path/to/file&amp;gt; → 另存为 &amp;lt;path/to/file&amp;gt;&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:x， ZZ 或 :wq → 保存并退出 (:x 表示仅在需要时保存，ZZ不需要输入冒号并回车)&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:q! → 退出不保存 :qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;:bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。（注：我喜欢使用:n到下一个文件）&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;花点时间熟悉一下上面的命令，一旦你掌握他们了，你就几乎可以干其它编辑器都能干的事了。但是到现在为止，你还是觉得使用vim还是有点笨拙，不过没关系，你可以进阶到第三级了。&lt;/p&gt;
+
+&lt;h2 id=&quot;第三级--更好更强更快&quot;&gt;第三级 – 更好，更强，更快&lt;/h2&gt;
+&lt;p&gt;先恭喜你！你干的很不错。我们可以开始一些更为有趣的事了。在第三级，我们只谈那些和vi可以兼容的命令。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更好&lt;/strong&gt;&lt;br /&gt;
+下面，让我们看一下vim是怎么重复自己的：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;. → (小数点) 可以重复上一次的命令&lt;/li&gt;
+  &lt;li&gt;N → 重复某个命令N次&lt;br /&gt;
+下面是一个示例，找开一个文件你可以试试下面的命令：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;2dd → 删除2行&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;3p → 粘贴文本3次&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;100idesu [ESC] → 会写下 “desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu “&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;. → 重复上一个命令—— 100 “desu “.&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;3.→ 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;更强&lt;/strong&gt;&lt;br /&gt;
+你要让你的光标移动更有效率，你一定要了解下面的这些命令，&lt;strong&gt;千万别跳过&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;NG → 到第 N 行 （注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）&lt;/li&gt;
+  &lt;li&gt;gg → 到第一行。（注：相当于1G，或 :1，另：137gg也可以到137行，我偏向用这条语句）&lt;/li&gt;
+  &lt;li&gt;G → 到最后一行。&lt;/li&gt;
+  &lt;li&gt;按单词移动：
+    &lt;ul&gt;
+      &lt;li&gt;w → 到下一个单词的开头。&lt;/li&gt;
+      &lt;li&gt;e → 到下一个单词的结尾。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;如果你认为单词是由默认方式，那么就用小写的e和w。默认上来说，一个单词由字母，数字和下划线组成（注：程序变量）&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（注：程序语句）&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim1.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面，让我来说说最强的光标移动：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;% : 匹配括号移动，包括 (, {, [. （注：你需要把光标先移到括号上）&lt;/li&gt;
+  &lt;li&gt;* 和 #: 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;相信我，上面这三个命令对程序员来说是相当强大的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;更快&lt;/strong&gt;&lt;br /&gt;
+你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;start position&amp;gt;&amp;lt;command&amp;gt;&amp;lt;end position&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;例如 0y$ 命令意味着：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;0 → 先到行头&lt;/li&gt;
+  &lt;li&gt;y → 从这里开始拷贝&lt;/li&gt;
+  &lt;li&gt;$ → 拷贝到本行最后一个字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;你可可以输入 ye，从当前位置拷贝到本单词的最后一个字符。&lt;br /&gt;
+你也可以输入 y2/foo 来拷贝2个 “foo” 之间的字符串。&lt;br /&gt;
+还有很多时间并不一定你就一定要按y才会拷贝，下面的命令也会被拷贝：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;d (删除 )&lt;/li&gt;
+  &lt;li&gt;v (可视化的选择)&lt;/li&gt;
+  &lt;li&gt;gU (变大写)&lt;/li&gt;
+  &lt;li&gt;gu (变小写)&lt;/li&gt;
+  &lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;（注：可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等）&lt;/p&gt;
+
+&lt;h2 id=&quot;第四级--vim-超能力&quot;&gt;第四级 – Vim 超能力&lt;/h2&gt;
+&lt;p&gt;你只需要掌握前面的命令，你就可以很舒服的使用VIM了。但是，现在，我们向你介绍的是VIM杀手级的功能。下面这些功能是我只用vim的原因。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;在当前行上移动光标: 0 ^ $ f F t T , ;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;0 → 到行头&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;^ → 到本行的第一个非blank字符&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;$ → 到行尾&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;g_ → 到本行最后一个不是blank字符的位置。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;fa → 到下一个为a的字符处，你也可以fs到下一个为s的字符。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;t, → 到逗号前的第一个字符。逗号可以变成其它字符。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;3fa → 在当前行查找第三个出现的a。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;F 和 T → 和 f 和 t 一样，只不过是相反方向。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim3.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还有一个很有用的命令是 &lt;strong&gt;dt”&lt;/strong&gt; → 删除所有的内容，直到遇到双引号—— &lt;strong&gt;“&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;区域选择 &amp;lt;action&amp;gt;a&amp;lt;object&amp;gt; 或 &amp;lt;action&amp;gt;i&amp;lt;object&amp;gt;&lt;/strong&gt;  &lt;br /&gt;
+在visual 模式下，这些命令很强大，其命令格式为&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;action&amp;gt;a&amp;lt;object&amp;gt; 和 &amp;lt;action&amp;gt;i&amp;lt;object&amp;gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。&lt;/li&gt;
+  &lt;li&gt;object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字， p 一个段落。也可以是一个特别的字符：”、 ‘、 )、 }、 ]。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;vi” → 会选择 foo.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;va” → 会选择 “foo”.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;vi) → 会选择 “foo”.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;va) → 会选择(“foo”).&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;v2i) → 会选择 map (+) (“foo”)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;v2a) → 会选择 (map (+) (“foo”))&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim2.jpeg&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;块操作: &amp;lt;C-v&amp;gt;&lt;/strong&gt; &lt;br /&gt;
+块操作，典型的操作： 0 &amp;lt;C-v&amp;gt; &amp;lt;C-d&amp;gt; I-- [ESC]&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;^ → 到行头&lt;/li&gt;
+  &lt;li&gt;&amp;lt;C-v&amp;gt; → 开始块操作&lt;/li&gt;
+  &lt;li&gt;&amp;lt;C-d&amp;gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)&lt;/li&gt;
+  &lt;li&gt;I-- [ESC] → I是插入，插入“--”，按ESC键来为每一行生效。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim4.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在Windows下的vim，你需要使用 &amp;lt;C-q&amp;gt; 而不是 &amp;lt;C-v&amp;gt; ，&amp;lt;C-v&amp;gt; 是拷贝剪贴板。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;自动提示：&amp;lt;C-n&amp;gt; 和 &amp;lt;C-p&amp;gt;&lt;/strong&gt;&lt;br /&gt;
+在 Insert 模式下，你可以输入一个词的开头，然后按&amp;lt;C-p&amp;gt;或是&amp;lt;C-n&amp;gt;，自动补齐功能就出现了……&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim5.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;宏录制： qa 操作序列 q, @a, @@&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;qa 把你的操作记录在寄存器 a。&lt;/li&gt;
+  &lt;li&gt;于是 @a 会replay被录制的宏。&lt;/li&gt;
+  &lt;li&gt;@@ 是一个快捷键用来replay最新录制的宏。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;&lt;br /&gt;
+在一个只有一行且这一行只有“1”的文本中，键入如下命令：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;qaYp&amp;lt;C-a&amp;gt;q→&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;qa 开始录制&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Yp 复制行.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-a&amp;gt;增加1.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;q 停止录制.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;@a → 在1下面写下 2&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;@@ → 在2 正面写下3&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;现在做 100@@ 会创建新的100行，并把数据增加到 103.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim6.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;可视化选择： v,V,&amp;lt;C-v&amp;gt;&lt;/strong&gt;&lt;br /&gt;
+前面，我们看到了&amp;lt;C-v&amp;gt;的示例 （在Windows下应该是&amp;lt;C-q&amp;gt;），我们可以使用 v 和 V。一但被选好了，你可以做下面的事：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;J → 把所有的行连接起来（变成一行）&lt;/li&gt;
+  &lt;li&gt;&amp;lt; 或 &amp;gt; → 左右缩进&lt;/li&gt;
+  &lt;li&gt;= → 自动给缩进 （注：这个功能相当强大，我太喜欢了）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim7.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在所有被选择的行后加上点东西：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;C-v&amp;gt;&lt;/li&gt;
+  &lt;li&gt;选中相关的行 (可使用 j 或 或是 /pattern 或是 % 等……)&lt;/li&gt;
+  &lt;li&gt;$ 到行最后&lt;/li&gt;
+  &lt;li&gt;A, 输入字符串，按 ESC。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim8.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;分屏: :split 和 vsplit.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;下面是主要的命令，你可以使用VIM的帮助 :help split. 你可以参考本站以前的一篇文章VIM分屏。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;:split → 创建分屏 (:vsplit创建垂直分屏)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-w&amp;gt;&amp;lt;dir&amp;gt;: dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-w&amp;gt;_ (或&amp;lt;C-w&amp;gt;|) : 最大化尺寸 (&amp;lt;C-w&amp;gt;| 垂直分屏)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&amp;lt;C-w&amp;gt;+ (或 &amp;lt;C-w&amp;gt;-) : 增加尺寸&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/vim9.gif&quot; alt=&quot;您的浏览器不支持或图片已删除，建议使用Chrome浏览器试试。&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;结束语&quot;&gt;结束语&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;上面是作者最常用的90%的命令。&lt;/li&gt;
+  &lt;li&gt;我建议你每天都学1到2个新的命令。&lt;/li&gt;
+  &lt;li&gt;在两到三周后，你会感到vim的强大的。&lt;/li&gt;
+  &lt;li&gt;有时候，学习VIM就像是在死背一些东西。&lt;/li&gt;
+  &lt;li&gt;幸运的是，vim有很多很不错的工具和优秀的文档。&lt;/li&gt;
+  &lt;li&gt;运行vimtutor直到你熟悉了那些基本命令。&lt;/li&gt;
+  &lt;li&gt;其在线帮助文档中你应该要仔细阅读的是 :help usr_02.txt.&lt;/li&gt;
+  &lt;li&gt;你会学习到诸如 !， 目录，寄存器，插件等很多其它的功能。&lt;/li&gt;
+  &lt;li&gt;学习vim就像学弹钢琴一样，一旦学会，受益无穷。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/05/vim-editor.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/05/vim-editor.html</guid>
+        
+        <category>shell</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
+    
+      <item>
+        <title>CCS selector</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;CSS 选择器除了样式表匹配元素时需要用到，在使用 jQuery 等库的时候也可以利用 CSS 选择器来选择元素，因此作为前端开发需要熟练掌握。下面是一些常用的 CSS 选择器示例。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-元素选择器&quot;&gt;1 元素选择器&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;E&lt;/strong&gt;，选择所有指定元素名称的元素，例如 p，选择所有的 p 元素。&lt;/p&gt;
+
+&lt;h3 id=&quot;通用选择器&quot;&gt;通用选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;*&lt;/strong&gt;，选择所有元素，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;box-sizing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;border-box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;类选择器&quot;&gt;类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;.class&lt;/strong&gt;，用一个点号加类名表示，例如 .header，选择所有 class 属性中包含 header 的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;也会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;多类选择器&quot;&gt;多类选择器&lt;/h3&gt;
+&lt;p&gt;使用多个 class 可以选择同时含有多个类名的元素，例如 .collapse.in 选择同时含有类 collapse 和 in 的元素：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;collapse in&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;collapse&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;in&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;IE 6 浏览器不支持多类选择器，会忽略多类中前面的类，比如这里 IE 6 只会匹配 .in。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-选择器&quot;&gt;ID 选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;#id&lt;/strong&gt;，用一个 # 号加 ID 值表示，例如 #title，选择 id 属性等于 title 的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;上下文选择器&quot;&gt;上下文选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector selector&lt;/strong&gt;，用于选择元素内部的元素，例如 p span，选择所有属于 p 元素内部的 span 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;同样会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;子元素选择器&quot;&gt;子元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector &amp;gt; selector&lt;/strong&gt;，用于选择带有特定父元素的元素，例如 p &amp;gt; span，选择所有父元素为 p 的 span 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;父元素是 p 会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;父元素是 strong 不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;相邻元素选择器&quot;&gt;相邻元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector + selector&lt;/strong&gt;，用于选择一个特定元素之后紧跟的元素，h2 + p，选择所有相邻 h2 元素之后的同级 p 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;h2 之前的不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;示例&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;紧邻 h2 的会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;同级元素选择器&quot;&gt;同级元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;selector ~ selector&lt;/strong&gt;，用于选择特定元素之后的同级元素，h2 ~ p，选择所有 h2 元素之后的同级 p 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;示例&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;h2 之后的同级 p 元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;示例&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;h2 之后的同级 p 元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;同级元素选择器选择特定元素之后的所有同级元素，而相邻元素选择器只选择特定元素之后紧邻的那个元素。 
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-属性名选择器&quot;&gt;2 属性名选择器&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;[attribute]&lt;/strong&gt;，用于选择所有带有特定属性的元素，例如 [title]，选择所有带有 title 属性的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;属性值选择器&quot;&gt;属性值选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;[attribute=”value”]&lt;/strong&gt;，用于选择所有带有特定属性和值的元素，例如 [title=”link”]，选择所有带有 title 属性并且值为 link 的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;this is a link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;属性值不匹配，不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute~=”value”]&lt;/strong&gt;，用于选择所有带有特定属性并且属性值包含指定单词的元素，单词之间用空格分隔，例如 [title~=”link”]，选择所有带有 title 属性并且属性值中包含 link 单词的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;this is a link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;属性值中包含 link 会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;thisisalink&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;other&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute|=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值是以指定值开头的所有元素，该值必须是整个单词，或者后面跟着连字符，例如 [title|=”red”]，选择所有带有 title 属性并且值是 red 开头的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red-hot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute^=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值是以指定字符串开头的所有元素，例如 a[href^=”http://”]，选择所有 href 属性值以 http:// 字符串开头的 a 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.baidu.com/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/index&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute$=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值是以指定字符串结尾的所有元素，例如 img[src$=”.png”]，选择所有 png 格式的 img 元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;logo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/logo.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;banner&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/banner.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;[attribute*=”value”]&lt;/strong&gt;，用于选择带有特定属性并且属性值包含指定字符串的所有元素，例如 [title*=”red”]，选择所有带有 title 属性并且值包含 red 字符串的所有元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;redhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hotredhot&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;属性选择器对比&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选择器&lt;/th&gt;
+      &lt;th&gt;属性值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute]&lt;/td&gt;
+      &lt;td&gt;仅匹配属性名，与属性值无关&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute=”value”]&lt;/td&gt;
+      &lt;td&gt;完全匹配属性名和属性值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute~=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以空格分隔，包含value单词或者仅为value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute |=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以 value- 开头或者仅为 value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute^=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以 value 字符串开头&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute$=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值以 value 字符串结尾&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[attribute*=”value”]&lt;/td&gt;
+      &lt;td&gt;属性值包含 value 字符串&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;3-伪类&quot;&gt;3 伪类&lt;/h2&gt;
+&lt;h3 id=&quot;状态伪类选择器&quot;&gt;状态伪类选择器&lt;/h3&gt;
+&lt;p&gt;状态伪类选择器会根据元素的特定状态选择相应的元素。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选择器&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+      &lt;th&gt;例子&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:link&lt;/td&gt;
+      &lt;td&gt;选择所有未被访问的链接&lt;/td&gt;
+      &lt;td&gt;a:link&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:visited&lt;/td&gt;
+      &lt;td&gt;选择所有已被访问的链接&lt;/td&gt;
+      &lt;td&gt;a:visited&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:focus&lt;/td&gt;
+      &lt;td&gt;选择获取焦点的元素&lt;/td&gt;
+      &lt;td&gt;input:focus&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:hover&lt;/td&gt;
+      &lt;td&gt;择鼠标指针位于其上的元素&lt;/td&gt;
+      &lt;td&gt;li:hover&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;:active&lt;/td&gt;
+      &lt;td&gt;选择激活的元素&lt;/td&gt;
+      &lt;td&gt;button:active&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;:target&lt;/strong&gt;，选择目标元素。当用户点击一个指向页面中其它元素的链接，则那个被指向的元素就是目标元素，例如：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#more&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;more&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 点击这个链接之后 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;more&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 这个元素会被 :target 选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:enabled&lt;/strong&gt;，选择所有已启用的元素。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 已禁用不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:disabled&lt;/strong&gt;，选择所有被禁用的元素，和 :enabled 相反，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;给禁用的文本输入框一个灰色的背景。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 禁用的文本框会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:checked&lt;/strong&gt;，选择所有已经被勾选的单选框或者复选框，例如 input:checked。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 已经勾选的元素会被选中 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 没有勾选的不会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;示例，结合属性选择器选择被勾选的单选框：input[type=”radio”]:checked。&lt;/p&gt;
+
+&lt;h3 id=&quot;lang-选择器&quot;&gt;:lang 选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:lang(language)&lt;/strong&gt;，用于选择所有带有以指定值开头的 lang 属性的元素，例如 p:lang(en)。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;该选择器等同于 [lang|=”language”]，是 [attribute|=”value”] 选择器的一种特例。&lt;/p&gt;
+
+&lt;h3 id=&quot;结构伪类选择器&quot;&gt;结构伪类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:nth-child(n)&lt;/strong&gt;，选择同级元素中的第 n 个元素，例如 ul &amp;gt; li:nth-child(2)：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第二个元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;需要注意的是子元素的下标是从 1 开始的。除了可以指定特定的数字，也可以使用 even（偶数）, odd（奇数） 关键字，例如 ul &amp;gt; li:nth-child(odd)，或者使用公式，例如 ul &amp;gt; li:nth-child(2n+1)（n 是计数器，从 0 开始）：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第一个子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第二个子元素不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;第三个子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:nth-last-child(n)&lt;/strong&gt;，同上，不过是从最后一个子元素开始计数，使用该选择器可以实现隔行变色的效果。&lt;br /&gt;
+&lt;strong&gt;:first-child&lt;/strong&gt;，选择同级元素中的第一个元素，例如 ul &amp;gt; li:first-child：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;作用等同于 ul &amp;gt; li:nth-child(1)。&lt;br /&gt;
+&lt;strong&gt;:last-child&lt;/strong&gt;，选择同级元素中的最后一个元素，例如 ul &amp;gt; li:last-child：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;作用等同于 ul &amp;gt; li:nth-last-child(1)。&lt;br /&gt;
+&lt;strong&gt;:only-child&lt;/strong&gt;，用于选择父元素下唯一的子元素，例如 ul &amp;gt; li:only-child：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;唯一子元素，会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:nth-of-type(n)&lt;/strong&gt;，选择同级元素中的第 n 个同类元素，和 :nth-child 类似，例如 .box &amp;gt; :nth-of-type(2)：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;第一个 p 子元素，不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;第一个 span 子元素，不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;第二个 p 子元素，会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;第二个 span 子元素，会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;:nth-last-of-type&lt;/strong&gt;，同上，不过是从最后一个同类子元素开始计数。&lt;br /&gt;
+&lt;strong&gt;:first-of-type&lt;/strong&gt;，选择同级元素中的第一个同类元素，等同于 :nth-of-type(1)。&lt;br /&gt;
+&lt;strong&gt;:last-of-type&lt;/strong&gt;，选择同级元素中的最后一个同类元素，等同于 nth-last-of-type(1)。
+&lt;strong&gt;:only-of-type&lt;/strong&gt;，用于选择父元素下特定类型的唯一子元素，例如 .box &amp;gt; :only-of-type：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;唯一的 em 子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;唯一的 span 子元素会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;root-选择器&quot;&gt;:root 选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:root&lt;/strong&gt;，选择文档的根元素，对于 HTML 文档就是 html 元素。&lt;/p&gt;
+
+&lt;h3 id=&quot;empty-伪类选择器&quot;&gt;:empty 伪类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:empty&lt;/strong&gt;，选择没有子元素的元素（包括文本节点），例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:empty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;表示隐藏没有内容的 p 元素，&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;非空不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 为空会被选中 --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;否定伪类选择器&quot;&gt;否定伪类选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;:not(selector)&lt;/strong&gt;，选择所有不匹配选择器的元素，例如 :not(p)，选择所有不为 p 的元素：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;不会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;会被选中&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;要选择既不是 p 也不是 span 的元素可以多次使用否定伪类选择器，例如 :not(p):not(span)，需要同时满足条件的元素才会被选中。
+CSS 4 否定伪类选择器支持传入参数列表，比如 :not(p, span)。&lt;/p&gt;
+
+&lt;h3 id=&quot;伪元素&quot;&gt;伪元素&lt;/h3&gt;
+&lt;p&gt;伪元素选择器用于选择那些若有实无的元素。在 CSS3 中，伪元素的写法为两个冒号，为了兼容旧浏览器，也可以使用一个冒号。&lt;br /&gt;
+&lt;strong&gt;首字母伪元素选择器&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;::first-letter&lt;/strong&gt;，选择元素的第一个字母，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::first-letter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;段落元素的首字母放大。&lt;/p&gt;
+
+&lt;p&gt;&lt;abbr style=&quot;font-size:50px&quot;&gt;L&lt;/abbr&gt;orem ipsum dolor sit amet.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;首行伪元素选择器&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;::first-line&lt;/strong&gt;，选择元素的第一行，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::first-line&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;段落元素的首行添加下划线。&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Lorem Ipsum is simply dummy text&lt;/u&gt;&lt;br /&gt;
+of the printing and typesetting&lt;br /&gt;
+industry.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;::before/::after&lt;/strong&gt; 伪元素选择器&lt;br /&gt;
+&lt;strong&gt;::before&lt;/strong&gt;，选择在元素之前插入的生成内容。&lt;br /&gt;
+&lt;strong&gt;::after&lt;/strong&gt;，选择在元素之后插入的生成内容，例如：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;blockquote&amp;gt;&lt;/span&gt;Lorem ipsum dolor sit amet.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/blockquote&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;和样式：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;\0022&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;\0022&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;“Lorem ipsum dolor sit amet.”&lt;/p&gt;
+
+&lt;h3 id=&quot;selection-伪元素选择器&quot;&gt;::selection 伪元素选择器&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;::selection&lt;/strong&gt;，选择用户选取的内容，例如：&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;::selection&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#b3d4fc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+  &lt;span class=&quot;nl&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/05/css-selector.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/05/css-selector.html</guid>
+        
+        <category>前端开发</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
+    
+      <item>
+        <title>Seven porridge</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;七人分粥的故事&quot;&gt;七人分粥的故事…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有七个人曾经住在一起，每天分一大桶粥。要命的是，粥每天都是不够的。  &lt;br /&gt;
+&lt;b&gt;一开始&lt;/b&gt;，他们抓阄决定谁来分粥，每天轮一个。于是乎每周下来，他们只有一天是饱的，就是自己分粥的那一天。&lt;br /&gt;
+&lt;b&gt;后来&lt;/b&gt;他们开始推选出一个道德高尚的人出来分粥。强权就会产生腐败，大家开始挖空心思去讨好他，贿赂他，搞得整个小团体乌烟障气。&lt;br /&gt;
+&lt;b&gt;然后&lt;/b&gt;大家开始组成三人的分粥委员会及四人的评选委员会，但他们常常互相攻击，扯皮下来，粥吃到嘴里全是凉的。&lt;br /&gt;
+&lt;b&gt;最后&lt;/b&gt;想出来一个方法：轮流分粥，但分粥的人要等其它人都挑完后拿剩下的最后一碗。为了不让自己吃到最少的，每人都尽量分得平均，就算不平，也只能认了。大家快快乐乐，和和气气，日子越过越好。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 同样是七个人，不同的分配制度，就会有不同的风气。所以一个单位如果有不好的工作习气，一定是机制问题，一定是没有完全公平公正公开，没有严格的奖勤罚懒。如何制订这样一个制度，是每个领导需要考虑的问题。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/03/seven-porridge.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/03/seven-porridge.html</guid>
+        
+        <category>story</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Doctor</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;博士和所长钓鱼的故事&quot;&gt;博士和所长钓鱼的故事…&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有一个博士分到一家研究所，成为学历最高的一个人。&lt;br /&gt;
+有一天他到单位后面的小池塘去钓鱼，正好正副所长在他的一左一右，也在钓鱼。&lt;br /&gt;
+他只是微微点了点头，这两个本科生，有啥好聊的呢？  &lt;br /&gt;
+不一会儿，正所长放下钓竿，伸伸懒腰，蹭蹭蹭从水面上如飞地走到对面上厕所。  &lt;br /&gt;
+博士眼睛睁得都快掉下来了。水上飘？不会吧？这可是一个池塘啊。&lt;br /&gt;
+正所长上完厕所回来的时候，同样也是蹭蹭蹭地从水上飘回来了。&lt;br /&gt;
+怎么回事？博士生又不好去问，自己是博士生哪！&lt;br /&gt;
+过一阵，副所长也站起来，走几步，蹭蹭蹭地飘过水面上厕所。这下子博士更是差点昏倒：不会吧，到了一个江湖高手集中的地方？&lt;br /&gt;
+博士生也内急了。这个池塘两边有围墙，要到对面厕所非得绕十分钟的路，而回单位上又太远，怎么办？&lt;br /&gt;
+博士生也不愿意去问两位所长，憋了半天后，也起身往水里跨：我就不信本科生能过的水面，我博士生不能过。&lt;br /&gt;
+只听咚的一声，博士生栽到了水里。&lt;br /&gt;
+两位所长将他拉了出来，问他为什么要下水，他问：”为什么你们可以走过去呢？”&lt;br /&gt;
+两所长相视一笑：”这池塘里有两排木桩子，由于这两天下雨涨水正好在水面下。我们都知道这木桩的位置，所以可以踩着桩子过去。你怎么不问一声呢？”&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 学历代表过去，只有学习力才能代表将来。尊重经验的人，才能少走弯路。一个好的团队，也应该是学习型的团队。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/03/doctor.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/03/doctor.html</guid>
+        
+        <category>story</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Bash shell</title>
+        <description>&lt;blockquote&gt;
+  &lt;h1 id=&quot;bash-shell编程入门&quot;&gt;Bash Shell编程入门&lt;/h1&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-shell是什么&quot;&gt;1 Shell是什么？&lt;/h2&gt;
+&lt;p&gt; shell本身是一个命令解释器，介于操作系统的内核（kernel）态和用户态之间，可以执行系统调用及系统命令等，让用户以此来与操作系统实现互动。同时，它也用来指一种计算机程序语言（类似于C、Python等）。一个shell程序一般被称为一个脚本。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Shell语言的流派&lt;/strong&gt;&lt;br /&gt;
+目前，shell主要有两大流派：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;sh:&lt;/li&gt;
+  &lt;li&gt;burne shell (sh)&lt;/li&gt;
+  &lt;li&gt;burne again shell (bash)&lt;/li&gt;
+  &lt;li&gt;csh:&lt;/li&gt;
+  &lt;li&gt;c shell (csh)&lt;/li&gt;
+  &lt;li&gt;tc shell (tcsh)&lt;/li&gt;
+  &lt;li&gt;korn shell (ksh)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;目前，大部分Linux系统预设的shell都是bash。&lt;br /&gt;
+Ubuntu16.04提供的shell环境（登录成功后默认使用bash）：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;slot@slot-ubt:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/shells
+&lt;span class=&quot;c&quot;&gt;# /etc/shells: valid login shells &lt;/span&gt;
+/bin/sh 
+/bin/dash 
+/bin/bash 
+/bin/rbash 
+slot@slot-ubt:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Mac OS提供的shell环境：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/shells 
+&lt;span class=&quot;c&quot;&gt;# List of acceptable shells for chpass(1).&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Ftpd will not allow users to connect who are not using &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# one of these shells. &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; 
+/bin/bash 
+/bin/csh 
+/bin/ksh 
+/bin/sh 
+/bin/tcsh 
+/bin/zsh &lt;span class=&quot;c&quot;&gt;# zsh系本文作者自己安装 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;一个极简的bash demo: hello_world.sh&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash &lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Here is comment &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;执行 &lt;br /&gt;
+方法1: 直接使用bash解释器来解释执行：&lt;br /&gt;
+&lt;em&gt;bash hello_world.sh&lt;/em&gt; &lt;br /&gt;
+或者：&lt;br /&gt;
+&lt;em&gt;sh hello_world.sh&lt;/em&gt; &lt;br /&gt;
+方法2: 先将文件属性改为可执行状态：&lt;br /&gt;
+&lt;em&gt;chmod +x hello_world.sh&lt;/em&gt; &lt;br /&gt;
+或者：&lt;br /&gt;
+&lt;em&gt;chmod 777 hello_world.sh&lt;/em&gt; &lt;br /&gt;
+再直接执行：&lt;br /&gt;
+&lt;em&gt;./hello_world.sh&lt;/em&gt; &lt;br /&gt;
+输出&lt;br /&gt;
+&lt;em&gt;Hello World!&lt;/em&gt; &lt;br /&gt;
+解释&lt;br /&gt;
+#!用来指定执行该脚本的解释器，后面的/bin/bash表明指定/bin目录下的bash程序来解释执行该脚本文件。 &lt;br /&gt;
+#开头的是注释行(#!除外)，shell中只有单行注释。 &lt;br /&gt;
+echo “Hello World!” 即用echo命令输出字符串”Hello World!”到终端显示器。 &lt;br /&gt;
+补充知识: 文件的属性&lt;br /&gt;
+通过ls -l命令可以查看文件的属性，例如查看新建文件test.sh的属性：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;slot@slot-ubt:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;test.sh 
+slot@slot-ubt:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; test.sh 
+&lt;span class=&quot;nt&quot;&gt;-rw-rw-r--&lt;/span&gt; 1 slot slot 0 12月 21 15:40 test.sh 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;可以看到，一般新建文件的默认属性是-rw-rw-r–，即644，不具有可执行属性x，可使用chmod命令来改变文件属性（修改默认属性则使用umask命令），例如将文件test.sh的属性改为可读可写可执行(rwx: 4 + 2 + 1 = 7)：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;slot@slot-ubt:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;777 test.sh 
+slot@slot-ubt:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; test.sh 
+&lt;span class=&quot;nt&quot;&gt;-rwxrwxrwx&lt;/span&gt; 1 slot slot 0 12月 21 15:40 test.sh 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-bash中的变量&quot;&gt;2 Bash中的变量&lt;/h2&gt;
+&lt;h3 id=&quot;21-变量的定义与赋值&quot;&gt;2.1 变量的定义与赋值&lt;/h3&gt;
+&lt;p&gt;不像C、Java等静态语言需要先声明然后才能使用，而是和Python等动态语言类似，Bash变量在使用时直接定义，例如：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;my_bash_var&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;this is my bash var&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;＝两边不能有空格！否则就是语法错误了。&lt;/li&gt;
+  &lt;li&gt;Bash变量命名只能使用字母，下划线和数字，并且不能以数字开头。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-变量的引用&quot;&gt;2.2 变量的引用&lt;/h3&gt;
+&lt;p&gt;使用已定义的变量时，只要在变量名前面加$符号即可:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$my_bash_var&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者使用${var_name}的形式，{}是可选的，主要是帮助解释器更好地识别变量的边界(推荐)：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_bash_var&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意’‘和”“的区别：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;’‘ ：单引号里的任何字符都会原样输出，单引号中对变量引用是无效的，且单引号中不能出现单引号（对单引号使用转义符也不行）；&lt;/li&gt;
+  &lt;li&gt;”“：双引号里可以引用变量，可以出现转义字符。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'a is : $a'&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a is : &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+Output:
+a is : &lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt; 
+a is : hello 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;只读变量&lt;br /&gt;
+使用 readonly 命令可以将变量限定为只读变量，这与 C 语言中的 const 常量类型的情况相同.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;a_var&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;a_var 
+&lt;span class=&quot;nv&quot;&gt;a_var&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;world&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: bash: read-only variable: a_var &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;删除变量&lt;br /&gt;
+使用 unset 命令可以删除变量，但是不能删除只读变量。&lt;br /&gt;
+变量被删除后不能再次使用。&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;haha&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;unset &lt;/span&gt;my_var 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 变量my_var已被删除，没有任何输出 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;23-变量的类型&quot;&gt;2.3 变量的类型&lt;/h3&gt;
+&lt;p&gt;诸如C、Java、Python等这些高级语言中的变量是有类型的，例如数字类型（整型、浮点型等）、字符串类型、布尔类型，面向对象语言中还有引用类型等。但是，在Bash中，并不对变量区分类型。&lt;br /&gt;
+本质上来说，Bash变量都是字符串。但是依赖于上下文，Bash也允许比较操作和算术操作。决定这些的关键因素是变量中的值是否只有数字，只有当变量是纯数字时，该变量才是“数字类型的”，否则就是字符串类型的。&lt;br /&gt;
+另外，注意Bash中的数字默认的是十进制，八进制需要以0开头，十六进制以0x开头。&lt;br /&gt;
+纯数字变量是“数字变量”：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1234 
+&lt;span class=&quot;nb&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a+=1&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: 1235 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;数字＋字符串：字符串变量，字符串变量不能进行数学运算&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/12/BB&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 将12替换为BB &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: BB35 &lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b+=1&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output:1 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;将变量中的非数字字符替换为数字，得到数字变量&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;BB34 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: BB34 &lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/BB/12&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 将BB替换为12 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: 1234 &lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;d+=1&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: 1235 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;空变量+数字：数字变量&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 变量e定义为空值 &lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: 没有任何输出 &lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;e+=1&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 空值 + 1 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: 1 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;未定义的变量+数字：数字变量&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 变量f未定义 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;f = &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$f&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: f = &lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;f+=1&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;f = &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Output: f = 1 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;24-变量的作用域&quot;&gt;2.4 变量的作用域&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;局部变量(local variables)：这种变量只有在变量所在的代码块或者函数中才可见，需要使用local声明；&lt;/li&gt;
+  &lt;li&gt;全局变量：Bash中用户自定义的普通变量默认是全局变量，可以在本文件中的其它位置引用；&lt;/li&gt;
+  &lt;li&gt;环境变量(environmental variables)：所有的程序（包括shell启动的程序）都能访问环境变量。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果一个shell脚本设置了环境变量,需要用 export 命令来通知脚本的环境。&lt;br /&gt;
+更多关于环境变量的知识可以参考以下文章：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/ac2bc0ad3d74&quot;&gt;Linux环境变量总结&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/f7d4a821d292&quot;&gt;linux入门之环境变量与文件查找&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-bash中的运算符&quot;&gt;3 Bash中的运算符&lt;/h2&gt;
+&lt;p&gt;Bash支持的运算符有：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;数学运算符&lt;/li&gt;
+  &lt;li&gt;关系运算符&lt;/li&gt;
+  &lt;li&gt;布尔运算符&lt;/li&gt;
+  &lt;li&gt;逻辑运算符&lt;/li&gt;
+  &lt;li&gt;字符串运算符&lt;/li&gt;
+  &lt;li&gt;文件测试运算符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;31-数学运算符&quot;&gt;3.1 数学运算符&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;数学运算符 &lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;+&lt;/td&gt;
+      &lt;td&gt;加法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;减法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;*&lt;/td&gt;
+      &lt;td&gt;乘法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/&lt;/td&gt;
+      &lt;td&gt;除法&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;%&lt;/td&gt;
+      &lt;td&gt;取余&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;赋值&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;==&lt;/td&gt;
+      &lt;td&gt;相等测试，相等则返回true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;!=&lt;/td&gt;
+      &lt;td&gt;不相等测试，不相等则返回true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;注意： 乘号*前边必须加反斜杠 \ 才能实现乘法运算&lt;/p&gt;
+
+&lt;h3 id=&quot;32-关系运算符&quot;&gt;3.2 关系运算符&lt;/h3&gt;
+&lt;p&gt;关系运算符只支持数字，不支持字符串，除非字符串的值是数字&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;关系运算符&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-eq&lt;/td&gt;
+      &lt;td&gt;(equal) 检测两个数是否相等，相等则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-ne&lt;/td&gt;
+      &lt;td&gt;(not equal）检测两个数是否相等，不相等则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-gt&lt;/td&gt;
+      &lt;td&gt;(greater than）检测左边的数是否大于右边的，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-lt&lt;/td&gt;
+      &lt;td&gt;(lower than) 检测左边的数是否小于右边的，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-ge&lt;/td&gt;
+      &lt;td&gt;(greater equal）检测左边的数是否大于等于右边的，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-le&lt;/td&gt;
+      &lt;td&gt;(lower equal) 检测左边的数是否小于等于右边的，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;33-布尔运算符&quot;&gt;3.3 布尔运算符&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;布尔运算符&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-a&lt;/td&gt;
+      &lt;td&gt;与运算，两个表达式都为 true 才返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-o&lt;/td&gt;
+      &lt;td&gt;或运算，有一个表达式为 true 则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;!&lt;/td&gt;
+      &lt;td&gt;非运算，表达式为 true 则返回 false，否则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;34-逻辑运算符&quot;&gt;3.4 逻辑运算符&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;逻辑运算符&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;amp;&amp;amp;&lt;/td&gt;
+      &lt;td&gt;逻辑与&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;||&lt;/td&gt;
+      &lt;td&gt;逻辑或&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;35-字符串运算符&quot;&gt;3.5 字符串运算符&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;字符串运算符&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+      &lt;th&gt;举例 (a=”abc” b=”def”)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;检测两个字符串是否相等，相等返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ $a = $b ]&lt;/code&gt; 返回 false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;!=&lt;/td&gt;
+      &lt;td&gt;检测两个字符串是否相等，不相等返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ $a != $b ]&lt;/code&gt; 返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-z&lt;/td&gt;
+      &lt;td&gt;检测字符串长度是否为0，为0返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ -z $a ]&lt;/code&gt; 返回 false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-n&lt;/td&gt;
+      &lt;td&gt;检测字符串长度是否为0，不为0返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ -n $a ]&lt;/code&gt; 返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;str_name&lt;/td&gt;
+      &lt;td&gt;检测字符串是否为空，不为空返回 true&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ $a ]&lt;/code&gt; 返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;36-文件测试运算符&quot;&gt;3.6 文件测试运算符&lt;/h3&gt;
+&lt;p&gt;文件测试运算符用于检测 Unix 文件的各种属性&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;文件测试运算符&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-b file&lt;/td&gt;
+      &lt;td&gt;检测文件是否是块设备文件，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-c file&lt;/td&gt;
+      &lt;td&gt;检测文件是否是字符设备文件，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-d file&lt;/td&gt;
+      &lt;td&gt;检测文件是否是目录，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-f file&lt;/td&gt;
+      &lt;td&gt;检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-g file&lt;/td&gt;
+      &lt;td&gt;检测文件是否设置了 SGID 位，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-k file&lt;/td&gt;
+      &lt;td&gt;检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-p fill&lt;/td&gt;
+      &lt;td&gt;检测文件是否是命名管道，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-u file&lt;/td&gt;
+      &lt;td&gt;检测文件是否设置了 SUID 位，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-r file&lt;/td&gt;
+      &lt;td&gt;检测文件是否可读，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-w file&lt;/td&gt;
+      &lt;td&gt;检测文件是否可写，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-x file&lt;/td&gt;
+      &lt;td&gt;检测文件是否可执行，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-s file&lt;/td&gt;
+      &lt;td&gt;检测文件是否为空（文件大小是否大于0），不为空返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-e file&lt;/td&gt;
+      &lt;td&gt;检测文件（包括目录）是否存在，如果是，则返回 true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-bash的控制流&quot;&gt;4 Bash的控制流&lt;/h2&gt;
+&lt;h3 id=&quot;41-条件语句&quot;&gt;4.1 条件语句&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;4.1.1 if语句&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; condition &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;then 
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;if-else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; condition &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;then 
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else 
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;if-elif-else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; condition1 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;then 
+	&lt;/span&gt;command1 
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; condition2 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+	command2 
+&lt;span class=&quot;k&quot;&gt;else 
+	&lt;/span&gt;commandN 
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意：&lt;br /&gt;
+勿忘最后的fi（if的反向拼写）!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4.1.2 case语句&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; 
+	&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$condition1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+		command1 
+	&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; 
+
+	&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$condition2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+		command2 
+	&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; 
+	&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 这里相当于C中case语句的default &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;对变量使用”“并不是强制的，因为不会发生单词分离;&lt;/li&gt;
+  &lt;li&gt;每句测试行,都以右小括号)结尾;&lt;/li&gt;
+  &lt;li&gt;每个条件块都以两个分号;;结尾（作用类似C中的break）;&lt;/li&gt;
+  &lt;li&gt;case 块的结束以 esac(case 的反向拼写)结尾.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;42-循环语句&quot;&gt;4.2 循环语句&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;4.2.1 for语句&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;var &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;item1 item2 ... itemN 
+&lt;span class=&quot;k&quot;&gt;do 
+	&lt;/span&gt;command1 
+	command2 
+	... 
+	commandN 
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意： &lt;br /&gt;
+在循环的每次执行中，var将顺序的存取 list （i.e. item1 … itemN）中列出的变量。&lt;br /&gt;
+C风格的for循环:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt; EXP1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; EXP2&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; EXP3 &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;do 
+	&lt;/span&gt;command1 
+	command2 
+	command3 
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意: (())中对变量的引用可以不加$&lt;br /&gt;
+&lt;strong&gt;4.2.2 while语句&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; condition &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;do 
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;C风格的while循环:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt; condition &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;do 
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意: (())中对变量的引用同样可以不加$&lt;br /&gt;
+&lt;strong&gt;4.2.3 until语句&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; condition-is-true &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;do 
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;command 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意：   
+util结构在循环的顶部判断条件,并且如果条件一直为 false 那就一直循环下去，直到条件为真才结束循环(与 while 相反)。&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-bash支持的编程模型&quot;&gt;5 Bash支持的编程模型&lt;/h2&gt;
+&lt;p&gt;Bash只支持过程式的编程模型，不支持面向对象和函数式等高级编程模型，更不支持对高级设计模式的实现。所以，如果要实现比较复杂的功能，还是使用Perl、Python或者Ruby等高级语言吧。&lt;/p&gt;
+&lt;h3 id=&quot;51-bash的传参机制&quot;&gt;5.1 Bash的传参机制&lt;/h3&gt;
+&lt;p&gt;shell通过位置参数（positional parameters）来给脚本文件传递参数，就是从命令行中传进来的参数,&lt;code class=&quot;highlighter-rouge&quot;&gt;$0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt;… 其中：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$0&lt;/code&gt; 是该脚本文件的名字&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; 是第一个参数, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt; 是第 2 个参数…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$9&lt;/code&gt; 以后就需要大括号了,如 &lt;code class=&quot;highlighter-rouge&quot;&gt;${10}&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;${11}&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;${12}&lt;/code&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;另外，还有几个特殊字符用来处理参数：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;参数处理&lt;/th&gt;
+      &lt;th&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$#&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;传递到脚本的参数个数&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$*&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;以一个单字符串显示所有向脚本传递的参数。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$@&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;$*&lt;/code&gt;相同，但是使用时加引号，并在引号中返回每个参数。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;脚本运行的当前进程ID号&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$!&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;后台运行的最后一个进程的ID号&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$-&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;显示Shell使用的当前选项，与set命令功能相同&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$?&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$*&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;$@&lt;/code&gt; 区别:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;相同点：都表示引用所有的位置参数;&lt;/li&gt;
+  &lt;li&gt;不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 “ * “ 等价于 “1 2 3”（传递了一个参数），而 “@” 等价于 “1” “2” “3”（传递了三个参数）。&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-bash函数&quot;&gt;6 Bash函数&lt;/h2&gt;
+&lt;h3 id=&quot;61-函数的定义&quot;&gt;6.1 函数的定义&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;func_name&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+	&lt;span class=&quot;c&quot;&gt;# 函数体 &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;关键字function是可选的;&lt;/li&gt;
+  &lt;li&gt;函数定义必须在第一次调用前完成，shell没有像 C 中的函数“声明”;&lt;/li&gt;
+  &lt;li&gt;在一个函数内嵌套另一个函数也是可以的，但是不常用.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;函数的参数传递&lt;/strong&gt;  &lt;br /&gt;
+函数以位置来引用传递过来的参数(就好像他们是位置参数一样), 例如&lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, …&lt;br /&gt;
+&lt;strong&gt;函数的调用&lt;/strong&gt;&lt;br /&gt;
+函数被调用或被触发, 只需要简单地用函数名来调用，有参数的话将参数依次置于函数名之后。&lt;/p&gt;
+&lt;h3 id=&quot;62-无参函数的调用&quot;&gt;6.2 无参函数的调用&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;func1&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt; 
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;This is func1&quot;&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# Calling func1 &lt;/span&gt;
+func1 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World! 
+This is func1 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;63-有参函数的调用&quot;&gt;6.3 有参函数的调用&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;func2&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;This is func2&quot;&lt;/span&gt; 
+
+	&lt;span class=&quot;nv&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; 
+	&lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt; 
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a is : &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b is : &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$b&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# Calling func2,and pass two parameters &lt;/span&gt;
+func2 &lt;span class=&quot;s2&quot;&gt;&quot;aaa&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bbb&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;This is func2 
+a is : aaa 
+b is : bbb 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;64-函数中参数的作用域&quot;&gt;6.4 函数中参数的作用域&lt;/h3&gt;
+&lt;p&gt;在函数调用之前，所有在函数内声明且没有明确声明为 local 的变量都可在函数体外可见（默认为全局变量）。&lt;br /&gt;
+如果变量用local 来声明,那么它只能在该变量声明的代码块中可见。这个代码块就是局部”范围”。在一个函数内,局部变量意味着只能在函数代码块内它才有意义。&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash &lt;/span&gt;
+ 
+func&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;nv&quot;&gt;global_var&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;I am global_var difined in function func.&quot;&lt;/span&gt; 
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$global_var&lt;/span&gt; 
+
+    &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;loc_var&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;I am local_var defined in function func&quot;&lt;/span&gt; 
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$loc_var&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+ 
+func 
+&lt;span class=&quot;nb&quot;&gt;echo 
+echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$global_var&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$loc_var&lt;/span&gt; 
+
+&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;I am global_var difined &lt;span class=&quot;k&quot;&gt;in function &lt;/span&gt;func. 
+I am local_var defined &lt;span class=&quot;k&quot;&gt;in function &lt;/span&gt;func 
+
+I am global_var difined &lt;span class=&quot;k&quot;&gt;in function &lt;/span&gt;func. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;7-bash数组&quot;&gt;7 Bash数组&lt;/h2&gt;
+&lt;p&gt;Bash 只支持一维数组，用圆括号()来表示，数组元素之间用”空格”符号来分割（不同于C、C++、Java等语言中用逗号分割）。&lt;/p&gt;
+&lt;h3 id=&quot;71-数组的定义与初始化&quot;&gt;7.1 数组的定义与初始化&lt;/h3&gt;
+&lt;p&gt;初始化时不需要指定数组的大小。和其它大部分语言一样，bash数组元素的下标从0开始。&lt;br /&gt;
+初始化方式1：直接初始化&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;arr_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;value1 value2 ... valueN&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;初始化方式2: 用下标初始化&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arr_name[0]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value1 
+arr_name[1]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value2 
+arr_name[223]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value3 &lt;span class=&quot;c&quot;&gt;# 不连续初始化 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;数组成员不必一定要连续，空缺元素是允许的;&lt;/li&gt;
+  &lt;li&gt;数组的一部分成员允许不被初始化, 没有被初始化的元素将打印空(NULL)值;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;72-访问数组元素&quot;&gt;7.2 访问数组元素&lt;/h3&gt;
+&lt;p&gt;访问数组元素的一般格式：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;arr_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[index]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;遍历数组&lt;br /&gt;
+使用* 或@ 可以获取数组中的所有元素&lt;br /&gt;
+实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;my_arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;A B C &lt;span class=&quot;s2&quot;&gt;&quot;ddd&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# 遍历数组格式1 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my_arr: &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[*]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; 
+
+# 遍历数组格式2 
+echo &quot;&lt;/span&gt;my_arr: &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;my_arr: A B C ddd 
+my_arr: A B C ddd 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;73-获取数组长度&quot;&gt;7.3 获取数组长度&lt;/h3&gt;
+&lt;p&gt;获取数组长度（即数组中的元素个数），和遍历数组语法很相似，只是在数组名前加了#符号，格式：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;arr_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[*]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 获取数组my_arr的长度（元素个数） &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my_arr length: &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[*]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+
+ # 获取数组my_arr的长度, 
+echo &quot;&lt;/span&gt;my_arr length: &lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;my_arr length: 4 
+my_arr length: 4 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;8-bash字符串操作&quot;&gt;8 Bash字符串操作&lt;/h2&gt;
+&lt;p&gt;在Bash中，字符串可以用单引号，也可以用双引号，也可以不用引号。单双引号的区别如前文所述。&lt;br /&gt;
+定义字符串实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;hello 
+&lt;span class=&quot;nv&quot;&gt;str2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'hello'&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;str3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$str1&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$str2&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$str3&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hello 
+hello 
+hello 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;81-获取字符串长度&quot;&gt;8.1 获取字符串长度&lt;/h3&gt;
+&lt;p&gt;格式：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string_name&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;my_str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world&quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my_str length: &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;my_str&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;my_str length: 11 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;82-字符串拼接&quot;&gt;8.2 字符串拼接&lt;/h3&gt;
+&lt;p&gt;和Java Python等语言类似，bash允许直接将字符串拼接在一起以获得新的字符串。&lt;br /&gt;
+实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;str2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;world&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;nv&quot;&gt;str3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str2&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str3&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hello world 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;83-提取子串&quot;&gt;8.3 提取子串&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;表达式&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string:position}&lt;/td&gt;
+      &lt;td&gt;在string中, 从位置position开始提取子串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string:position:length}&lt;/td&gt;
+      &lt;td&gt;在string中, 从位置position开始提取长度为length的子串&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;实例1：从位置1开始提取子串&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;nv&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;:1&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;sub_str: &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sub_str: ello world 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;实例2：从位置1开始提取长度为3的子串&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world&quot;&lt;/span&gt; 
+&lt;span class=&quot;nv&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;:1:3&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; 
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;sub_str: &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sub_str: ell 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;84-删除子串&quot;&gt;8.4 删除子串&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;表达式&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string#substring}&lt;/td&gt;
+      &lt;td&gt;从string的开头, 删除最短匹配substring的子串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string##substring}&lt;/td&gt;
+      &lt;td&gt;从string的开头, 删除最长匹配substring的子串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string%substring}&lt;/td&gt;
+      &lt;td&gt;从string的结尾, 删除最短匹配substring的子串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string%%substring}&lt;/td&gt;
+      &lt;td&gt;从string的结尾, 删除最长匹配substring的子串&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;记忆：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;#表示从头匹配，%表示从尾匹配&lt;/li&gt;
+  &lt;li&gt;一个符号（#或者%）表示最短匹配，两个符号（##或者%%）表示最长匹配&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注意：substring可以是正则表达式。&lt;br /&gt;
+实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;abcabcdefabcabc&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# 从str的开头,删除最短匹配的以a开头c结尾的子串 &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 将删除最左端的abc &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 输出：abcdefabcabc &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#a*c&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# 从str的开头,删除最长匹配以a开头b结尾的子串 &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 将删除abcabcdefabcab &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 输出：c &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##a*b&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# 从str的结尾,删除最短匹配以a开头c结尾的子串 &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 将删除最右端的abc &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 输出：abcabcdefabc &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%a*c&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# 从str的结尾,删除最长匹配以a开头c结尾的子串 &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 将删除整个字符串 &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 输出：空 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%a*b&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;85-替换子串&quot;&gt;8.5 替换子串&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;表达式&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string/substring/replacement}&lt;/td&gt;
+      &lt;td&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt; 来代替第一个匹配的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string//substring/replacement}&lt;/td&gt;
+      &lt;td&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt; 代替所有匹配的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string/#substring/replacement}&lt;/td&gt;
+      &lt;td&gt;如果&lt;code class=&quot;highlighter-rouge&quot;&gt;$string&lt;/code&gt;的前缀匹配&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;, 那么就用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt;来代替匹配到的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;${string/%substring/replacement}&lt;/td&gt;
+      &lt;td&gt;如果&lt;code class=&quot;highlighter-rouge&quot;&gt;$string&lt;/code&gt;的后缀匹配&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;, 那么就用&lt;code class=&quot;highlighter-rouge&quot;&gt;$replacement&lt;/code&gt;来代替匹配到的&lt;code class=&quot;highlighter-rouge&quot;&gt;$substring&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;abcdefabc&quot;&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# 用hello替换第一个abc&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 输出：hellodefabc &lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 用hello替换第一个abc &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 输出：hellodefhello &lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 前缀匹配替换 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/#&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 输出：worlddefabc &lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 后缀匹配替换 &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/％&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 输出：abcdefworld &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;9-彩色文本&quot;&gt;9 彩色文本&lt;/h2&gt;
+&lt;p&gt;格式: echo -e “\033[字背景颜色;字体颜色m字符串\033[0m”&lt;/p&gt;
+
+&lt;p&gt;例如:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;33[41;36m something here &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;33[0m&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;其中41的位置代表底色, 36的位置是代表字的颜色&lt;/p&gt;
+
+&lt;p&gt;那些ascii code 是对颜色调用的始末.&lt;br /&gt;
+\033[ ; m …… \033[0m&lt;/p&gt;
+
+&lt;p&gt;字背景颜色范围:40———49&lt;br /&gt;
+40:   $\color{#000000}{黑色}$ &lt;br /&gt;
+41:   $\color{#880000}{深红}$ &lt;br /&gt;
+42:   $\color{#00ff00}{绿色}$  &lt;br /&gt;
+43:   $\color{#dddd00}{黄色}$ &lt;br /&gt;
+44:   $\color{#0000ff}{蓝色}$ &lt;br /&gt;
+45:   $\color{#ff00ff}{紫色}$ &lt;br /&gt;
+46:   $\color{#007700}{深绿}$ &lt;br /&gt;
+47:   $\color{#bbbbbb}{白色}$&lt;/p&gt;
+
+&lt;p&gt;字颜色:30———39 &lt;br /&gt;
+30:   $\color{#000000}{黑色}$&lt;br /&gt;
+31:   $\color{#ff0000}{红色}$ &lt;br /&gt;
+32:   $\color{#00ff00}{绿色}$ &lt;br /&gt;
+33:   $\color{#dddd00}{黄色}$ &lt;br /&gt;
+34:   $\color{#0000ff}{蓝色}$ &lt;br /&gt;
+35:   $\color{#ff00ff}{紫色}$ &lt;br /&gt;
+36:   $\color{#008800}{深绿}$ &lt;br /&gt;
+37:   $\color{#bbbbbb}{白色}$&lt;/p&gt;
+
+&lt;p&gt;======ANSI控制码的说明=========================================&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[0m&lt;/td&gt;
+      &lt;td&gt;关闭所有属性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[1m&lt;/td&gt;
+      &lt;td&gt;设置高亮度&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[4m&lt;/td&gt;
+      &lt;td&gt;下划线&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[5m&lt;/td&gt;
+      &lt;td&gt;闪烁&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[7m&lt;/td&gt;
+      &lt;td&gt;反显&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[8m&lt;/td&gt;
+      &lt;td&gt;消隐&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[30m – \33[37m&lt;/td&gt;
+      &lt;td&gt;设置前景色&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[40m – \33[47m&lt;/td&gt;
+      &lt;td&gt;设置背景色&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[nA&lt;/td&gt;
+      &lt;td&gt;光标上移n行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[nB&lt;/td&gt;
+      &lt;td&gt;光标下移n行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[nC&lt;/td&gt;
+      &lt;td&gt;光标右移n行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[nD&lt;/td&gt;
+      &lt;td&gt;光标左移n行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[y;xH&lt;/td&gt;
+      &lt;td&gt;设置光标位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[2J&lt;/td&gt;
+      &lt;td&gt;清屏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[K&lt;/td&gt;
+      &lt;td&gt;清除从光标到行尾的内容&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[s&lt;/td&gt;
+      &lt;td&gt;保存光标位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[u&lt;/td&gt;
+      &lt;td&gt;恢复光标位置&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[?25l&lt;/td&gt;
+      &lt;td&gt;隐藏光标&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;\33[?25h&lt;/td&gt;
+      &lt;td&gt;显示光标&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://tldp.org/LDP/abs/html/&quot;&gt;Advanced Bash-Scripting Guide&lt;/a&gt;&lt;br /&gt;
+这本书内容翔实，实例丰富，既可做精钻细研的教材，又可作为手册时时查阅，真是居家旅行必备良品;-)&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/12/03/bash-shell.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/03/bash-shell.html</guid>
+        
+        <category>shell</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
