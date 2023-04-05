@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor - Kuta's Blog</title>
+    <title>SFL70H Imitation - Kuta's Blog</title>
     <meta name="author"  content="zsssj">
-    <meta name="description" content="Doctor">
-    <meta name="keywords"  content="story">
+    <meta name="description" content="SFL70H Imitation">
+    <meta name="keywords"  content="design">
     <!-- Open Graph -->
-    <meta property="og:title" content="Doctor - Kuta's Blog">
+    <meta property="og:title" content="SFL70H Imitation - Kuta's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/12/03/doctor.html">
+    <meta property="og:url" content="http://localhost:4000/2023/03/05/stage-lamp.html">
     <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
     <meta property="og:site_name" content="Kuta's Blog"> 
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -127,14 +127,14 @@ Author: Ray-Eldath
       <div class="post-tags">
         
           
-            <a href="/tags.html#story" class="post-tag">story</a>
+            <a href="/tags.html#design" class="post-tag">design</a>
           
         
       </div>
-      <h1>Doctor</h1>
+      <h1>SFL70H Imitation</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>zsssj</span>
-        <time class="post-meta-item" datetime="19-12-03"><i class="iconfont icon-date"></i>03 Dec 2019</time>
+        <time class="post-meta-item" datetime="23-03-05"><i class="iconfont icon-date"></i>05 Mar 2023</time>
       </div>
     </div>
     
@@ -144,26 +144,79 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <blockquote>
-  <h2 id="博士和所长钓鱼的故事">博士和所长钓鱼的故事…</h2>
+      <h2 id="stage-lamp-design">Stage Lamp Design</h2>
+<p><img src="/assets/img/lamp1.JPG" alt="" /></p>
+
+<blockquote>
+  <p>SPL-4 舞台灯针对 <a href="/assets/pdf/Versa-min.pdf">SFL70H 舞台灯</a>进行了研仿及功性能的扩展。</p>
 </blockquote>
 
-<p>有一个博士分到一家研究所，成为学历最高的一个人。<br />
-有一天他到单位后面的小池塘去钓鱼，正好正副所长在他的一左一右，也在钓鱼。<br />
-他只是微微点了点头，这两个本科生，有啥好聊的呢？  <br />
-不一会儿，正所长放下钓竿，伸伸懒腰，蹭蹭蹭从水面上如飞地走到对面上厕所。  <br />
-博士眼睛睁得都快掉下来了。水上飘？不会吧？这可是一个池塘啊。<br />
-正所长上完厕所回来的时候，同样也是蹭蹭蹭地从水上飘回来了。<br />
-怎么回事？博士生又不好去问，自己是博士生哪！<br />
-过一阵，副所长也站起来，走几步，蹭蹭蹭地飘过水面上厕所。这下子博士更是差点昏倒：不会吧，到了一个江湖高手集中的地方？<br />
-博士生也内急了。这个池塘两边有围墙，要到对面厕所非得绕十分钟的路，而回单位上又太远，怎么办？<br />
-博士生也不愿意去问两位所长，憋了半天后，也起身往水里跨：我就不信本科生能过的水面，我博士生不能过。<br />
-只听咚的一声，博士生栽到了水里。<br />
-两位所长将他拉了出来，问他为什么要下水，他问：”为什么你们可以走过去呢？”<br />
-两所长相视一笑：”这池塘里有两排木桩子，由于这两天下雨涨水正好在水面下。我们都知道这木桩的位置，所以可以踩着桩子过去。你怎么不问一声呢？”</p>
+<blockquote>
+  <p>SPL-4 舞台灯主要有核心控制板、接口板、驱动模块、灯板和电源模块组成。</p>
+</blockquote>
 
-<hr />
-<p><strong><em>PS:</em></strong> 学历代表过去，只有学习力才能代表将来。尊重经验的人，才能少走弯路。一个好的团队，也应该是学习型的团队。</p>
+<h3 id="-核心控制板">* 核心控制板</h3>
+<p><img src="/assets/img/lamp2.JPG" alt="" />
+<img src="/assets/img/lamp3.JPG" alt="" />
+<img src="/assets/img/lamp4.JPG" alt="" /></p>
+
+<h3 id="-接口板">* 接口板</h3>
+<p>接口板最多可以驱动 6 个灯板。
+<img src="/assets/img/lamp5.JPG" alt="" /></p>
+
+<h3 id="-驱动模块">* 驱动模块</h3>
+<p><img src="/assets/img/lamp6.JPG" alt="" /></p>
+
+<h3 id="-灯板及散热器">* 灯板及散热器</h3>
+<p><img src="/assets/img/lamp7.JPG" alt="" /></p>
+
+<h3 id="-双电源模块">* 双电源模块</h3>
+<p>双电源模块，220VAC转DC48V，提供舞台灯总输入电源。
+<img src="/assets/img/lamp8.JPG" alt="" /></p>
+
+<h3 id="-单模块的测试">* 单模块的测试</h3>
+
+<p>在实验室中，对驱动电源模块，接口板和主控制板，带现有灯具进行了调光
+测试及输出驱动功率测试，测试中，可以实现单驱动模块输出 42V/3.6A。</p>
+
+<p>接口板和主控板均工作正常，已初步完成测试。</p>
+
+<p><img src="/assets/img/lamp9.JPG" alt="" /></p>
+
+<h3 id="-软件工作">* 软件工作</h3>
+
+<p>完成软件界面的编写及调试，完成所有菜单栏条目的测试。</p>
+
+<p><img src="/assets/img/lamp11.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp12.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp13.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp14.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp15.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp16.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp17.jpg" alt="" /></p>
+
+<p><img src="/assets/img/lamp18.jpg" alt="" /></p>
+
+<blockquote>
+  <p>软件工作已经接近尾声，目前已完成 95%的软件工作，包括 DMX512 有线
+和无线信号的接收和解码，全部的人机界面，掉电存储及上电恢复至掉电前状态，2 通道/8 通道/11 通道模式控制。</p>
+</blockquote>
+
+<h3 id="美国测试">美国测试</h3>
+
+<p>2023年3月初，美国公司对SPL-4舞台灯进行了测试，测试反馈问题已经解决。</p>
+
+<p><img src="/assets/img/lamp21.JPG" alt="" /></p>
+
+<blockquote>
+  <p>SPL-4舞台灯已进入了小批生产。首批150套舞台灯已完成批量生产及测试。</p>
+</blockquote>
 
     </article>
 
@@ -215,22 +268,13 @@ Author: Ray-Eldath
     </section>
     <section class="post-footer-item read-next">
       
-      <div class="read-next-item">
-        <a href="/2019/12/03/seven-porridge.html" class="read-next-link"></a>
-        <section>
-          <span>Seven porridge</span>
-          <p>  七人分粥的故事…</p>
-        </section>
-        
-     </div>
-      
 
       
       <div class="read-next-item">
-        <a href="/2019/12/03/bash-shell.html" class="read-next-link"></a>
+        <a href="/2020/02/11/kangaroos-and-the-cage.html" class="read-next-link"></a>
           <section>
-            <span>Bash shell</span>
-            <p>  Bash Shell编程入门</p>
+            <span>Kangaroos and the Cage</span>
+            <p>  袋鼠与笼子…</p>
           </section>
           
       </div>

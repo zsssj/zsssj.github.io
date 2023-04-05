@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js? config=TeX-AMS-MML_HTMLorMML"></script> 
+<!--script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script-->
 <html>
 <head>
     <meta charset="UTF-8">
@@ -20,6 +22,11 @@
     <link rel="stylesheet" href="/assets/css/share.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <!--script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script-->
     <!-- Clicky Analytics -->
     <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101183951);</script>
     <script async src="//static.getclicky.com/js"></script>   
@@ -27,8 +34,8 @@
 
 <body>
     <!--[if lt IE 10]>
-<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
-<![endif]-->
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
     <input id="nm-switch" type="hidden" value="true">
     <div class="visible">
       <header class="g-header">
@@ -59,6 +66,28 @@
 
 <main class="g-container home-content">
     <div class="article-list">
+        
+            <article class="article-item">
+                
+                <section class="post-preview">
+                    <a class="post-link" href="/2019/12/02/debug-skill.html" title="Debug skill (C&Make)"></a>
+                    <h2 class="post-title">Debug skill (C&Make)</h2>
+                    
+                    
+                    <p class="post-excerpt">C语言类调试技巧1 使用不同的颜色打印调试信息,区分调试等级.</p>
+                    
+                </section>
+                <footer class="post-meta">
+                    <div class="post-tags">
+                        
+                            
+                            <a href=/tags.html#makefile class="post-tag">makefile</a>
+                            
+                        
+                    </div>
+                    <time class="post-date" datetime="19-12-02">02 Dec 2019</time>
+                </footer>
+            </article>
         
             <article class="article-item">
                 
@@ -219,6 +248,9 @@
                     
                     <a href="/tags.html#speech" class="tag">speech</a>
                 
+                    
+                    <a href="/tags.html#design" class="tag">design</a>
+                
             </section>
             
         </div>
@@ -242,7 +274,7 @@
     2017
     -
   
-  2022
+  2023
   </section>
   <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
 </footer>
@@ -251,6 +283,16 @@
     </div>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101183951ns.gif" /></p></noscript>
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!--script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script-->
     <script src="/assets/js/prism.js"></script>
     <script src="/assets/js/index.min.js"></script>
 </body>
