@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMXconT(S) - Kuta's Blog</title>
+    <meta name="author"  content="zsssj">
+    <meta name="description" content="DMXconT(S)">
+    <meta name="keywords"  content="design">
+    <!-- Open Graph -->
+    <meta property="og:title" content="DMXconT(S) - Kuta's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2024/01/16/DMXconT.html">
+    <meta property="og:description" content="Nick Kuta,全栈工程师,极客,热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。">
+    <meta property="og:site_name" content="Kuta's Blog"> 
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Clicky Analytics -->
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101183951);</script>
+    <script async src="//static.getclicky.com/js"></script>   
+    <!-- gitalk javascript -->
+    <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>    
+    -->
+    <!-- gitalk will conflict with prism, please use it carefully. --> 
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+	<!--数学公式-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {			
+			inlineMath: [['$', '$']],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+		},
+		messageStyle: "none",
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+	  MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for(i=0; i < all.length; i += 1) { all[i].SourceElement().parentNode.className += ' has-jax'; } });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#design" class="post-tag">design</a>
+          
+        
+      </div>
+      <h1>DMXconT(S)</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>zsssj</span>
+        <time class="post-meta-item" datetime="24-01-16"><i class="iconfont icon-date"></i>16 Jan 2024</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <h2 id="打造专属于舞台灯光师的灯控产品">打造专属于舞台灯光师的灯控产品</h2>
+
+<p><img src="/assets/img/DMXconT(S)-main.jpg" alt="" /></p>
+
+<p>随着舞台灯市场的蓬勃发展，舞台灯相关产品需求旺盛。</p>
+
+<p>舞台灯的控制台市场种类繁多，鱼龙混杂；舞台灯控制台主要分为两大类，一类师舞台设计师和婚庆公司常用的大型多功能DMX512控制台，另一类是小型舞台灯具简易测试控制台。前一类产品大都体积尺寸大携带不便，功能强大价格高；后一类产品参差不齐，要么外壳尺寸大重量重，要么功能简单无法满足所有需求。</p>
+
+<p><img src="/assets/img/DMXconT(S)-white.jpg" alt="" /></p>
+
+<p>小型舞台灯控制器按用途又分为小型舞台灯光控制和舞台灯测试用途，对于一般舞台灯自动场景都需要对灯光的场景进行预设（灯光秀），小型舞台灯控制器通常不能连接上位机，设置场幕和场景时只能单杆设定，设置和读取都极不方便，而且控制器损坏后，已有场景无法一次性导出，用于替换的新设备需要重新设置，加重了技术人员的工作负担。</p>
+
+<p>针对当前舞台灯市场的特点，创新推出迷你DMX512控制台，集合了市场上简易控制台的全部特点，人机界面清晰，用户体验佳；外扩标准卡侬接口，尺寸小巧便携；迷你DMX512控制台自带U盘功能，结合上位机软件，可实现只有大型DMX512控制台才有的文件导入导出功能，控制器换新后，只需要将已存文件一次性导入新控制器，极大地方便了技术人员，减轻了工作负担。</p>
+
+<iframe type="text/html" width="100%" height="385" src="/assets/img/DMXconT(S)22.mp4" allow="autoplay" frameborder="0"></iframe>
+
+<p><img src="/assets/img/DMXconT(S)-pot.jpg" alt="" /></p>
+
+<p><img src="/assets/img/DMXconT(S)-box(11).jpg" alt="" /></p>
+
+<h3 id="迷你dmx512控制台使用说明书如下">迷你DMX512控制台<a href="/assets/pdf/DMXconT(Slim).pdf">使用说明书</a>如下：</h3>
+
+<p><img src="/assets/img/DMXconT(Slim)-1.jpg" alt="" /></p>
+
+<p><img src="/assets/img/DMXconT(Slim)-2.jpg" alt="" /></p>
+
+<p><img src="/assets/img/DMXconT(Slim)-3.jpg" alt="" /></p>
+
+<p><img src="/assets/img/DMXconT(Slim)-4.jpg" alt="" /></p>
+
+<h3 id="dmxcont灯光控制器致力于打造专属于舞台灯光师的灯控产品">DMXconT灯光控制器，致力于打造专属于舞台灯光师的灯控产品。</h3>
+
+<blockquote>
+  <p>上位机软件：–&gt;<a href="/assets/pdf/DMXconT(Slim_zh).exe">下载</a></p>
+</blockquote>
+
+<blockquote>
+  <p>示例文件：—–&gt;<a href="/assets/pdf/F00.DAT">下载</a></p>
+</blockquote>
+
+<ul>
+  <li>我的淘宝小店 —–&gt; <a href="https://s.tb.cn/c.0vM8c9">DMXconT(S)</a></li>
+</ul>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">zsssj</div>
+      <div class="bio">
+        <p>全栈设计,极客,热爱技术&设计,简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/2675326420" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//zhihu.com/people/zsssjc" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="mailto:7_xi@163.com" target="_blank">
+                    <i class="iconfont icon-email"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/zsssj" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2023/03/05/stage-lamp.html" class="read-next-link"></a>
+          <section>
+            <span>SFL70H Imitation</span>
+            <p>Stage Lamp Design</p>
+          </section>
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Kuta's Blog ©
+  
+  
+    2017
+    -
+  
+  2024
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101183951ns.gif" /></p></noscript>
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

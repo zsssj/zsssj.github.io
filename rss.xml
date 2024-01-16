@@ -5,9 +5,64 @@
     <description>Nick Kuta,全栈工程师,极客,热爱技术&amp;设计。很高兴能在这里与你分享我对技术和生活的思考。</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Apr 2023 20:26:12 +0800</pubDate>
-    <lastBuildDate>Sun, 09 Apr 2023 20:26:12 +0800</lastBuildDate>
+    <pubDate>Tue, 16 Jan 2024 14:09:48 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Jan 2024 14:09:48 +0800</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>DMXconT(S)</title>
+        <description>&lt;h2 id=&quot;打造专属于舞台灯光师的灯控产品&quot;&gt;打造专属于舞台灯光师的灯控产品&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(S)-main.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;随着舞台灯市场的蓬勃发展，舞台灯相关产品需求旺盛。&lt;/p&gt;
+
+&lt;p&gt;舞台灯的控制台市场种类繁多，鱼龙混杂；舞台灯控制台主要分为两大类，一类师舞台设计师和婚庆公司常用的大型多功能DMX512控制台，另一类是小型舞台灯具简易测试控制台。前一类产品大都体积尺寸大携带不便，功能强大价格高；后一类产品参差不齐，要么外壳尺寸大重量重，要么功能简单无法满足所有需求。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(S)-white.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;小型舞台灯控制器按用途又分为小型舞台灯光控制和舞台灯测试用途，对于一般舞台灯自动场景都需要对灯光的场景进行预设（灯光秀），小型舞台灯控制器通常不能连接上位机，设置场幕和场景时只能单杆设定，设置和读取都极不方便，而且控制器损坏后，已有场景无法一次性导出，用于替换的新设备需要重新设置，加重了技术人员的工作负担。&lt;/p&gt;
+
+&lt;p&gt;针对当前舞台灯市场的特点，创新推出迷你DMX512控制台，集合了市场上简易控制台的全部特点，人机界面清晰，用户体验佳；外扩标准卡侬接口，尺寸小巧便携；迷你DMX512控制台自带U盘功能，结合上位机软件，可实现只有大型DMX512控制台才有的文件导入导出功能，控制器换新后，只需要将已存文件一次性导入新控制器，极大地方便了技术人员，减轻了工作负担。&lt;/p&gt;
+
+&lt;iframe type=&quot;text/html&quot; width=&quot;100%&quot; height=&quot;385&quot; src=&quot;/assets/img/DMXconT(S)22.mp4&quot; allow=&quot;autoplay&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(S)-pot.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(S)-box(11).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;迷你dmx512控制台使用说明书如下&quot;&gt;迷你DMX512控制台&lt;a href=&quot;/assets/pdf/DMXconT(Slim).pdf&quot;&gt;使用说明书&lt;/a&gt;如下：&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(Slim)-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(Slim)-2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(Slim)-3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/DMXconT(Slim)-4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dmxcont灯光控制器致力于打造专属于舞台灯光师的灯控产品&quot;&gt;DMXconT灯光控制器，致力于打造专属于舞台灯光师的灯控产品。&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;上位机软件：–&amp;gt;&lt;a href=&quot;/assets/pdf/DMXconT(Slim_zh).exe&quot;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;示例文件：—–&amp;gt;&lt;a href=&quot;/assets/pdf/F00.DAT&quot;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我的淘宝小店 —–&amp;gt; &lt;a href=&quot;https://s.tb.cn/c.0vM8c9&quot;&gt;DMXconT(S)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 16 Jan 2024 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2024/01/16/DMXconT.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/01/16/DMXconT.html</guid>
+        
+        <category>design</category>
+        
+        
+      </item>
     
       <item>
         <title>SFL70H Imitation</title>
@@ -1538,38 +1593,6 @@ industry.&lt;/p&gt;
         <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2019/12/03/seven-porridge.html</link>
         <guid isPermaLink="true">http://localhost:4000/2019/12/03/seven-porridge.html</guid>
-        
-        <category>story</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Doctor</title>
-        <description>&lt;blockquote&gt;
-  &lt;h2 id=&quot;博士和所长钓鱼的故事&quot;&gt;博士和所长钓鱼的故事…&lt;/h2&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;有一个博士分到一家研究所，成为学历最高的一个人。&lt;br /&gt;
-有一天他到单位后面的小池塘去钓鱼，正好正副所长在他的一左一右，也在钓鱼。&lt;br /&gt;
-他只是微微点了点头，这两个本科生，有啥好聊的呢？  &lt;br /&gt;
-不一会儿，正所长放下钓竿，伸伸懒腰，蹭蹭蹭从水面上如飞地走到对面上厕所。  &lt;br /&gt;
-博士眼睛睁得都快掉下来了。水上飘？不会吧？这可是一个池塘啊。&lt;br /&gt;
-正所长上完厕所回来的时候，同样也是蹭蹭蹭地从水上飘回来了。&lt;br /&gt;
-怎么回事？博士生又不好去问，自己是博士生哪！&lt;br /&gt;
-过一阵，副所长也站起来，走几步，蹭蹭蹭地飘过水面上厕所。这下子博士更是差点昏倒：不会吧，到了一个江湖高手集中的地方？&lt;br /&gt;
-博士生也内急了。这个池塘两边有围墙，要到对面厕所非得绕十分钟的路，而回单位上又太远，怎么办？&lt;br /&gt;
-博士生也不愿意去问两位所长，憋了半天后，也起身往水里跨：我就不信本科生能过的水面，我博士生不能过。&lt;br /&gt;
-只听咚的一声，博士生栽到了水里。&lt;br /&gt;
-两位所长将他拉了出来，问他为什么要下水，他问：”为什么你们可以走过去呢？”&lt;br /&gt;
-两所长相视一笑：”这池塘里有两排木桩子，由于这两天下雨涨水正好在水面下。我们都知道这木桩的位置，所以可以踩着桩子过去。你怎么不问一声呢？”&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:&lt;/em&gt;&lt;/strong&gt; 学历代表过去，只有学习力才能代表将来。尊重经验的人，才能少走弯路。一个好的团队，也应该是学习型的团队。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 03 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/12/03/doctor.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/12/03/doctor.html</guid>
         
         <category>story</category>
         
